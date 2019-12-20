@@ -1,42 +1,115 @@
-.page-header {
-  background-color: transparent;
+@media (min-width: $mob-width) {
+  .page-header {
+    background-color: transparent;
+  }
+
+  .page-header__wrapper {
+    position: relative;
+    padding-left: 16px;
+    padding-right: 8px;
+    padding-top: 17px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background-color: transparent;
+  }
+
+  .page-header__callback-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: transparent;
+  }
+
+  .page-header__telephone {
+    margin-bottom: 8px;
+    font-family: "Fira Sans", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    color: #484848;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  .page-header__callback {
+    margin: 0;
+    margin-right: 2px;
+    padding: 0;
+    font-family: "Fira Sans", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: lowercase;
+    color: #484848;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px dashed #484848;
+    order: 10;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  .page-header__logo {
+    position: relative;
+    top: 3px;
+    order: -10;
+  }
 }
 
-.page-header__wrapper {
-  padding-left: 110px;
-  padding-right: 114px;
-  padding-top: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
+@media (min-width: $desk-width) {
+  .page-header__wrapper {
+    display: block;
+    padding-left: 110px;
+    padding-right: 114px;
+    padding-top: 47px;
+    background-color: transparent;
+  }
 
-.page-header__telephone {
-  font-family: "Fira Sans", "Arial", sans-serif;
-  font-size: 15px;
-  line-height: 18px;
-  color: #484848;
-  cursor: pointer;
-}
+  .page-header__callback-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+  }
 
-.page-header__callback {
-  margin: 0;
-  padding: 0;
-  font-family: "Fira Sans", "Arial", sans-serif;
-  font-size: 15px;
-  line-height: 18px;
-  text-transform: lowercase;
-  color: #484848;
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-  border-bottom: 2px dashed #484848;
-}
+  .page-header__telephone {
+    margin-bottom: 0;
+    font-size: 15px;
+    line-height: 18px;
+    order: 0;
+  }
 
-.page-header__logo {
-  position: relative;
-  right: 13px;
-  top: 3px;
-}
+  .page-header__callback {
+    margin: 0;
+    font-size: 15px;
+    line-height: 18px;
+    order: 10;
+  }
 
+  .page-header__logo {
+    position: absolute;
+    top: 32px;
+    right: 45%;
+    order: 0;
+  }
+
+  .page-header__logo img {
+    width: 137px;
+    height: 48px;
+  }
+}

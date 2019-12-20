@@ -10,11 +10,16 @@
 <body>
   <header class="page-header">
     <div class="page-header__wrapper">
-      <a class="page-header__telephone" href="tel:+ (972) 2 – 621 – 6581">+ (972) 2 – 621 – 6581</a>
       <a class="page-header__logo" href="#">
-        <img src="./img/logo_desktop@1x.png" alt="Логотип программы обучения в Израиле Masa" width="137" height="48">
+        <picture>
+          <source media="(min-width: 1024px)" srcset="./img/logo_desktop@1x.png 1x, ./img/logo_desktop@2x.png 2x">
+          <img src="./img/logo_mobile@1x.png" srcset="img/logo_mobile@2x.png 2x" alt="Логотип программы обучения в Израиле Masa" width="120" height="42">
+        </picture>
       </a>
-      <button class="page-header__callback" type="button">Заказать звонок</button>
+      <div class="page-header__callback-wrapper">
+        <a class="page-header__telephone" href="tel:+ (972) 2 – 621 – 6581">+ (972) 2 – 621 – 6581</a>
+        <button class="page-header__callback" type="button">Заказать звонок</button>
+      </div>
     </div>
   </header>
   <main>
