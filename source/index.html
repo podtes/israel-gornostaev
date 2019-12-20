@@ -35,14 +35,14 @@
 
 
     <div class="modal-position">
-      <section class="modal modal-order-callback">
+      <section class="modal-order-callback">
         <h2 class="visually-hidden">Форма заказа обратного звонка</h2>
         <p class="modal-order-callback__title">Заказать звонок</p>
         <p class="modal-order-callback__message">Оставьте ваши контактные данные, мы свяжемся  с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
         <form class="modal-order-callback__form">
           <input type="text" name="name" placeholder="имя">
-          <input type="text" name="telephone" placeholder="телефон">
-          <button type="submit">
+          <input type="text" name="telephone" placeholder="телефон" required>
+          <button class="btn" type="submit">
             Перезвоните мне
           </button>
           <label>
@@ -51,6 +51,15 @@
             Нажимая на кнопку, вы даёте согласие на обработку персональных данных
           </label>
         </form>
+        <button class="modal-order-callback__close-button"></button>
+      </section>
+
+
+      <section class="modal-success">
+        <span></span>
+        <h2 class="modal-success__title">Заявка принята</h2>
+        <p class="modal-success__message">Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения деталей!</p>
+        <button class="btn" type="button">понятно</button>
         <button class="modal-order-callback__close-button"></button>
       </section>
     </div>
