@@ -1,3 +1,5 @@
-h1 {
-  color: red;
-}
+@import "base.scss";
+@import "visually-hidden.scss";
+@import "variables.scss";
+@import "./blocks/page-header.scss";
+@import "./blocks/intro.scss";

@@ -1,0 +1,59 @@
+@font-face {
+  font-weight: normal;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/FiraSans.woff2") format("woff2"), url("../fonts/FiraSans.woff") format("woff");
+}
+
+@font-face {
+  font-weight: 500;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/FiraSans-Bold.woff2") format("woff2"), url("../fonts/FiraSans-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-weight: normal;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-weight: bold;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-weight: 800;
+  font-family: "Roleway";
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Roleway-Bold.woff2") format("woff2"), url("../fonts/Roleway-Bold.woff") format("woff");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 26px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
