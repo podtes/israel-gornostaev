@@ -44,7 +44,7 @@
 }
 
 .modal-order-callback__form input[type="text"],
-.modal-order-callback__form input[type="number"] {
+.modal-order-callback__form input[type="tel"] {
   padding-top: 18px;
   padding-bottom: 17px;
   padding-left: 38px;
@@ -55,11 +55,15 @@
 
   &:focus {
     border-color: #ffd701;
-  // TODO: тут нужно будет поставить градиент на бордер
+    // TODO: тут нужно будет поставить градиент на бордер
   }
 
   &:valid {
     border-color: #484848;
+  }
+
+  &:invalid {
+    border-color: red;
   }
 
   &:first-of-type {
@@ -137,5 +141,112 @@
 
   &:active {
     opacity: 0.5;
+  }
+}
+
+@media (max-width: $tab-width) {
+  .modal-order-callback {
+    padding: 169px 16px;
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: center;
+  }
+
+  .modal-order-callback__title {
+    margin-bottom: 16px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .modal-order-callback__message {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .modal-order-callback__form input[type="text"],
+  .modal-order-callback__form input[type="tel"] {
+    padding-top: 18px;
+    padding-bottom: 17px;
+    padding-left: 38px;
+    width: 70%;
+    border: 2px solid #e3e3e3;
+    box-sizing: border-box;
+    border-radius: 80px;
+
+    &:first-of-type {
+      margin-bottom: 8px;
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .modal-order-callback__form input[type="submit"] {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 17px;
+    padding: 19px 63px;
+  }
+
+  .modal-order-callback__form label {
+    position: relative;
+    margin: 0 auto;
+    padding-left: 24px;
+    width: 60%;
+    text-align: center;
+  }
+
+  .modal-order-callback__custom-checkbox {
+    position: absolute;
+    margin-left: -24px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: $mob-width) {
+  .modal-order-callback {
+    padding: 169px 16px;
+  }
+
+  .modal-order-callback__title {
+    margin-bottom: 16px;
+  }
+
+  .modal-order-callback__message {
+    width: 287px;
+    margin-bottom: 32px;
+    padding: 0 13px;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    box-sizing: border-box;
+    //TODO: сомнительно отцентровал, текст не совпадает по макету.
+  }
+
+  .modal-order-callback__close-button {
+    top: 23px;
+    right: 24px;
+  }
+
+  .modal-order-callback__form input[type="text"],
+  .modal-order-callback__form input[type="tel"] {
+    width: 100%;
+  }
+
+  .modal-order-callback__form input[type="submit"] {
+    width: 92%;
+  }
+
+  .modal-order-callback__form label {
+    width: 85%;
+    text-align: left;
   }
 }

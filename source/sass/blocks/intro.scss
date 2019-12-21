@@ -1,4 +1,4 @@
-@media (min-width: $mob-width) {
+@media (min-width: 320px) {
   .intro {
     box-sizing: border-box;
     margin-top: -35px;
@@ -80,7 +80,7 @@
   }
 }
 
-@media (min-width: $tab-width) {
+@media (min-width: 768px) {
   .intro {
     margin-top: -67px;
     background-image: url("../../img/background_top_desktop@1x.jpg");
@@ -103,7 +103,7 @@
 }
 
 
-@media (min-width: $desk-width) {
+@media (min-width: 1024px) {
   .intro__israel {
     background-image: url("../../img/israel_desktop@1x.png");
     background-size: contain;

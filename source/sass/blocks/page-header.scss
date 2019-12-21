@@ -1,4 +1,4 @@
-@media (min-width: $mob-width) {
+@media (min-width: 320px) {
   .page-header {
     background-color: transparent;
   }
@@ -71,7 +71,7 @@
   }
 }
 
-@media (min-width: $desk-width) {
+@media (min-width: 1024px) {
   .page-header__wrapper {
     display: block;
     padding-left: 110px;

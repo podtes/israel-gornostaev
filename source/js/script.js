@@ -1,4 +1,7 @@
 'use strict';
+var ESC_KEYCODE = 27;
+var ENTER_KEYCODE = 13;
+
 var pageHeader = document.querySelector('.page-header');
 var callbackOpenButton = pageHeader.querySelector('.page-header__callback');
 var callbackCloseButton = document.querySelector('.modal-order-callback__close-button');
@@ -9,8 +12,11 @@ var successModal = overlay.querySelector('.modal-success');
 var successModalOKButton = successModal.querySelector('button[type="button"]');
 var successModalCloseButton = successModal.querySelector('.modal-order-callback__close-button');
 var nameInput = callbackModal.querySelector('input[name="name"]');
+var telephoneInput = callbackModal.querySelector('input[name="telephone"]');
 var form = callbackModal.querySelector('form');
 
+
+// логика открытия и закрытия модальных окон
 var closeCallbackModal = function () {
   overlay.classList.remove('modal-open');
   callbackModal.classList.remove('modal-open');
@@ -26,7 +32,7 @@ var openCallbackModal = function () {
 };
 
 var openCallbackModalPressEscHandler = function (evt) {
-  if (evt.keyCode === 27) {
+  if (evt.keyCode === ESC_KEYCODE) {
     closeCallbackModal();
   }
 };
@@ -34,7 +40,7 @@ var callbackOpenButtonClickHandler = function () {
   openCallbackModal();
 };
 var callbackOpenButtonPressEnterHandler = function (evt) {
-  if (evt.keyCode === 13) {
+  if (evt.keyCode === ENTER_KEYCODE) {
     openCallbackModal();
   }
 };
@@ -42,7 +48,7 @@ var callbackCloseButtonClickHandler = function () {
   closeCallbackModal();
 };
 var callbackCloseButtonPressEnterHandler = function (evt) {
-  if (evt.keycode === 13) {
+  if (evt.keycode === ENTER_KEYCODE) {
     closeCallbackModal();
   }
 };
@@ -61,17 +67,17 @@ var closeSuccessModal = function () {
 };
 
 var openSuccessModalPressEscHandler = function (evt) {
-  if (evt.keyCode === 27) {
+  if (evt.keyCode === ESC_KEYCODE) {
     closeSuccessModal();
   }
 };
 var successModalOKButtonPressEnterHandler = function (evt) {
-  if (evt.keyCode === 13) {
+  if (evt.keyCode === ENTER_KEYCODE) {
     closeSuccessModal();
   }
 };
 var successModalCloseButtonPressEnterHandler = function (evt) {
-  if (evt.keyCode === 13) {
+  if (evt.keyCode === ENTER_KEYCODE) {
     closeSuccessModal();
   }
 };
@@ -88,13 +94,14 @@ callbackOpenButton.addEventListener('click', callbackOpenButtonClickHandler);
 callbackCloseButton.addEventListener('click', callbackCloseButtonClickHandler);
 callbackOpenButton.addEventListener('keydown', callbackOpenButtonPressEnterHandler);
 callbackCloseButton.addEventListener('keydown', callbackCloseButtonPressEnterHandler);
-form.addEventListener('submit', function () {
-  closeCallbackModal();
-  openSuccessModal();
-});
-//TODO: проблема с отправкой формы, окно с успешным сообщением открывается, но сразу же закрывается.
 
 successModalOKButton.addEventListener('click', closeSuccessModal);
 successModalCloseButton.addEventListener('click', closeSuccessModal);
 successModalOKButton.addEventListener('keydown', successModalOKButtonPressEnterHandler);
 successModalCloseButton.addEventListener('keydown', successModalCloseButtonPressEnterHandler);
+
+form.addEventListener('submit', function () {
+  closeCallbackModal();
+  openSuccessModal();
+  // TODO: проблема с отправкой формы, окно с успешным сообщением открывается, но сразу же закрывается.
+});

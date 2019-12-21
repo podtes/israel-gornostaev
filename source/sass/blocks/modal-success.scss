@@ -53,3 +53,41 @@
   padding: 19px 98px;
 }
 
+@media (max-width: $tab-width) {
+  .modal-success {
+    display: none;
+    padding-top: 196px;
+    padding-bottom: 292px;
+    padding-left: 26px;
+    padding-right: 26px;
+    width: 100%;
+    border-radius: none;
+    box-shadow: none;
+    text-align: center;
+  }
+
+  .modal-success span {
+    margin-bottom: 28px;
+  }
+
+  .modal-success__title {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 16px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .modal-success__message {
+    margin: 0;
+    margin-bottom: 32px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .modal-success button[type="button"] {
+    margin: 0 auto;
+    padding: 19px 98px;
+  }
+}
+
