@@ -10,7 +10,7 @@
   width: 480px;
   box-sizing: border-box;
   border-radius: 8px;
-  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
 }
 
 .modal-order-callback__title {
@@ -43,7 +43,8 @@
   text-align: center;
 }
 
-.modal-order-callback__form input[type="text"] {
+.modal-order-callback__form input[type="text"],
+.modal-order-callback__form input[type="number"] {
   padding-top: 18px;
   padding-bottom: 17px;
   padding-left: 38px;
@@ -57,11 +58,15 @@
   // TODO: тут нужно будет поставить градиент на бордер
   }
 
+  &:valid {
+    border-color: #484848;
+  }
+
   &:first-of-type {
     margin-bottom: 8px;
   }
 
-  &:last-of-type {
+  &:nth-child(2) {
     margin-bottom: 24px;
   }
 }
@@ -75,7 +80,7 @@
   letter-spacing: -0.04em;
 }
 
-.modal-order-callback__form button[type="submit"] {
+.modal-order-callback__form input[type="submit"] {
   margin-left: 59px;
   margin-bottom: 17px;
   padding: 19px 63px;
@@ -115,12 +120,6 @@
   height: 16px;
   cursor: pointer;
 }
-
-
-
-
-
-
 
 .modal-order-callback__close-button {
   position: absolute;
