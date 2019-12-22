@@ -1,0 +1,105 @@
+.about {
+  padding-top: 28px;
+  padding-bottom: 600px;
+  text-align: center;
+  background: url("../../img/watercolor_Bg_desktop@1x.jpg") 50% 695px no-repeat;
+  background-size: contain;
+}
+
+.about h2 {
+  margin: 0;
+  margin-bottom: 23px;
+  padding: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 40px;
+  line-height: 49px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #1fc0fc;
+}
+
+.about p {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 48px;
+  padding: 0;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-size: 17px;
+  line-height: 29px;
+  font-weight: normal;
+  color: #484848;
+  max-width: 695px;
+}
+
+.about__img-wrapper {
+  display: inline-block;
+  //TODO: Можно ли сверстать пустой span и в него фоном или псевдоэлементов сделать кнопку? Будет проще и без этих заморочек. На img псевдоэлемент не вешается.
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url("../../img/play_button.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 96px;
+    height: 96px;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover::after {
+    cursor: pointer;
+    background-image: url("../../img/play_button_hover.svg");
+  }
+
+  &:active::after {
+    cursor: pointer;
+    background-image: url("../../img/play_button_active.svg");
+  }
+}
+
+@media (max-width: $mob-width) {
+  .about {
+    padding-top: 45px;
+    padding-bottom: 50px;
+    text-align: center;
+    background: url("../../img/watercolor_Bg_mobile@1x.jpg") 50% 245px no-repeat;
+    background-size: contain;
+  }
+
+  .about h2 {
+    margin-bottom: 23px;
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: -0.02em;
+  }
+
+  .about p {
+    margin-bottom: 49px;
+    padding: 0 16px;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: left;
+  }
+
+  .about img {
+    min-width: 320px;
+    min-height: 224px;
+  }
+
+  .about__img-wrapper {
+    &::after {
+      width: 80px;
+      height: 80px;
+      top: 52%;
+    }
+  }
+}
