@@ -23,7 +23,7 @@
 
 .programms__item--active {
   position: relative;
-  &:before {
+  &::before {
     position: absolute;
     content: "";
     background: url("../../img/programms_button_desktop.png") no-repeat 50% 50%;
@@ -197,6 +197,14 @@
   text-transform: uppercase;
   letter-spacing: -0.02em;
   color: #1fc0fc;
+}
+
+.programms__about {
+  display: none;
+
+  &--active {
+    display: block;
+  }
 }
 
 .programms h3 {

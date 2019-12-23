@@ -15,6 +15,25 @@ var nameInput = callbackModal.querySelector('input[name="name"]');
 var telephoneInput = callbackModal.querySelector('input[name="telephone"]');
 var form = callbackModal.querySelector('form');
 
+var programmButtonItems = document.querySelectorAll('.programms__item');
+var programmGeneralButtonItem = document.querySelector('.programms__item--general');
+var programmStudyButtonItem = document.querySelector('.programms__item--study');
+var programmWorkButtonItem = document.querySelector('.programms__item--work');
+var programmVolunteerButtonItem = document.querySelector('.programms__item--volunteer');
+var programmReligionButtonItem = document.querySelector('.programms__item--religion');
+
+var programmGeneralButton = programmGeneralButtonItem.querySelector('.programms__button--general');
+var programmStudyButton = programmStudyButtonItem.querySelector('.programms__button--study');
+var programmWorkButton = programmWorkButtonItem.querySelector('.programms__button--work');
+var programmVolunteerButton = programmVolunteerButtonItem .querySelector('.programms__button--volunteer');
+var programmReligionButton = programmReligionButtonItem.querySelector('.programms__button--religion');
+
+var programmsTexts = document.querySelectorAll('.programms__about');
+var programmGeneralText = document.querySelector('.programms__about--general');
+var programmStudyText = document.querySelector('.programms__about--study');
+var programmWorkText = document.querySelector('.programms__about--work');
+var programmVolunteerText = document.querySelector('.programms__about--volunteer');
+var programmReligionText = document.querySelector('.programms__about--religion');
 
 // логика открытия и закрытия модальных окон
 var closeCallbackModal = function () {
@@ -105,3 +124,48 @@ form.addEventListener('submit', function () {
   openSuccessModal();
   // TODO: проблема с отправкой формы, окно с успешным сообщением открывается, но сразу же закрывается.
 });
+
+// переключение программ обучения
+var deactiveateProgrammButton = function () {
+  for (var i = 0; i < programmsTexts.length; i++) {
+    if (programmsTexts[i].classList.contains('programms__about--active')) {
+      programmsTexts[i].classList.remove('programms__about--active');
+      break;
+    }
+  }
+  for (var j = 0; j < programmButtonItems.length; j++) {
+    console.log(programmButtonItems);
+    if (programmButtonItems[j].classList.contains('programms__item--active')) {
+      programmButtonItems[j].classList.remove('programms__item--active');
+      break;
+    }
+  }
+};
+
+programmGeneralButton.addEventListener('click', function () {
+  deactiveateProgrammButton();
+  programmGeneralButtonItem.classList.add('programms__item--active');
+  programmGeneralText.classList.add('programms__about--active');
+});
+programmStudyButton.addEventListener('click', function () {
+  deactiveateProgrammButton();
+  programmStudyButtonItem.classList.add('programms__item--active');
+  programmStudyText.classList.add('programms__about--active');
+});
+programmWorkButton.addEventListener('click', function () {
+  deactiveateProgrammButton();
+  programmWorkButtonItem.classList.add('programms__item--active');
+  programmWorkText.classList.add('programms__about--active');
+});
+programmVolunteerButton.addEventListener('click', function () {
+  deactiveateProgrammButton();
+  programmVolunteerButtonItem.classList.add('programms__item--active');
+  programmVolunteerText.classList.add('programms__about--active');
+});
+programmReligionButton.addEventListener('click', function () {
+  deactiveateProgrammButton();
+  programmReligionButtonItem.classList.add('programms__item--active');
+  programmReligionText.classList.add('programms__about--active');
+});
+
+
