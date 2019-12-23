@@ -1,0 +1,147 @@
+.want-go {
+  padding-top: 863px;
+  background-image: url("../../img/backpack_desktop@1x.png"),
+    url("../../img/girl-flag_desktop@1x.jpg");
+  background-repeat: no-repeat,
+    no-repeat;
+  background-position: left 7px,
+    right 269px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../../img/backpack_desktop@2x.png"),
+      url("../../img/girl-flag_desktop@2x.jpg");
+    background-repeat: no-repeat,
+      no-repeat;
+    background-position: left 7px,
+      right 269px;
+    background-size: 220px,
+      818px;
+  }
+}
+
+.want-go h2 {
+  margin: 0;
+  margin-bottom: 23px;
+  padding: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 40px;
+  line-height: 49px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #1fc0fc;
+}
+
+.want-go p {
+  margin: 0;
+  margin-bottom: 64px;
+  padding: 0;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-size: 17px;
+  line-height: 29px;
+  color: #484848;
+  opacity: 0.87;
+  max-width: 400px;
+}
+
+.want-go__form-wrapper {
+  display: flex;
+}
+
+.want-go input[type="tel"] {
+  margin: 0;
+  padding: 0;
+  padding-left: 38px;
+  border: 2px solid #e3e3e3;
+  box-sizing: border-box;
+  border-radius: 80px;
+  width: 100%;
+  max-width: 477px;
+
+  &:focus {
+    border-color: #ffd701;
+    // TODO: тут нужно будет поставить градиент на бордер
+  }
+
+  &:valid {
+    border-color: #484848;
+  }
+
+  &:invalid {
+    border-color: red;
+  }
+}
+
+.want-go input[placeholder] {
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+  color: #484848;
+  opacity: 0.5;
+  letter-spacing: -0.04em;
+  font-variant: small-caps;
+}
+
+.want-go button {
+  padding: 20px 38px;
+  transform: translateX(-216px);
+}
+
+@media (max-width: $mob-width) {
+  .want-go {
+    padding-top: 79px;
+    padding-bottom: 308px;
+    padding-left: 17px;
+    padding-right: 17px;
+    background-image: url("../../img/backpack_mobile@1x.png"),
+    url("../../img/girl-flag-bg_mobile@1x.jpg");
+    background-repeat: no-repeat,
+    no-repeat;
+    background-position: left 31px,
+    50% 370px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/backpack_mobile@2x.png"),
+      url("../../img/girl-flag-bg_mobile@2x.jpg");
+      background-repeat: no-repeat,
+      no-repeat;
+      background-position: left 31px,
+      right 370px;
+      background-size: 103px,
+      contain;
+    }
+  }
+
+  .want-go h2 {
+    text-align: center;
+    margin-bottom: 23px;
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  .want-go p {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 26px;
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .want-go__form-wrapper {
+    display: block;
+  }
+
+  .want-go input[type="tel"] {
+    margin-bottom: 8px;
+    padding: 18px 39px;
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .want-go button {
+    margin-left: 11px;
+    padding: 20px 62px;
+    transform: translateX(0);
+    max-width: 450px;
+  }
+}

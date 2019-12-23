@@ -1,7 +1,15 @@
 .programms {
   padding-top: 423px;
-  padding-bottom: 100px;
   padding-left: 50px;
+  padding-right: 50px;
+  background-image: url("../../img/programms_sketch_desktop@1x.png");
+  background-repeat: no-repeat;
+  background-position: right -4px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../../img/programms_sketch_desktop@2x.png");
+    background-size: 680px;
+  }
 }
 
 .programms__wrapper {
@@ -11,14 +19,20 @@
 
 .programms ul {
   margin: 0;
-  margin-right: 110px;
+  margin-right: 18px;
   padding: 0;
   padding-top: 3px;
+  min-width: 250px;
   list-style: none;
 }
 
 .programms__item {
   display: block;
+  margin-bottom: 46px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .programms__item--active {
@@ -53,7 +67,7 @@
 .programms__button {
   position: relative;
   margin: 0;
-  margin-bottom: 50px;
+  //margin-bottom: 50px;
   padding: 0;
   padding-left: 48px;
   background-color: transparent;
@@ -79,7 +93,7 @@
   &::before {
     position: absolute;
     content: "";
-    background: url("../../img/general.png");
+    background: url("../../img/general.png") no-repeat 50% 50%;
     width: 28px;
     height: 33px;
     top: -6px;
@@ -87,13 +101,13 @@
   }
 
   &:hover::before {
-    background: url("../../img/general_hover.png");
+    background: url("../../img/general_hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--general {
   &::before {
-    background: url("../../img/general_active.png");
+    background: url("../../img/general_active.png") no-repeat 50% 50%;
   }
 }
 
@@ -101,7 +115,7 @@
   &::before {
     position: absolute;
     content: "";
-    background: url("../../img/study.png");
+    background: url("../../img/study.png") no-repeat 50% 50%;
     width: 36px;
     height: 35px;
     top: -8px;
@@ -109,13 +123,13 @@
   }
 
   &:hover::before {
-    background: url("../../img/study_hover.png");
+    background: url("../../img/study_hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--study {
   &::before {
-    background: url("../../img/study_active.png");
+    background: url("../../img/study_active.png") no-repeat 50% 50%;
   }
 }
 
@@ -123,7 +137,7 @@
   &::before {
     position: absolute;
     content: "";
-    background: url("../../img/work.png");
+    background: url("../../img/work.png") no-repeat 50% 50%;
     width: 32px;
     height: 25px;
     top: -3px;
@@ -131,13 +145,13 @@
   }
 
   &:hover::before {
-    background: url("../../img/work_hover.png");
+    background: url("../../img/work_hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--work {
   &::before {
-    background: url("../../img/work_active.png");
+    background: url("../../img/work_active.png") no-repeat 50% 50%;
   }
 }
 
@@ -145,7 +159,7 @@
   &::before {
     position: absolute;
     content: "";
-    background: url("../../img/volunteer.png");
+    background: url("../../img/volunteer.png") no-repeat 50% 50%;
     width: 32px;
     height: 25px;
     top: -5px;
@@ -153,13 +167,13 @@
   }
 
   &:hover::before {
-    background: url("../../img/volunteer_hover.png");
+    background: url("../../img/volunteer_hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--volunteer {
   &::before {
-    background: url("../../img/volunteer_active.png");
+    background: url("../../img/volunteer_active.png") no-repeat 50% 50%;
   }
 }
 
@@ -167,7 +181,7 @@
   &::before {
     position: absolute;
     content: "";
-    background: url("../../img/religion.png");
+    background: url("../../img/religion.png") no-repeat 50% 50%;
     width: 23px;
     height: 25px;
     top: -3px;
@@ -175,13 +189,13 @@
   }
 
   &:hover::before {
-    background: url("../../img/religion_hover.png");
+    background: url("../../img/religion_hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--religion {
   &::before {
-    background: url("../../img/religion_active.png");
+    background: url("../../img/religion_active.png") no-repeat 50% 50%;
   }
 }
 
@@ -235,5 +249,136 @@
 
   &:last-of-type {
     max-width: 520px;
+  }
+}
+
+@media (max-width: $tab-width) {
+  .programms__wrapper {
+    padding-left: 115px;
+  }
+
+  .programms h2 {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: $mob-width) {
+  .programms {
+    padding-top: 23px;
+    padding-left: 0;
+    padding-right: 0;
+    background-image: url("../../img/programms_sketch_mobile@1x.png");
+    background-repeat: no-repeat;
+    background-position: 24px 31%;
+    background-size: contain;
+    overflow: hidden;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/programms_sketch_mobile@2x.png");
+    }
+  }
+
+  .programms__wrapper {
+    padding-left: 16px;
+    padding-right: 15px;
+    flex-direction: column;
+  }
+
+  .programms h2 {
+    margin-bottom: 12px;
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  .programms ul {
+    display: flex;
+    width: auto;
+    margin-right: 0;
+    margin-bottom: 32px;
+    transform: translateX(-56px);
+  }
+
+  .programms h3 {
+    margin-bottom: 17px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .programms p {
+    font-size: 14px;
+    line-height: 22px;
+
+    &:first-of-type {
+      margin-bottom: 15px;
+      width: auto;
+    }
+
+    &:last-of-type {
+      width: auto;
+    }
+  }
+
+  .programms__item {
+    padding: 11px 11px;
+    margin-bottom: 0;
+  }
+
+  .programms__item--active {
+    background: linear-gradient(141.47deg, #ffc341 20.46%, #ffd701 65.31%);
+    border-radius: 60px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .programms__item--active .programms__button {
+    font-size: 16px;
+    line-height: 19px;
+
+    &:hover {
+      color: #ffffff;
+      opacity: 1;
+      cursor: auto;
+    }
+  }
+
+  .programms__button {
+    margin: 0;
+    padding: 0;
+    padding-left: 40px;
+    color: #484848;
+    opacity: 0.4;
+
+    &:hover {
+      color: #ffd701;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  .programms__button--work {
+    &::before {
+      background: url("../../img/work_mobile.png") no-repeat 50% 50%;
+      width: 32px;
+      height: 25px;
+      top: -3px;
+      left: 1px;
+
+      //TODO: при переключениях кнопки дергаются из-за того, что в макете есть пара иконок мобильной версии, а в стайлгайде они только десктопные. Если везде оставить десктопные иконки, т обудет ок, но не попадает по макету.
+    }
+  }
+
+  .programms__item--active .programms__button--study {
+    &::before {
+      background: url("../../img/study_mobile.png") no-repeat 50% 50%;
+      width: 32px;
+      height: 32px;
+      top: -5px;
+      left: 0px;
+    }
   }
 }
