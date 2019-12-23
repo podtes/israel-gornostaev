@@ -1,0 +1,231 @@
+.programms {
+  padding-top: 423px;
+  padding-bottom: 100px;
+  padding-left: 50px;
+}
+
+.programms__wrapper {
+  padding-left: 231px;
+  display: flex;
+}
+
+.programms ul {
+  margin: 0;
+  margin-right: 110px;
+  padding: 0;
+  padding-top: 3px;
+  list-style: none;
+}
+
+.programms__item {
+  display: block;
+}
+
+.programms__item--active {
+  position: relative;
+  &:before {
+    position: absolute;
+    content: "";
+    background: url("../../img/programms_button_desktop.png") no-repeat 50% 50%;
+    width: 228px;
+    height: 68px;
+    top: -19px;
+    left: -24px;
+  }
+}
+
+.programms__item--active .programms__button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  font-variant: small-caps;
+  opacity: 1;
+
+  &:hover {
+    color: #ffffff;
+    opacity: 1;
+    cursor: auto;
+  }
+}
+
+.programms__button {
+  position: relative;
+  margin: 0;
+  margin-bottom: 50px;
+  padding: 0;
+  padding-left: 48px;
+  background-color: transparent;
+  border: none;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 18px;
+  color: #484848;
+  opacity: 0.87;
+  cursor: pointer;
+
+  &:hover {
+    color: #ffd701;
+    //TODO: в макете заливка букв градиентная при ховере
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.programms__button--general {
+  &::before {
+    position: absolute;
+    content: "";
+    background: url("../../img/general.png");
+    width: 28px;
+    height: 33px;
+    top: -6px;
+    left: 0;
+  }
+
+  &:hover::before {
+    background: url("../../img/general_hover.png");
+  }
+}
+
+.programms__item--active .programms__button--general {
+  &::before {
+    background: url("../../img/general_active.png");
+  }
+}
+
+.programms__button--study {
+  &::before {
+    position: absolute;
+    content: "";
+    background: url("../../img/study.png");
+    width: 36px;
+    height: 35px;
+    top: -8px;
+    left: -4px;
+  }
+
+  &:hover::before {
+    background: url("../../img/study_hover.png");
+  }
+}
+
+.programms__item--active .programms__button--study {
+  &::before {
+    background: url("../../img/study_active.png");
+  }
+}
+
+.programms__button--work {
+  &::before {
+    position: absolute;
+    content: "";
+    background: url("../../img/work.png");
+    width: 32px;
+    height: 25px;
+    top: -3px;
+    left: -2px;
+  }
+
+  &:hover::before {
+    background: url("../../img/work_hover.png");
+  }
+}
+
+.programms__item--active .programms__button--work {
+  &::before {
+    background: url("../../img/work_active.png");
+  }
+}
+
+.programms__button--volunteer {
+  &::before {
+    position: absolute;
+    content: "";
+    background: url("../../img/volunteer.png");
+    width: 32px;
+    height: 25px;
+    top: -5px;
+    left: -2px;
+  }
+
+  &:hover::before {
+    background: url("../../img/volunteer_hover.png");
+  }
+}
+
+.programms__item--active .programms__button--volunteer {
+  &::before {
+    background: url("../../img/volunteer_active.png");
+  }
+}
+
+.programms__button--religion {
+  &::before {
+    position: absolute;
+    content: "";
+    background: url("../../img/religion.png");
+    width: 23px;
+    height: 25px;
+    top: -3px;
+    left: 2px;
+  }
+
+  &:hover::before {
+    background: url("../../img/religion_hover.png");
+  }
+}
+
+.programms__item--active .programms__button--religion {
+  &::before {
+    background: url("../../img/religion_active.png");
+  }
+}
+
+.programms h2 {
+  margin: 0;
+  margin-left: 207px;
+  margin-bottom: 82px;
+  padding: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 40px;
+  line-height: 49px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #1fc0fc;
+}
+
+.programms h3 {
+  margin: 0;
+  margin-bottom: 24px;
+  padding: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  color: #1fc0fc;
+}
+
+.programms p {
+  margin: 0;
+  padding: 0;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 26px;
+  color: #484848;
+  opacity: 0.87;
+
+  &:first-of-type {
+    margin-bottom: 15px;
+    max-width: 560px;
+  }
+
+  &:last-of-type {
+    max-width: 520px;
+  }
+}

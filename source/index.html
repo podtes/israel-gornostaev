@@ -4,8 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Стартовый шаблон</title>
+  <title>Программы обучения в Израиле</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="./fonts/FiraSans.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="./fonts/FiraSans-Bold.woff2" as="font">
+  <link rel="preload" href="./fonts/Montserrat-Bold.woff2" as="font">
+  <link rel="preload" href="./fonts/Montserrat-Regular.woff2" as="font">
+  <link rel="preload" href="./fonts/Raleway-Bold.woff2" as="font">
 </head>
 <body>
   <div class="intro-header-wrapper">
@@ -23,8 +28,10 @@
     <div class="intro">
       <h1 class="visually-hidden">Программа обучения еврейской молодежи в Израиле Masa</h1>
       <h2>Учёба, путешествие и карьера для еврейской молодёжи</h2>
+      <picture>
         <source media="(max-width: 767px)" srcset="./img/israel_reserve_mobile@1x.png 1x, ./img/israel_reserve_mobile@2x.png 2x">
         <img class="intro__reserve-pic" src="./img/israel_reserve_desktop@1x.png" srcset="./img/israel_reserve_desktop@2x.png 2x" alt="Надпись Израиль" width="998" height="147">
+      </picture>
     </div>
   </div>
   <main>
@@ -36,6 +43,39 @@
           <source media="(max-width: 767px)" srcset="./img/photo_about_mobile@1x.png 1x, ./img/photo_about_mobile@2x.png 2x">
           <img src="./img/photo_about_desktop@1x.jpg" srcset="./img/photo_about_desktop@2x.jpg 2x" alt="Фотография участников программы Маса" width="870" height="460">
         </picture>
+      </div>
+    </section>
+
+    <section class="programms">
+      <h2>Программы</h2>
+      <div class="programms__wrapper">
+        <ul>
+          <li class="programms__item">
+            <button class="programms__button programms__button--general">Общие</button>
+          </li>
+          <li class="programms__item programms__item--active">
+            <button class="programms__button programms__button--study">академические</button>
+          </li>
+          <li class="programms__item">
+            <button class="programms__button programms__button--work">Стажировки</button>
+          </li>
+          <li class="programms__item">
+            <button class="programms__button programms__button--volunteer">Волонтёрство</button>
+          </li>
+          <li class="programms__item">
+            <button class="programms__button programms__button--religion">Религиозные</button>
+          </li>
+        </ul>
+        <div class="programms__about programms__about--study">
+          <h3>Академические</h3>
+          <p>
+            Провести семестр или год за рубежом, знакомясь с различными культурами  и идеями, традициями и стилем жизни — вот что такое учеба за границей! Израиль — это не только центр религиозного мира, это  также академический центр, живая лаборатория идей и творческого исследования.
+          </p>
+          <p>
+            Может быть, Вы заинтересованы в изучении социологии, мира, юриспруденции, биологии, сравнительной религии, законодательного  и делового администрирования или искусства? Здесь, в Израиле, Вы сможете
+            изучить все это в удивительной университетской среде.
+          </p>
+        </div>
       </div>
     </section>
 

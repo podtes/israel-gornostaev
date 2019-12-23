@@ -29,11 +29,11 @@
 }
 
 .intro__reserve-pic {
-  display: none;
+  display: block;
   margin: 0 auto;
   width: 998px;
   height: 147px;
-  transform: translateY(-36px);
+  transform: translateY(96px);
   //TODO: непонятно как сверстать в мобильном разрешении, картинка нужна другая, а использование тега picture не допускается
 }
 
