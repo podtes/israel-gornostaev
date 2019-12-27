@@ -94,21 +94,21 @@
     padding-left: 17px;
     padding-right: 17px;
     background-image: url("../../img/backpack_mobile@1x.png"),
-    url("../../img/girl-flag-bg_mobile@1x.jpg");
+      url("../../img/girl-flag-bg_mobile@1x.jpg");
     background-repeat: no-repeat,
-    no-repeat;
+      no-repeat;
     background-position: left 31px,
-    50% 370px;
+      50% 370px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../../img/backpack_mobile@2x.png"),
-      url("../../img/girl-flag-bg_mobile@2x.jpg");
+        url("../../img/girl-flag-bg_mobile@2x.jpg");
       background-repeat: no-repeat,
-      no-repeat;
+        no-repeat;
       background-position: left 31px,
-      right 370px;
+        right 370px;
       background-size: 103px,
-      contain;
+        contain;
     }
   }
 

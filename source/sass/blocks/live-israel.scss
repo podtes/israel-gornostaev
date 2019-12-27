@@ -12,12 +12,13 @@
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../../img/live_israel_Bg_desktop@2x.jpg"),
-    url("../../img/watch_desktop@1x.png");
-    background-repeat: no-repeat,;
+      url("../../img/watch_desktop@1x.png");
+    background-repeat: no-repeat,
+      no-repeat;
     background-position: 50% 85%,
       right bottom;
     background-size: contain,
-    124px 148px;
+      124px 148px;
   }
 }
 
@@ -28,7 +29,7 @@
 }
 
 .live-israel h2 {
-  margin: 0 ;
+  margin: 0;
   margin-bottom: 24px;
   margin-right: 102px;
   padding: 0;
@@ -157,8 +158,6 @@
     text-align: left;
   }
 }
-
-
 
 @media (max-width: $mob-width) {
   .live-israel {
@@ -296,13 +295,6 @@
   }
 
   .live-israel__indicators {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-  }
-
-  .live-israel__indicators {
     margin: 0 auto;
     padding: 0;
     list-style: none;
@@ -324,14 +316,13 @@
   .live-israel__indicator--active {
     width: 8px;
     height: 8px;
-    background: linear-gradient(108.42deg, #FFC341 20.46%, #FFD701 65.31%);
+    background: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
     opacity: 1;
   }
 
   .live-israel__indicator span {
     font-size: 0;
     line-height: 0;
-  //TODO:  для доступности с читалок и чтобы не было пустых элементов, хотя не понятно должны ли быть вообще эти индикаторы интерактивными
+    //TODO:  для доступности с читалок и чтобы не было пустых элементов, хотя не понятно должны ли быть вообще эти индикаторы интерактивными
   }
-
 }

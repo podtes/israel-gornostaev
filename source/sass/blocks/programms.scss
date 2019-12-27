@@ -37,6 +37,7 @@
 
 .programms__item--active {
   position: relative;
+
   &::before {
     position: absolute;
     content: "";
@@ -378,7 +379,7 @@
       width: 32px;
       height: 32px;
       top: -5px;
-      left: 0px;
+      left: 0;
     }
   }
 }
