@@ -1,0 +1,125 @@
+.masa-photo {
+  background-image: url("../../img/cynthia-magana-138943_desktop@1x.png");
+  background-repeat: no-repeat;
+  background-position: 50% -4%;
+  background-size: contain;
+  display: flex;
+  justify-content: flex-end;
+
+  // TODO: При ширине свыше 1480px фон не растягивается.
+}
+
+.masa-photo__wrapper {
+  padding-top: 120px;
+  padding-bottom: 244px;
+  padding-right: 175px;
+  max-width: 397px;
+  text-align: left;
+}
+
+.masa-photo h2 {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 40px;
+  line-height: 49px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #1fc0fc;
+}
+
+.masa-photo p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 47px;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-size: 17px;
+  line-height: 29px;
+  color: #ffffff;
+  opacity: 0.87;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.masa-photo__watch-btn {
+  position: relative;
+  display: inline-block;
+  padding-top: 21px;
+  padding-bottom: 18px;
+  padding-left: 71px;
+  padding-right: 41px;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+  font-variant: small-caps;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  letter-spacing: -0.02em;
+  cursor: pointer;
+}
+
+.masa-photo__icon-insta {
+  position: absolute;
+  top: 18px;
+  left: 39px;
+  fill: #ffffff;
+  //TODO: Не работает заливка белым.
+}
+
+@media (max-width: $tab-width) {
+  .masa-photo__wrapper {
+    padding-top: 120px;
+    padding-bottom: 244px;
+    padding-right: 175px;
+    max-width: 397px;
+  }
+}
+
+@media (max-width: $mob-width) {
+  .masa-photo {
+    padding-bottom: 317px;
+    background-image: url("../../img/cynthia_mobile@1x.png");
+    background-repeat: no-repeat;
+    background-position: 22% 10%;
+    background-size: 632px 272px;
+    display: block;
+    //TODO: кончается фон на разрешении 672px
+  }
+
+  .masa-photo__wrapper {
+    margin: 0;
+    padding: 0;
+    padding-left: 11px;
+    padding-right: 13px;
+    max-width: 100%;
+  }
+
+  .masa-photo h2 {
+    margin-bottom: 96px;
+  }
+
+  .masa-photo p {
+    margin: 0;
+    padding: 0;
+    padding-left: 12px;
+    margin-bottom: 57px;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: normal;
+  }
+
+  .masa-photo__watch-btn {
+    padding-top: 21px;
+    padding-bottom: 18px;
+    padding-left: 88px;
+    padding-right: 59px;
+    margin-left: 17px;
+  }
+
+  .masa-photo__icon-insta {
+    top: 18px;
+    left: 57px;
+  }
+}

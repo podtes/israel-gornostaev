@@ -1,0 +1,337 @@
+.live-israel {
+  padding-left: 107px;
+  padding-bottom: 1069px;
+  background-image: url("../../img/live_israel_Bg_desktop@1x.jpg"),
+    url("../../img/watch_desktop@1x.png");
+  background-repeat: no-repeat,
+    no-repeat;
+  background-position: 50% 85%,
+    right bottom;
+  background-size: contain,
+    124px 148px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../../img/live_israel_Bg_desktop@2x.jpg"),
+    url("../../img/watch_desktop@1x.png");
+    background-repeat: no-repeat,;
+    background-position: 50% 85%,
+      right bottom;
+    background-size: contain,
+    124px 148px;
+  }
+}
+
+.live-israel img {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.live-israel h2 {
+  margin: 0 ;
+  margin-bottom: 24px;
+  margin-right: 102px;
+  padding: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 40px;
+  line-height: 49px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #1fc0fc;
+  text-align: center;
+}
+
+.live-israel__about {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 32px;
+  margin-left: 215px;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-size: 17px;
+  line-height: 29px;
+  color: #484848;
+  opacity: 0.87;
+  width: 720px;
+  text-align: right;
+}
+
+.live-israel__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.live-israel__photo-wrapper {
+  padding-top: 13px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 655px;
+}
+
+.live-israel__first-photo {
+  position: relative;
+  margin-right: 15px;
+  margin-top: -54px;
+  min-width: 482px;
+}
+
+.live-israel__second-photo,
+.live-israel__third-photo,
+.live-israel__fourth-photo,
+.live-israel__fifth-photo {
+  position: relative;
+  margin-bottom: 29px;
+}
+
+.live-israel__list p {
+  position: absolute;
+  display: block;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", "Arial", sans-serif;
+  font-size: 21px;
+  line-height: 25px;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.live-israel__first-photo p {
+  max-width: 360px;
+  top: 651px;
+  left: 40px;
+}
+
+.live-israel__second-photo p {
+  max-width: 10px;
+  top: 237px;
+  left: 24px;
+}
+
+.live-israel__third-photo p {
+  max-width: 320px;
+  top: 237px;
+  left: 28px;
+}
+
+.live-israel__fourth-photo p {
+  max-width: 360px;
+  top: 237px;
+  left: 32px;
+}
+
+.live-israel__fifth-photo p {
+  max-width: 120px;
+  top: 237px;
+  left: 24px;
+}
+
+.live-israel__indicators {
+  display: none;
+}
+
+@media (max-width: $tab-width) {
+  .live-israel {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background: none;
+  }
+
+  .live-israel h2 {
+    margin: 0 auto;
+    margin-bottom: 25px;
+    padding: 0;
+  }
+
+  .live-israel__about {
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: auto;
+    text-align: left;
+  }
+}
+
+
+
+@media (max-width: $mob-width) {
+  .live-israel {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 79px;
+    padding-top: 0;
+    background: none;
+    overflow: hidden;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background: none;
+    }
+  }
+
+  .live-israel h2 {
+    margin: 0 auto;
+    margin-bottom: 24px;
+    font-size: 32px;
+    line-height: 39px;
+
+    //TODO: То ли лыжи не едут, то ли я совсем не понимаю, как выставить по макету без <br>
+  }
+
+  .live-israel__about {
+    margin: 0;
+    margin-bottom: 24px;
+    padding: 0;
+    font-size: 16px;
+    line-height: 26px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .live-israel__photo-wrapper {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .live-israel__list li {
+    margin-right: 40px;
+    margin-bottom: 4px;
+  }
+
+  .live-israel__list p {
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+  }
+
+  .live-israel__first-photo {
+    margin: 0;
+    min-width: 288px;
+  }
+
+  .live-israel__first-photo img {
+    margin: 0 auto;
+    width: 264px;
+    height: 400px;
+  }
+
+  .live-israel__first-photo p {
+    max-width: 208px;
+    top: 314px;
+    left: 40px;
+  }
+
+  .live-israel__second-photo {
+    margin: 0;
+    min-width: 288px;
+  }
+
+  .live-israel__second-photo img {
+    margin: 0 auto;
+    width: 264px;
+    height: 400px;
+  }
+
+  .live-israel__second-photo p {
+    max-width: 208px;
+    top: 373px;
+    left: 66px;
+  }
+
+  .live-israel__third-photo {
+    margin: 0;
+    overflow: hidden;
+    min-width: 288px;
+  }
+
+  .live-israel__third-photo img {
+    margin: 0 auto;
+    width: 264px;
+    height: 400px;
+  }
+
+  .live-israel__third-photo p {
+    max-width: 208px;
+    top: 314px;
+    left: 40px;
+  }
+
+  .live-israel__fourth-photo {
+    margin: 0;
+    min-width: 288px;
+  }
+
+  .live-israel__fourth-photo img {
+    margin: 0 auto;
+    width: 264px;
+    height: 400px;
+  }
+
+  .live-israel__fourth-photo p {
+    max-width: 208px;
+    top: 314px;
+    left: 40px;
+  }
+
+  .live-israel__fifth-photo {
+    margin: 0;
+    min-width: 288px;
+  }
+
+  .live-israel__fifth-photo img {
+    margin: 0 auto;
+    width: 264px;
+    height: 400px;
+  }
+
+  .live-israel__fifth-photo p {
+    max-width: 208px;
+    top: 314px;
+    left: 40px;
+  }
+
+  .live-israel__indicators {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  .live-israel__indicators {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 62px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .live-israel__indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #484848;
+    opacity: 0.2;
+  }
+
+  .live-israel__indicator--active {
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(108.42deg, #FFC341 20.46%, #FFD701 65.31%);
+    opacity: 1;
+  }
+
+  .live-israel__indicator span {
+    font-size: 0;
+    line-height: 0;
+  //TODO:  для доступности с читалок и чтобы не было пустых элементов, хотя не понятно должны ли быть вообще эти индикаторы интерактивными
+  }
+
+}
