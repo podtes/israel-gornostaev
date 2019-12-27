@@ -1,4 +1,6 @@
 .masa-photo {
+  padding-bottom: 196px;
+  padding-top: 120px;
   background-image: url("../../img/cynthia-magana-138943_desktop@1x.png");
   background-repeat: no-repeat;
   background-position: 50% -4%;
@@ -10,8 +12,6 @@
 }
 
 .masa-photo__wrapper {
-  padding-top: 120px;
-  padding-bottom: 244px;
   padding-right: 175px;
   max-width: 397px;
   text-align: left;
@@ -69,17 +69,22 @@
 }
 
 @media (max-width: $tab-width) {
+  .masa-photo {
+    padding-top: 50px;
+  }
+
   .masa-photo__wrapper {
-    padding-top: 120px;
-    padding-bottom: 244px;
-    padding-right: 175px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 25px;
     max-width: 397px;
   }
 }
 
 @media (max-width: $mob-width) {
   .masa-photo {
-    padding-bottom: 317px;
+    padding-top: 0;
+    padding-bottom: 80px;
     background-image: url("../../img/cynthia_mobile@1x.png");
     background-repeat: no-repeat;
     background-position: 22% 10%;

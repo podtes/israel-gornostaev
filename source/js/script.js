@@ -14,6 +14,12 @@ var successModalCloseButton = successModal.querySelector('.modal-order-callback_
 var nameInput = callbackModal.querySelector('input[name="name"]');
 var telephoneInput = callbackModal.querySelector('input[name="telephone"]');
 var form = callbackModal.querySelector('form');
+var firstQuestionButton = document.querySelector('.faq__question--first');
+var secondQuestionButton = document.querySelector('.faq__question--second');
+var thirdQuestionButton = document.querySelector('.faq__question--third');
+var fourthQuestionButton = document.querySelector('.faq__question--fourth');
+var fifthQuestionButton = document.querySelector('.faq__question--fifth');
+var sixthQuestionButton = document.querySelector('.faq__question--sixth');
 
 var programmButtonItems = document.querySelectorAll('.programms__item');
 var programmGeneralButtonItem = document.querySelector('.programms__item--general');
@@ -134,7 +140,6 @@ var deactiveateProgrammButton = function () {
     }
   }
   for (var j = 0; j < programmButtonItems.length; j++) {
-    console.log(programmButtonItems);
     if (programmButtonItems[j].classList.contains('programms__item--active')) {
       programmButtonItems[j].classList.remove('programms__item--active');
       break;
@@ -168,4 +173,22 @@ programmReligionButton.addEventListener('click', function () {
   programmReligionText.classList.add('programms__about--active');
 });
 
-
+//логика открытия и закрытия частых вопросов
+firstQuestionButton.addEventListener('click', function () {
+  firstQuestionButton.classList.toggle('faq__question--active');
+});
+secondQuestionButton.addEventListener('click', function () {
+  secondQuestionButton.classList.toggle('faq__question--active');
+});
+thirdQuestionButton.addEventListener('click', function () {
+  thirdQuestionButton.classList.toggle('faq__question--active');
+});
+fourthQuestionButton.addEventListener('click', function () {
+  fourthQuestionButton.classList.toggle('faq__question--active');
+});
+fifthQuestionButton.addEventListener('click', function () {
+  fifthQuestionButton.classList.toggle('faq__question--active');
+});
+sixthQuestionButton.addEventListener('click', function () {
+  sixthQuestionButton.classList.toggle('faq__question--active');
+});

@@ -1,0 +1,252 @@
+.faq {
+  padding-left: 55px;
+  padding-bottom: 1286px;
+  background-image: url("../../img/faq_img_desktop@1x.png"),
+    url("../../img/bag_desktop@1x.png"),
+    url("../../img/faq_bg_desktop@1x.jpg");
+  background-repeat: no-repeat,
+    no-repeat,
+    no-repeat;
+  background-position: 92.4% top,
+    left bottom,
+    50% 82%;
+  background-size: auto,
+    auto,
+    contain;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../../img/faq_img_desktop@2x.png"),
+    url("../../img/bag_desktop@2x.png"),
+      url("../../img/faq_bg_desktop@2x.jpg");
+    background-size: 645px 803px,
+      194px 177px,
+      contain;
+  }
+}
+
+.faq h2 {
+  margin: 0;
+  margin-bottom: 46px;
+  padding: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 49px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #1fc0fc;
+}
+
+.faq ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 42.5%;
+}
+
+.faq li {
+  position: relative;
+  display: block;
+  margin: 0;
+  margin-bottom: 38px;
+  list-style: none;
+  border-bottom: 1px solid #dadada;
+  cursor: pointer;
+}
+
+.faq h3 {
+  margin: 0;
+  padding: 0;
+  padding-left: 29px;
+  padding-right: 150px;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 25px;
+  color: #484848;
+  letter-spacing: -0.01em;
+}
+
+.faq p {
+  display: none;
+  margin: 0;
+  padding: 0;
+  padding-right: 60px;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 21px;
+  color: #484848;
+  opacity: 0.74;
+  letter-spacing: -0.01em;
+}
+
+.faq__question--active p {
+  display: block;
+}
+
+.faq__question h3 {
+  &::before {
+    position: absolute;
+    content: "1";
+    top: -3px;
+    left: 0;
+    font-family: "Fira Sans", "Arial", sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    color: #ffc341;
+    //TODO: цвет должен быть градиентом. Как сделать пока не знаю.
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    background: url("../../img/arrow_down.svg") no-repeat 0 0;
+    width: 20px;
+    height: 13px;
+    top: 9px;
+    right: 30px;
+  }
+}
+
+.faq__question--active h3 {
+  margin-bottom: 25px;
+  &::after {
+    background: url("../../img/arrow_up.svg") no-repeat 0 0;
+  }
+}
+
+.faq__question--first,
+.faq__question--second,
+.faq__question--third,
+.faq__question--fourth {
+  padding-bottom: 32px;
+}
+
+.faq__question--fifth,
+.faq__question--sixth {
+  padding-bottom: 23px;
+}
+
+.faq__question--second h3 {
+  &::before {
+    content: "2";
+  }
+}
+
+.faq__question--third h3 {
+  &::before {
+    content: "3";
+  }
+}
+
+.faq__question--fourth h3 {
+  &::before {
+    content: "4";
+  }
+}
+
+.faq__question--fifth {
+  padding-bottom: 23px;
+}
+
+.faq__question--fifth h3 {
+  &::before {
+    content: "5";
+  }
+}
+
+.faq__question--sixth h3 {
+  &::before {
+    content: "6";
+  }
+}
+
+@media (max-width: $tab-width) {
+  .faq {
+    text-align: center;
+    padding: 0 35px;
+    background: none;
+    //TODO: как правильно сделать так, чтобы из трех картинок на фоне этой секции осталась одна. Я пробовал ставить неправильный путь загрузки, но браузер выдает ошибку, хотя по факту все работает.
+  }
+
+  .faq ul {
+    margin: 0 auto;
+    max-width: 70%;
+  }
+}
+
+@media (max-width: $mob-width) {
+  .faq {
+    text-align: center;
+    padding: 0 16px;
+    background-image: url("../../img/bag_mobile@1x.png");
+    background-repeat: no-repeat;
+    background-position: -37.9% 91.3%;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/bag_mobile@2x.png");
+      background-size: 194px 177px;
+    }
+  }
+
+  .faq ul {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .faq h2 {
+    margin-bottom: 38px;
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  .faq h3 {
+    margin: 0;
+    padding: 0;
+    padding-left: 25px;
+    padding-right: 30px;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: left;
+  }
+
+  .faq p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: left;
+  }
+
+  .faq__question--first {
+    padding-bottom: 15px;
+  }
+
+  .faq__question--third {
+    padding-bottom: 13px;
+  }
+
+  .faq__question--second,
+  .faq__question--fourth {
+    padding-bottom: 23px;
+  }
+
+  .faq__question--fifth {
+    padding-bottom: 15px;
+  };
+
+  .faq__question--sixth {
+    padding-bottom: 16px;
+  }
+
+  .faq__question--active h3 {
+    margin-bottom: 17px;
+  }
+
+  .faq__question h3 {
+    &::after {
+      top: 9px;
+      right: -4px;
+    }
+  }
+}
