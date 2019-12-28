@@ -21,6 +21,11 @@ var fourthQuestionButton = document.querySelector('.faq__question--fourth');
 var fifthQuestionButton = document.querySelector('.faq__question--fifth');
 var sixthQuestionButton = document.querySelector('.faq__question--sixth');
 
+var reviewSlides = document.querySelectorAll('.reviews__item');
+var nextReviewButton = document.querySelector('.reviews__next-review');
+var currentReviewCount = document.querySelector('.reviews__start-review');
+var previousReviewButton = document.querySelector('.reviews__previous-review');
+
 var programmButtonItems = document.querySelectorAll('.programms__item');
 var programmGeneralButtonItem = document.querySelector('.programms__item--general');
 var programmStudyButtonItem = document.querySelector('.programms__item--study');
@@ -173,7 +178,7 @@ programmReligionButton.addEventListener('click', function () {
   programmReligionText.classList.add('programms__about--active');
 });
 
-//логика открытия и закрытия частых вопросов
+// логика открытия и закрытия частых вопросов
 firstQuestionButton.addEventListener('click', function () {
   firstQuestionButton.classList.toggle('faq__question--active');
 });
@@ -191,4 +196,42 @@ fifthQuestionButton.addEventListener('click', function () {
 });
 sixthQuestionButton.addEventListener('click', function () {
   sixthQuestionButton.classList.toggle('faq__question--active');
+});
+
+
+// логика переключения слайдера отзывов
+nextReviewButton.addEventListener('click', function () {
+  for (var i = 0; i < reviewSlides.length; i++) {
+    if (reviewSlides[i].classList.contains('reviews__item--active')) {
+      if (i !== reviewSlides.length - 1) {
+        reviewSlides[i].classList.remove('reviews__item--active');
+        reviewSlides[i + 1].classList.add('reviews__item--active');
+        currentReviewCount.innerHTML = i + 2 + ' ';
+        break;
+      } else {
+        reviewSlides[i].classList.remove('reviews__item--active');
+        reviewSlides[0].classList.add('reviews__item--active');
+        currentReviewCount.innerHTML = 1 + ' ';
+        break;
+      }
+    }
+  }
+});
+
+previousReviewButton.addEventListener('click', function () {
+  for (var i = 0; i < reviewSlides.length; i++) {
+    if (reviewSlides[i].classList.contains('reviews__item--active')) {
+      if (i !== 0) {
+        reviewSlides[i].classList.remove('reviews__item--active');
+        reviewSlides[i - 1].classList.add('reviews__item--active');
+        currentReviewCount.innerHTML = i + ' ';
+        break;
+      } else {
+        reviewSlides[0].classList.remove('reviews__item--active');
+        reviewSlides[reviewSlides.length - 1].classList.add('reviews__item--active');
+        currentReviewCount.innerHTML = reviewSlides.length + ' ';
+        break;
+      }
+    }
+  }
 });

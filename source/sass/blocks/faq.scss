@@ -8,8 +8,8 @@
     no-repeat,
     no-repeat;
   background-position: 92.4% top,
-    left bottom,
-    50% 82%;
+    left 1922px,
+    50% 803px;
   background-size: auto,
     auto,
     contain;
@@ -182,7 +182,7 @@
     padding: 0 16px;
     background-image: url("../../img/bag_mobile@1x.png");
     background-repeat: no-repeat;
-    background-position: -37.9% 91.3%;
+    background-position: -48px 660pxv;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../../img/bag_mobile@2x.png");
