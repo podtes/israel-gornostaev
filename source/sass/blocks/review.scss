@@ -1,16 +1,22 @@
 .reviews {
   position: relative;
-  padding-top: 318px;
+  padding-top: 319px;
   padding-left: 141px;
   padding-right: 141px;
+  padding-bottom: 452px;
   text-align: center;
-  background-image: url("../../img/reviews_sketch_desktop@1x.png");
-  background-repeat: no-repeat;
-  background-position: top right;
+  background-image: url("../../img/reviews_sketch_desktop@1x.png"),
+    url("../../img/reviews__bg_watercolor@1x.png");
+  background-repeat: no-repeat,
+    no-repeat;
+  background-position: top right,
+    50% bottom;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/reviews_sketch_desktop@2x.png");
-    background-size: 535px 318px;
+    background-image: url("../../img/reviews_sketch_desktop@2x.png"),
+      url("../../img/reviews__bg_watercolor@2x.png");
+    background-size: 535px 318px,
+      1259px, 600px;
   }
 }
 
@@ -210,6 +216,7 @@
 .reviews__icon-twitter,
 .reviews__icon-instagram {
   fill: #d6d6d6;
+  // TODO: не меняется цвет иконки на серый
 
   &:hover {
     opacity: 0.7;
@@ -225,6 +232,7 @@
     padding-top: 318px;
     padding-left: 35px;
     padding-right: 35px;
+    padding-bottom: 30px;
   }
 
   .reviews__footer-wrapper {
@@ -238,12 +246,15 @@
     padding-top: 42px;
     padding-left: 15px;
     padding-right: 15px;
-    background-image: url("../../img/reviews_sketch_mobile@1x.png");
+    padding-bottom: 0;
+    background-image: url("../../img/reviews_sketch_mobile@1x.png"),
+      none;
     background-repeat: no-repeat;
     background-position: 100% 67%;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/reviews_sketch_mobile@2x.png");
+      background-image: url("../../img/reviews_sketch_mobile@2x.png"),
+        none;
       background-size: 288px 261px;
     }
   }
