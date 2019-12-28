@@ -166,6 +166,7 @@
   .faq {
     text-align: center;
     padding: 0 35px;
+    padding-bottom: 200px;
     background: none;
     //TODO: как правильно сделать так, чтобы из трех картинок на фоне этой секции осталась одна. Я пробовал ставить неправильный путь загрузки, но браузер выдает ошибку, хотя по факту все работает.
   }
@@ -182,7 +183,7 @@
     padding: 0 16px;
     background-image: url("../../img/bag_mobile@1x.png");
     background-repeat: no-repeat;
-    background-position: -48px 660pxv;
+    background-position: -48px 660px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../../img/bag_mobile@2x.png");
