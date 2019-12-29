@@ -231,7 +231,7 @@
 @media (max-width: $tab-width) {
   .details {
     background-image: url("../../img/map_desktop@1x.png"),
-    none;
+      none;
     background-position: right 390px;
   }
 
@@ -252,14 +252,14 @@
     padding-top: 66px;
     padding-bottom: 63px;
     background-image: url("../../img/map_desktop@1x.png"),
-    none;
+      none;
     background-position: 66% 699px;
     background-size: 655px;
     text-align: center;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../../img/map_desktop@2x.png"),
-      none;
+        none;
       background-size: 655px;
     }
   }

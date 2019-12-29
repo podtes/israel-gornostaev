@@ -58,16 +58,16 @@
   .intro {
     background: url("../../img/hint_scroll_down_mobile@1x.png") 50% 319px no-repeat,
       url("../../img/girl_mobile@1x.png") 50% -64px no-repeat,
-      url("../../img/israel_mobile@1x.png") 50% 72px no-repeat;
+      url("../../img/israel_mobile@1x.png") 48% 72px no-repeat;
     height: 434px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background: url("../../img/hint_scroll_down_mobile@1x.png") 50% 319px no-repeat,
         url("../../img/girl_mobile@2x.png") 50% -63px no-repeat,
-        url("../../img/israel_mobile@2x.png") 50% 72px no-repeat;
+        url("../../img/israel_mobile@2x.png") 52% 72px no-repeat;
       background-size: 76px 132px,
         320px 602px,
-        320px 122px;
+        347px 122px;
     }
   }
 

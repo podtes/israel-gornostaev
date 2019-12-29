@@ -160,8 +160,8 @@
     padding-right: 50px;
     padding-top: 75px;
     padding-bottom: 0;
-    background-image: url("../../img/."),
-      url("../../img/."),
+    background-image: none,
+      none,
       url("../../img/stamp_desktop@1x.png");
     background-repeat: no-repeat,
       no-repeat,
@@ -181,8 +181,8 @@
     padding-right: 15px;
     padding-top: 80px;
     padding-bottom: 78px;
-    background-image: url("../../img/."),
-      url("../../img/."),
+    background-image: none,
+      none,
       url("../../img/stamp_mobile@1x.png");
     background-repeat: no-repeat,
       no-repeat,
@@ -195,8 +195,8 @@
       216px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/."),
-        url("../../img/."),
+      background-image: none,
+        none,
         url("../../img/stamp_mobile@2x.png");
     }
   }

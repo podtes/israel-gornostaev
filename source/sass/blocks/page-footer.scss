@@ -6,6 +6,10 @@
   border-top: 1px solid #e3e3e3;
 }
 
+.page-footer__logo {
+  cursor: pointer;
+}
+
 .page-footer img {
   position: relative;
   margin-right: 384px;
@@ -76,7 +80,7 @@
 
   .page-footer img {
     margin-right: 0;
-    margin-bottom: 21px;
+    margin-bottom: 13px;
     width: 99px;
     height: 31px;
   }
@@ -101,5 +105,4 @@
     width: 32px;
     height: 32px;
   }
-
 }
