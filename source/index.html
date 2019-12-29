@@ -119,8 +119,8 @@
       <p>Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!</p>
       <form>
         <div class="want-go__form-wrapper">
-          <input type="tel" placeholder="телефон">
-          <button class="btn" type="submit">Перезвоните мне</button>
+          <input type="tel" placeholder="телефон" required>
+          <button class="want-go__callback-button btn" type="submit">Перезвоните мне</button>
         </div>
       </form>
     </section>
@@ -403,11 +403,9 @@
     </section>
     <section class="details">
       <h2>Узнать подробности</h2>
-
       <div class="details__choose-city">
         <span>Ваш город: </span><span>новосибирск</span>
       </div>
-
       <div class="details__kurator-info">
         <img src="./img/kurator_mobile@1x.jpg" srcset="./img/kurator_mobile@2x.jpg 2x" alt="Куратор Анна Горелик" width="112" height="112">
         <div class="details__kurator-info-wrapper">
@@ -442,11 +440,9 @@
           </ul>
         </div>
       </div>
-
       <p class="details__about-kurator">
         Куратор является опытным специалистом агентства Сохнут  и знает о проекте «Маса» всё! Свяжитесь с куратором,  узнайте подробнее о программах и выберите свою !
       </p>
-
       <div class="details__bottom-wrapper">
         <div class="details__form-text-wrapper">
           <p>
@@ -457,16 +453,44 @@
             Мы не передаём данные третьим лицам. Ваши данные будут в безопасности и вам не придёт спам от нас!
           </p>
         </div>
-
         <form class="details__form" autocomplete="off">
           <div class="details__form-wrapper">
             <input type="text" name="name" placeholder="имя" required>
             <input type="tel" name="telephone" placeholder="телефон" required>
-            <button class="btn" type="submit">Перезвоните мне</button>
+            <button class="details__callback-button btn" type="submit">Перезвоните мне</button>
           </div>
         </form>
       </div>
     </section>
+    <footer class="page-footer">
+      <img src="./img/logo_footer_desktop@1x.png" srcset="./img/logo_footer_desktop@2x.png" alt="Логотип программы маса" width="85" height="27">
+      <p>
+        Copyright someDesignCompany ©2019
+      </p>
+      <ul class="page-footer__social-list">
+        <li>
+          <a href="#">Наш фейсбук
+            <svg class="page-footer__icon-facebook" width="24" height="24">
+              <use xlink:href="./img/sprite_auto.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#">Наш твиттер
+            <svg class="page-footer__icon-twitter" width="24" height="24">
+              <use xlink:href="./img/sprite_auto.svg#icon-twitter"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#">Наш инстаграм
+            <svg class="page-footer__icon-instagram" width="24" height="24">
+              <use xlink:href="./img/sprite_auto.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </footer>
 
 
 

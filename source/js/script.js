@@ -14,13 +14,14 @@ var successModalCloseButton = successModal.querySelector('.modal-order-callback_
 var nameInput = callbackModal.querySelector('input[name="name"]');
 var telephoneInput = callbackModal.querySelector('input[name="telephone"]');
 var form = callbackModal.querySelector('form');
+var wantGoCallbackButton = document.querySelector('.want-go__callback-button');
+var detailsCallbackButton = document.querySelector('.details__callback-button');
 var firstQuestionButton = document.querySelector('.faq__question--first');
 var secondQuestionButton = document.querySelector('.faq__question--second');
 var thirdQuestionButton = document.querySelector('.faq__question--third');
 var fourthQuestionButton = document.querySelector('.faq__question--fourth');
 var fifthQuestionButton = document.querySelector('.faq__question--fifth');
 var sixthQuestionButton = document.querySelector('.faq__question--sixth');
-
 var reviewSlides = document.querySelectorAll('.reviews__item');
 var nextReviewButton = document.querySelector('.reviews__next-review');
 var currentReviewCount = document.querySelector('.reviews__start-review');
@@ -235,3 +236,8 @@ previousReviewButton.addEventListener('click', function () {
     }
   }
 });
+
+// открытие модального окна из секции want-go и details
+
+wantGoCallbackButton.addEventListener('click', openSuccessModal);
+detailsCallbackButton.addEventListener('click', openSuccessModal);
