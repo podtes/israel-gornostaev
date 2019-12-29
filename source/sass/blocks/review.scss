@@ -5,16 +5,16 @@
   padding-right: 141px;
   padding-bottom: 452px;
   text-align: center;
-  background-image: url("../../img/reviews_sketch_desktop@1x.png"),
-    url("../../img/reviews__bg_watercolor@1x.png");
+  background-image: url("../../img/reviews-sketch-desktop@1x.png"),
+    url("../../img/reviews-bg-watercolor@1x.png");
   background-repeat: no-repeat,
     no-repeat;
   background-position: top right,
     50% bottom;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/reviews_sketch_desktop@2x.png"),
-      url("../../img/reviews__bg_watercolor@2x.png");
+    background-image: url("../../img/reviews-sketch-desktop@2x.png"),
+      url("../../img/reviews-bg-watercolor@2x.png");
     background-size: 535px 318px,
       1259px;
   }
@@ -165,7 +165,7 @@
   font-size: 0;
   width: 15px;
   height: 30px;
-  background: url("../../img/arrow_left.svg") no-repeat 0 0;
+  background: url("../../img/arrow-left.svg") no-repeat 0 0;
   border: none;
   cursor: pointer;
 
@@ -183,7 +183,7 @@
   font-size: 0;
   width: 15px;
   height: 30px;
-  background: url("../../img/arrow_right.svg") no-repeat 0 0;
+  background: url("../../img/arrow-right.svg") no-repeat 0 0;
   border: none;
   cursor: pointer;
 
@@ -247,13 +247,13 @@
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 0;
-    background-image: url("../../img/reviews_sketch_mobile@1x.png"),
+    background-image: url("../../img/reviews-sketch-mobile@1x.png"),
       none;
     background-repeat: no-repeat;
     background-position: 100% 67%;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/reviews_sketch_mobile@2x.png"),
+      background-image: url("../../img/reviews-sketch-mobile@2x.png"),
         none;
       background-size: 288px 261px;
     }

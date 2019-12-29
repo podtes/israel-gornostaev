@@ -2,12 +2,12 @@
   padding-top: 423px;
   padding-left: 50px;
   padding-right: 50px;
-  background-image: url("../../img/programms_sketch_desktop@1x.png");
+  background-image: url("../../img/programms-sketch-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: right -4px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/programms_sketch_desktop@2x.png");
+    background-image: url("../../img/programms-sketch-desktop@2x.png");
     background-size: 680px;
   }
 }
@@ -41,7 +41,7 @@
   &::before {
     position: absolute;
     content: "";
-    background: url("../../img/programms_button_desktop.png") no-repeat 50% 50%;
+    background: url("../../img/programms-button-desktop.png") no-repeat 50% 50%;
     width: 228px;
     height: 68px;
     top: -19px;
@@ -101,13 +101,13 @@
   }
 
   &:hover::before {
-    background: url("../../img/general_hover.png") no-repeat 50% 50%;
+    background: url("../../img/general-hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--general {
   &::before {
-    background: url("../../img/general_active.png") no-repeat 50% 50%;
+    background: url("../../img/general-active.png") no-repeat 50% 50%;
   }
 }
 
@@ -123,13 +123,13 @@
   }
 
   &:hover::before {
-    background: url("../../img/study_hover.png") no-repeat 50% 50%;
+    background: url("../../img/study-hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--study {
   &::before {
-    background: url("../../img/study_active.png") no-repeat 50% 50%;
+    background: url("../../img/study-active.png") no-repeat 50% 50%;
   }
 }
 
@@ -145,13 +145,13 @@
   }
 
   &:hover::before {
-    background: url("../../img/work_hover.png") no-repeat 50% 50%;
+    background: url("../../img/work-hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--work {
   &::before {
-    background: url("../../img/work_active.png") no-repeat 50% 50%;
+    background: url("../../img/work-active.png") no-repeat 50% 50%;
   }
 }
 
@@ -167,13 +167,13 @@
   }
 
   &:hover::before {
-    background: url("../../img/volunteer_hover.png") no-repeat 50% 50%;
+    background: url("../../img/volunteer-hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--volunteer {
   &::before {
-    background: url("../../img/volunteer_active.png") no-repeat 50% 50%;
+    background: url("../../img/volunteer-active.png") no-repeat 50% 50%;
   }
 }
 
@@ -189,13 +189,13 @@
   }
 
   &:hover::before {
-    background: url("../../img/religion_hover.png") no-repeat 50% 50%;
+    background: url("../../img/religion-hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--religion {
   &::before {
-    background: url("../../img/religion_active.png") no-repeat 50% 50%;
+    background: url("../../img/religion-active.png") no-repeat 50% 50%;
   }
 }
 
@@ -268,14 +268,14 @@
     padding-top: 23px;
     padding-left: 0;
     padding-right: 0;
-    background-image: url("../../img/programms_sketch_mobile@1x.png");
+    background-image: url("../../img/programms-sketch-mobile@1x.png");
     background-repeat: no-repeat;
     background-position: 24px 31%;
     background-size: contain;
     overflow: hidden;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/programms_sketch_mobile@2x.png");
+      background-image: url("../../img/programms-sketch-mobile@2x.png");
     }
   }
 
@@ -362,7 +362,7 @@
 
   .programms__button--work {
     &::before {
-      background: url("../../img/work_mobile.png") no-repeat 50% 50%;
+      background: url("../../img/work-mobile.png") no-repeat 50% 50%;
       width: 32px;
       height: 25px;
       top: -3px;
@@ -374,7 +374,7 @@
 
   .programms__item--active .programms__button--study {
     &::before {
-      background: url("../../img/study_mobile.png") no-repeat 50% 50%;
+      background: url("../../img/study-mobile.png") no-repeat 50% 50%;
       width: 32px;
       height: 32px;
       top: -5px;

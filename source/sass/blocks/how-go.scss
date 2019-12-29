@@ -3,9 +3,9 @@
   padding-right: 98px;
   padding-top: 285px;
   padding-bottom: 1256px;
-  background-image: url("../../img/bg_how_desktop@1x.png"),
-    url("../../img/img_how_desktop@1x.jpg"),
-    url("../../img/stamp_desktop@1x.png");
+  background-image: url("../../img/bg-how-desktop@1x.png"),
+    url("../../img/img-how-desktop@1x.jpg"),
+    url("../../img/stamp-desktop@1x.png");
   background-repeat: no-repeat,
     no-repeat,
     no-repeat;
@@ -17,9 +17,9 @@
     337px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/bg_how_desktop@2x.png"),
-      url("../../img/img_how_desktop@2x.jpg"),
-      url("../../img/stamp_desktop@2x.png");
+    background-image: url("../../img/bg-how-desktop@2x.png"),
+      url("../../img/img-how-desktop@2x.jpg"),
+      url("../../img/stamp-desktop@2x.png");
   }
 }
 
@@ -146,7 +146,7 @@
   &::before {
     position: absolute;
     content: "";
-    background: url("../../img/border_left_budget.png") no-repeat 50% 50%;
+    background: url("../../img/border-left-budget.png") no-repeat 50% 50%;
     width: 5px;
     height: 43px;
     top: -2px;
@@ -162,7 +162,7 @@
     padding-bottom: 0;
     background-image: none,
       none,
-      url("../../img/stamp_desktop@1x.png");
+      url("../../img/stamp-desktop@1x.png");
     background-repeat: no-repeat,
       no-repeat,
       no-repeat;
@@ -183,7 +183,7 @@
     padding-bottom: 78px;
     background-image: none,
       none,
-      url("../../img/stamp_mobile@1x.png");
+      url("../../img/stamp-mobile@1x.png");
     background-repeat: no-repeat,
       no-repeat,
       no-repeat;
@@ -197,7 +197,7 @@
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: none,
         none,
-        url("../../img/stamp_mobile@2x.png");
+        url("../../img/stamp-mobile@2x.png");
     }
   }
 

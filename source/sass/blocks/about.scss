@@ -2,7 +2,7 @@
   padding-top: 28px;
   padding-bottom: 600px;
   text-align: center;
-  background: url("../../img/watercolor_Bg_desktop@1x.jpg") 50% 695px no-repeat;
+  background: url("../../img/watercolor-Bg-desktop@1x.jpg") 50% 695px no-repeat;
   background-size: contain;
 }
 
@@ -45,7 +45,7 @@
   &::after {
     position: absolute;
     content: "";
-    background-image: url("../../img/play_button.svg");
+    background-image: url("../../img/play-button.svg");
     background-repeat: no-repeat;
     background-size: contain;
     width: 96px;
@@ -57,12 +57,12 @@
 
   &:hover::after {
     cursor: pointer;
-    background-image: url("../../img/play_button_hover.svg");
+    background-image: url("../../img/play-button-hover.svg");
   }
 
   &:active::after {
     cursor: pointer;
-    background-image: url("../../img/play_button_active.svg");
+    background-image: url("../../img/play-button-active.svg");
   }
 }
 
@@ -71,7 +71,7 @@
     padding-top: 45px;
     padding-bottom: 50px;
     text-align: center;
-    background: url("../../img/watercolor_Bg_mobile@1x.jpg") 50% 245px no-repeat;
+    background: url("../../img/watercolor-Bg-mobile@1x.jpg") 50% 245px no-repeat;
     background-size: contain;
   }
 
