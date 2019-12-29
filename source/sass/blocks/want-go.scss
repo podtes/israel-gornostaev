@@ -1,19 +1,17 @@
 .want-go {
-  padding-top: 863px;
+  padding-top: 244px;
+  padding-left: 210px;
+  padding-bottom: 130px;
   background-image: url("../../img/backpack-desktop@1x.png"),
     url("../../img/girl-flag-desktop@1x.jpg");
   background-repeat: no-repeat,
     no-repeat;
-  background-position: left 7px,
-    right 269px;
+  background-position: -73px 46%,
+    548px 34px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../../img/backpack-desktop@2x.png"),
       url("../../img/girl-flag-desktop@2x.jpg");
-    background-repeat: no-repeat,
-      no-repeat;
-    background-position: left 7px,
-      right 269px;
     background-size: 220px,
       818px;
   }
@@ -134,14 +132,14 @@
   .want-go input[type="tel"] {
     margin-bottom: 8px;
     padding: 18px 39px;
-    width: 100%;
-    max-width: 450px;
+    max-width: 100%;
   }
 
   .want-go__callback-button {
-    margin-left: 11px;
-    padding: 20px 62px;
+    margin: 0 auto;
+    //margin-left: 11px;
+    //margin-right: 11px;
+    padding: 20px 61px;
     transform: translateX(0);
-    max-width: 450px;
   }
 }

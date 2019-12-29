@@ -131,10 +131,11 @@ successModalCloseButton.addEventListener('click', closeSuccessModal);
 successModalOKButton.addEventListener('keydown', successModalOKButtonPressEnterHandler);
 successModalCloseButton.addEventListener('keydown', successModalCloseButtonPressEnterHandler);
 
-form.addEventListener('submit', function () {
+form.addEventListener('submit', function (evt) {
   closeCallbackModal();
+  evt.preventDefault();
   openSuccessModal();
-  // TODO: проблема с отправкой формы, окно с успешным сообщением открывается, но сразу же закрывается.
+  // TODO: проблема с отправкой формы, окно с успешным сообщением открывается, но сразу же закрывается, пока просто отключил действие по умолчанию.
 });
 
 // переключение программ обучения

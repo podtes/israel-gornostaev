@@ -93,8 +93,9 @@
     font-family: "Fira Sans", "Arial", sans-serif;
     font-weight: bold;
     font-size: 28px;
-    color: #ffc341;
-    //TODO: цвет должен быть градиентом. Как сделать пока не знаю.
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(95.15deg, #ffc341 20.46%, #ffd701 65.31%);
   }
 
   &::after {
@@ -167,8 +168,15 @@
     text-align: center;
     padding: 0 35px;
     padding-bottom: 200px;
-    background: none;
-    //TODO: как правильно сделать так, чтобы из трех картинок на фоне этой секции осталась одна. Я пробовал ставить неправильный путь загрузки, но браузер выдает ошибку, хотя по факту все работает.
+    background-image: none,
+      url("../../img/bag-desktop@1x.png"),
+      none;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: none,
+        url("../../img/bag-desktop@2x.png"),
+        none;
+    }
   }
 
   .faq ul {

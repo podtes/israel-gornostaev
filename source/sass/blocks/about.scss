@@ -1,9 +1,20 @@
 .about {
-  padding-top: 28px;
-  padding-bottom: 600px;
+  padding-top: 17px;
+  padding-bottom: 281px;
   text-align: center;
-  background: url("../../img/watercolor-Bg-desktop@1x.jpg") 50% 695px no-repeat;
-  background-size: contain;
+  background-image: url("../../img/photo-about-desktop@1x.png"),
+    url("../../img/watercolor-Bg-desktop@1x.jpg");
+  background-repeat: no-repeat,
+    no-repeat;
+  background-position: 50% 70%,
+    50% bottom;
+  background-size: 870px 460px,
+    contain;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../../img/photo-about-desktop@2x.png"),
+    url("../../img/watercolor-Bg-desktop@2x.jpg");
+  }
 }
 
 .about h2 {
@@ -23,7 +34,7 @@
 .about p {
   display: block;
   margin: 0 auto;
-  margin-bottom: 48px;
+  margin-bottom: 227px;
   padding: 0;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-size: 17px;
@@ -33,34 +44,26 @@
   max-width: 695px;
 }
 
-.about__img-wrapper {
-  display: inline-block;
-  //TODO: Можно ли сверстать пустой span и в него фоном или псевдоэлементов сделать кнопку? Будет проще и без этих заморочек. На img псевдоэлемент не вешается.
+.about button {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
   position: relative;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  background-image: url("../../img/play-button.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 96px;
+  height: 96px;
 
   &:hover {
-    cursor: pointer;
-  }
-
-  &::after {
-    position: absolute;
-    content: "";
-    background-image: url("../../img/play-button.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 96px;
-    height: 96px;
-    top: 48%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &:hover::after {
     cursor: pointer;
     background-image: url("../../img/play-button-hover.svg");
   }
 
-  &:active::after {
+  &:active {
     cursor: pointer;
     background-image: url("../../img/play-button-active.svg");
   }
@@ -69,10 +72,21 @@
 @media (max-width: $mob-width) {
   .about {
     padding-top: 45px;
-    padding-bottom: 50px;
+    padding-bottom: 145px;
     text-align: center;
-    background: url("../../img/watercolor-Bg-mobile@1x.jpg") 50% 245px no-repeat;
-    background-size: contain;
+    background-image: url("../../img/photo-about-mobile@1x.png"),
+      url("../../img/watercolor-Bg-mobile@1x.jpg");
+    background-repeat: no-repeat,
+      no-repeat;
+    background-position: 50% 81%,
+      50% 54%;
+    background-size: contain,
+      contain;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/photo-about-mobile@2x.png"),
+      url("../../img/watercolor-Bg-mobile@2x.jpg");
+    }
   }
 
   .about h2 {
@@ -83,23 +97,16 @@
   }
 
   .about p {
-    margin-bottom: 49px;
+    margin-bottom: 129px;
     padding: 0 16px;
     font-size: 16px;
     line-height: 26px;
     text-align: left;
   }
 
-  .about img {
-    min-width: 320px;
-    min-height: 224px;
-  }
-
-  .about__img-wrapper {
-    &::after {
-      width: 80px;
-      height: 80px;
-      top: 52%;
-    }
+  .about button {
+    width: 80px;
+    height: 80px;
+    background-size: contain;
   }
 }

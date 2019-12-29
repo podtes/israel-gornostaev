@@ -1,26 +1,36 @@
 .how-go {
-  padding-left: 759px;
-  padding-right: 98px;
-  padding-top: 285px;
-  padding-bottom: 1256px;
-  background-image: url("../../img/bg-how-desktop@1x.png"),
-    url("../../img/img-how-desktop@1x.jpg"),
+  padding-left: 698px;
+  //padding-right: 145px;
+  padding-top: 191px;
+  padding-bottom: 209px;
+  background-image: url("../../img/img-how-desktop@1x.png"),
+    url("../../img/bg-how-desktop@1x.png"),
     url("../../img/stamp-desktop@1x.png");
   background-repeat: no-repeat,
     no-repeat,
     no-repeat;
-  background-position: 50% 960px,
-    9% 254px,
-    right top;
-  background-size: contain,
-    581px,
+  background-position: 12px 160px,
+    0 -40px,
+    1150px 370px;
+  background-size: 581px,
+    1366px,
     337px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/bg-how-desktop@2x.png"),
-      url("../../img/img-how-desktop@2x.jpg"),
+    background-image: url("../../img/img-how-desktop@2x.png"),
+      url("../../img/bg-how-desktop@2x.png"),
       url("../../img/stamp-desktop@2x.png");
+    background-position: 12px 160px,
+      0 -40px,
+      1150px 370px;
+    background-size: 581px,
+      1366px,
+      337px;
   }
+}
+
+.how-go__wrapper {
+  max-width: 525px;
 }
 
 .how-go h2 {
@@ -39,12 +49,14 @@
 .how-go__about {
   margin: 0;
   padding: 0;
+  padding-right: 40px;
   margin-bottom: 32px;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-size: 15px;
   line-height: 26px;
   color: #484848;
   opacity: 0.87;
+  letter-spacing: -0.002em;
 }
 
 .how-go b {
@@ -52,6 +64,7 @@
   margin: 0;
   margin-bottom: 32px;
   padding: 0;
+  padding-right: 60px;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-weight: bold;
   font-size: 17px;
@@ -65,8 +78,10 @@
   margin-bottom: 48px;
   padding: 0;
   padding-left: 43px;
+  padding-right: 60px;
   list-style: none;
-  //TODO: надо сделать границу слева
+  border-left: 2px dashed #dadada;
+  letter-spacing: -0.005em;
 }
 
 .how-go li {
@@ -116,6 +131,16 @@
       top: -4px;
       content: "4";
     }
+
+    & p::before {
+      position: absolute;
+      content: "";
+      width: 5px;
+      height: 110px;
+      top: 31px;
+      left: -46px;
+      background-color: #ffffff;
+    }
   }
 }
 
@@ -141,17 +166,12 @@
   color: #484848;
   opacity: 0.5;
   max-width: 520px;
-  letter-spacing: -0.02em;
-
-  &::before {
-    position: absolute;
-    content: "";
-    background: url("../../img/border-left-budget.png") no-repeat 50% 50%;
-    width: 5px;
-    height: 43px;
-    top: -2px;
-    left: -4px;
-  }
+  letter-spacing: -0.01em;
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-left-color: transparent;
+  border-image: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
+  // TODO: должна ведь работать граница с градиентом сейчас.
 }
 
 @media (max-width: $tab-width) {
@@ -209,20 +229,25 @@
   }
 
   .how-go__about {
+    padding-right: 0;
     margin-bottom: 24px;
     font-size: 14px;
     line-height: 22px;
   }
 
   .how-go b {
+    padding-right: 0;
     margin-bottom: 32px;
     font-size: 16px;
     line-height: 26px;
+    letter-spacing: -0.004em;
   }
 
   .how-go ul {
+    margin-left: 9px;
     margin-bottom: 24px;
-    padding-left: 43px;
+    padding-left: 34px;
+    padding-right: 1px;
   }
 
   .how-go li {
@@ -254,7 +279,9 @@
 
     &:last-child {
       margin-bottom: 0;
-
+      & p::before {
+        left: -37px;
+      }
       & p::after {
         top: 14px;
         content: "4";
@@ -268,7 +295,7 @@
   }
 
   .how-go__budget {
-    padding-left: 8px;
+    padding-left: 4px;
     font-size: 14px;
     line-height: 22px;
   }

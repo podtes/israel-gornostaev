@@ -1,10 +1,10 @@
 .programms {
-  padding-top: 423px;
+  padding-top: 105px;
   padding-left: 50px;
   padding-right: 50px;
   background-image: url("../../img/programms-sketch-desktop@1x.png");
   background-repeat: no-repeat;
-  background-position: right -4px;
+  background-position: right 43%;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../../img/programms-sketch-desktop@2x.png");
@@ -13,7 +13,7 @@
 }
 
 .programms__wrapper {
-  padding-left: 231px;
+  padding-left: 184px;
   display: flex;
 }
 
@@ -28,7 +28,7 @@
 
 .programms__item {
   display: block;
-  margin-bottom: 46px;
+  margin-bottom: 47px;
 
   &:last-child {
     margin-bottom: 0;
@@ -80,8 +80,10 @@
   cursor: pointer;
 
   &:hover {
-    color: #ffd701;
-    //TODO: в макете заливка букв градиентная при ховере
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(132.19deg, #ffc341 20.46%, #ffd701 65.31%);
+    opacity: 0.87;
   }
 
   &:active {
@@ -96,7 +98,7 @@
     background: url("../../img/general.png") no-repeat 50% 50%;
     width: 28px;
     height: 33px;
-    top: -6px;
+    top: -5px;
     left: 0;
   }
 
@@ -118,7 +120,7 @@
     background: url("../../img/study.png") no-repeat 50% 50%;
     width: 36px;
     height: 35px;
-    top: -8px;
+    top: -7px;
     left: -4px;
   }
 
@@ -140,7 +142,7 @@
     background: url("../../img/work.png") no-repeat 50% 50%;
     width: 32px;
     height: 25px;
-    top: -3px;
+    top: -4px;
     left: -2px;
   }
 
@@ -161,8 +163,8 @@
     content: "";
     background: url("../../img/volunteer.png") no-repeat 50% 50%;
     width: 32px;
-    height: 25px;
-    top: -5px;
+    height: 29px;
+    top: -7px;
     left: -2px;
   }
 
@@ -184,7 +186,7 @@
     background: url("../../img/religion.png") no-repeat 50% 50%;
     width: 23px;
     height: 25px;
-    top: -3px;
+    top: -6px;
     left: 2px;
   }
 
@@ -201,7 +203,7 @@
 
 .programms h2 {
   margin: 0;
-  margin-left: 207px;
+  margin-left: 160px;
   margin-bottom: 82px;
   padding: 0;
   font-family: "Montserrat", "Arial", sans-serif;
@@ -265,12 +267,12 @@
 
 @media (max-width: $mob-width) {
   .programms {
-    padding-top: 23px;
+    padding-top: 0;
     padding-left: 0;
     padding-right: 0;
     background-image: url("../../img/programms-sketch-mobile@1x.png");
     background-repeat: no-repeat;
-    background-position: 24px 31%;
+    background-position: 24px 36%;
     background-size: contain;
     overflow: hidden;
 

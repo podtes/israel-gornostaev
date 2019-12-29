@@ -1,24 +1,24 @@
 .live-israel {
-  padding-left: 107px;
-  padding-bottom: 1069px;
-  background-image: url("../../img/live-israel-Bg-desktop@1x.jpg"),
-    url("../../img/watch-desktop@1x.png");
+  padding-left: 104px;
+  padding-bottom: 26px;
+  background-image: url("../../img/watch-desktop@1x.png"),
+    url("../../img/live-israel-Bg-desktop@1x.jpg");
   background-repeat: no-repeat,
     no-repeat;
-  background-position: 50% 85%,
-    right bottom;
-  background-size: contain,
-    124px 148px;
+  background-position: 1276px 612px,
+    50% 85%;
+  background-size: 124px 148px,
+    cover;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/live-israel-Bg-desktop@2x.jpg"),
-      url("../../img/watch-desktop@1x.png");
+    background-image: url("../../img/watch-desktop@1x.png"),
+      url("../../img/live-israel-Bg-desktop@2x.jpg");
     background-repeat: no-repeat,
       no-repeat;
-    background-position: 50% 85%,
-      right bottom;
-    background-size: contain,
-      124px 148px;
+    background-position: 1276px 612px,
+      50% 85%;
+    background-size: 124px 148px,
+      cover;
   }
 }
 
