@@ -127,6 +127,20 @@ var overlayClickHandler = function (evt) {
   }
 };
 
+var validatePhoneInputHandler = function (field, message) {
+  if (field.value.length > 0 && field.value.length < 16) {
+    field.style.border = '2px solid #ff0000';
+    message.style.display = 'block';
+  } else if (field.value.length === 0) {
+    field.style.border = '2px solid #e3e3e3';
+    message.style.display = 'none';
+  } else {
+    field.style.border = '2px solid #484848';
+    message.style.display = 'none';
+  }
+};
+
+
 callbackOpenButton.addEventListener('click', callbackOpenButtonClickHandler);
 callbackCloseButton.addEventListener('click', callbackCloseButtonClickHandler);
 callbackOpenButton.addEventListener('keydown', callbackOpenButtonPressEnterHandler);
@@ -247,19 +261,6 @@ previousReviewButton.addEventListener('click', function () {
 wantGoCallbackButton.addEventListener('click', openSuccessModal);
 detailsCallbackButton.addEventListener('click', openSuccessModal);
 
-
-var validatePhoneInputHandler = function (field, message) {
-  if (field.value.length > 0 && field.value.length < 16) {
-    field.style.border = '2px solid #ff0000';
-    message.style.display = 'block';
-  } else if (field.value.length === 0) {
-    field.style.border = '2px solid #e3e3e3';
-    message.style.display = 'none';
-  } else {
-    field.style.border = '2px solid #484848';
-    message.style.display = 'none';
-  }
-};
 
 // валидация инпута в модальном окне
 var maskOptions = {
