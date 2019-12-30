@@ -96,6 +96,23 @@
   transform: translateX(-216px);
 }
 
+.want-go label {
+  position: absolute;
+  left: -99999px;
+  font-size: 0;
+  line-height: 0;
+}
+
+@media (max-width: $tab-width) {
+  .want-go {
+    padding-left: 50px;
+  }
+
+  .want-go__error-message {
+    left: 112px;
+  }
+}
+
 @media (max-width: $mob-width) {
   .want-go {
     padding-top: 79px;
@@ -146,10 +163,13 @@
     max-width: 100%;
   }
 
+  .want-go__error-message {
+    top: 216px;
+    left: 24%;
+  }
+
   .want-go__callback-button {
     margin: 0 auto;
-    //margin-left: 11px;
-    //margin-right: 11px;
     padding: 20px 61px;
     transform: translateX(0);
   }

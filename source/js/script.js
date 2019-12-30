@@ -204,20 +204,55 @@ programmReligionButton.addEventListener('click', function () {
 firstQuestionButton.addEventListener('click', function () {
   firstQuestionButton.classList.toggle('faq__question--active');
 });
+firstQuestionButton.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 13) {
+    firstQuestionButton.classList.toggle('faq__question--active');
+  }
+});
+
 secondQuestionButton.addEventListener('click', function () {
   secondQuestionButton.classList.toggle('faq__question--active');
 });
+secondQuestionButton.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 13) {
+    secondQuestionButton.classList.toggle('faq__question--active');
+  }
+});
+
 thirdQuestionButton.addEventListener('click', function () {
   thirdQuestionButton.classList.toggle('faq__question--active');
 });
+thirdQuestionButton.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 13) {
+    thirdQuestionButton.classList.toggle('faq__question--active');
+  }
+});
+
 fourthQuestionButton.addEventListener('click', function () {
   fourthQuestionButton.classList.toggle('faq__question--active');
 });
+fourthQuestionButton.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 13) {
+    fourthQuestionButton.classList.toggle('faq__question--active');
+  }
+});
+
 fifthQuestionButton.addEventListener('click', function () {
   fifthQuestionButton.classList.toggle('faq__question--active');
 });
+fifthQuestionButton.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 13) {
+    fifthQuestionButton.classList.toggle('faq__question--active');
+  }
+});
+
 sixthQuestionButton.addEventListener('click', function () {
   sixthQuestionButton.classList.toggle('faq__question--active');
+});
+sixthQuestionButton.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === 13) {
+    sixthQuestionButton.classList.toggle('faq__question--active');
+  }
 });
 
 

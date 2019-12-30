@@ -114,6 +114,7 @@
       <h2>Хочу поехать!</h2>
       <p>Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!</p>
       <form>
+        <label for="want-go__phone-input-field">Телефон</label>
         <div class="want-go__form-wrapper">
           <input class="want-go__phone-input" id="want-go__phone-input-field" type="tel" placeholder="телефон" required>
           <span class="want-go__error-message">Ошибка: неверный формат</span>
@@ -455,8 +456,10 @@
           </p>
         </div>
         <form class="details__form" autocomplete="off">
+          <label for="details__name-field">Имя</label>
+          <label for="details__phone-input-field">Телефон</label>
           <div class="details__form-wrapper">
-            <input type="text" name="name" placeholder="имя" required>
+            <input type="text" name="name" id="details__name-field" placeholder="имя" required>
             <input type="tel" id="details__phone-input-field" name="telephone" placeholder="телефон" required>
             <span class="details__error-message">Ошибка: неверный формат</span>
             <button class="details__callback-button btn" type="submit">Перезвоните мне</button>

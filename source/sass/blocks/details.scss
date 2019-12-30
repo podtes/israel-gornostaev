@@ -244,11 +244,22 @@
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
+.details label {
+  position: absolute;
+  left: -99999px;
+  font-size: 0;
+  line-height: 0;
+}
+
 @media (max-width: $tab-width) {
   .details {
     background-image: url("../../img/map-desktop@1x.png"),
       none;
     background-position: right 390px;
+  }
+
+  .details__form-wrapper {
+    flex-direction: column;
   }
 
   .details__about-kurator {
@@ -257,8 +268,16 @@
 
   .details__form input:first-child,
   .details__form input:nth-child(2) {
-    margin-right: 20px;
-    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .details__form input:nth-child(2) {
+    margin-bottom: 30px;
+  }
+
+  .details__error-message {
+    top: 131px;
+    left: 21px;
   }
 }
 
@@ -381,6 +400,11 @@
 
   .details__form input:nth-child(2) {
     margin-bottom: 24px;
+  }
+
+  .details__error-message {
+    top: 126px;
+    left: 45px;
   }
 
   .details__form button {

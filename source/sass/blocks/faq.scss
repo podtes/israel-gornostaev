@@ -186,6 +186,11 @@
     margin: 0 auto;
     max-width: 70%;
   }
+
+  .faq p {
+    text-align: left;
+    padding-left: 25px;
+  }
 }
 
 @media (max-width: $mob-width) {
