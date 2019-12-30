@@ -187,6 +187,7 @@
 }
 
 .details__form-wrapper {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
 }
@@ -216,6 +217,18 @@
 
 .details__form input:nth-child(2) {
   margin-right: 24px;
+}
+
+.details__error-message {
+  position: absolute;
+  top: 64px;
+  left: 302px;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-size: 13px;
+  line-height: 19px;
+  color: #ff0000;
+  opacity: 0.75;
+  display: none;
 }
 
 .details__form button {

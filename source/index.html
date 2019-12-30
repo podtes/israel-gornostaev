@@ -116,6 +116,7 @@
       <form>
         <div class="want-go__form-wrapper">
           <input class="want-go__phone-input" id="want-go__phone-input-field" type="tel" placeholder="телефон" required>
+          <span class="want-go__error-message">Ошибка: неверный формат</span>
           <button class="want-go__callback-button btn" type="submit">Перезвоните мне</button>
         </div>
       </form>
@@ -455,8 +456,9 @@
         </div>
         <form class="details__form" autocomplete="off">
           <div class="details__form-wrapper">
-            <input id="details__name-field" type="text" name="name" placeholder="имя" required>
+            <input type="text" name="name" placeholder="имя" required>
             <input type="tel" id="details__phone-input-field" name="telephone" placeholder="телефон" required>
+            <span class="details__error-message">Ошибка: неверный формат</span>
             <button class="details__callback-button btn" type="submit">Перезвоните мне</button>
           </div>
         </form>
@@ -501,6 +503,7 @@
         <form autocomplete="off" class="modal-order-callback__form">
           <input type="text" name="name" placeholder="имя" required>
           <input id="modal-order-callback__phone-input-field" type="tel" name="telephone" placeholder="телефон" required>
+          <span class="modal-order-callback__error-message">Ошибка: неверный формат</span>
           <input class="btn" type="submit" value="Перезвоните мне">
           <label>
             <input class="modal-order-callback__checkbox" type="checkbox" name="agree" required>

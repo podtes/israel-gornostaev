@@ -46,6 +46,13 @@ var programmWorkText = document.querySelector('.programms__about--work');
 var programmVolunteerText = document.querySelector('.programms__about--volunteer');
 var programmReligionText = document.querySelector('.programms__about--religion');
 
+var phoneInputModal = document.getElementById('modal-order-callback__phone-input-field');
+var phoneInputDetails = document.getElementById('details__phone-input-field');
+var phoneInputWantGo = document.getElementById('want-go__phone-input-field');
+var errorMessageWantGo = document.querySelector('.want-go__error-message');
+var errorMessageDetails = document.querySelector('.details__error-message');
+var errorMessageModal = document.querySelector('.modal-order-callback__error-message');
+
 // логика открытия и закрытия модальных окон
 var closeCallbackModal = function () {
   overlay.classList.remove('modal-open');
@@ -218,7 +225,6 @@ nextReviewButton.addEventListener('click', function () {
     }
   }
 });
-
 previousReviewButton.addEventListener('click', function () {
   for (var i = 0; i < reviewSlides.length; i++) {
     if (reviewSlides[i].classList.contains('reviews__item--active')) {
@@ -238,18 +244,43 @@ previousReviewButton.addEventListener('click', function () {
 });
 
 // открытие модального окна из секции want-go и details
-
 wantGoCallbackButton.addEventListener('click', openSuccessModal);
 detailsCallbackButton.addEventListener('click', openSuccessModal);
 
 
-// валидация телефонного номера
+var validatePhoneInputHandler = function (field, message) {
+  if (field.value.length > 0 && field.value.length < 16) {
+    field.style.border = '2px solid #ff0000';
+    message.style.display = 'block';
+  } else if (field.value.length === 0) {
+    field.style.border = '2px solid #e3e3e3';
+    message.style.display = 'none';
+  } else {
+    field.style.border = '2px solid #484848';
+    message.style.display = 'none';
+  }
+};
 
-var phoneInputWantGo = document.querySelector('.want-go__phone-input');
+// валидация инпута в модальном окне
 var maskOptions = {
   mask: '+{7}(000)000-00-00',
   lazy: true
 };
-var mask = IMask(phoneInputWantGo, maskOptions);
+var maskToModal = IMask(phoneInputModal, maskOptions);
+phoneInputModal.addEventListener('input', function () {
+  validatePhoneInputHandler(phoneInputModal, errorMessageModal);
+});
+
+// валидация инпута в секции подробностей
+var maskToDetails = IMask(phoneInputDetails, maskOptions);
+phoneInputDetails.addEventListener('input', function () {
+  validatePhoneInputHandler(phoneInputDetails, errorMessageDetails);
+});
+
+// валидация инпута в секции хочу поехать
+var maskToWantGo = IMask(phoneInputWantGo, maskOptions);
+phoneInputWantGo.addEventListener('input', function () {
+  validatePhoneInputHandler(phoneInputWantGo, errorMessageWantGo);
+});
 
 // TODO: сделать всем инпутам лейблы и спрятать их.

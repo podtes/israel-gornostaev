@@ -37,6 +37,7 @@
 }
 
 .modal-order-callback__form {
+  position: relative;
   margin: 0;
   padding: 0;
   border: none;
@@ -62,10 +63,6 @@
     border-color: #484848;
   }
 
-  &:invalid {
-    border-color: red;
-  }
-
   &:first-of-type {
     margin-bottom: 8px;
   }
@@ -73,6 +70,18 @@
   &:nth-child(2) {
     margin-bottom: 24px;
   }
+}
+
+.modal-order-callback__error-message {
+  position: absolute;
+  top: 125px;
+  left: 101px;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-size: 13px;
+  line-height: 19px;
+  color: #ff0000;
+  opacity: 0.75;
+  display: none;
 }
 
 .modal-order-callback__form input[placeholder] {

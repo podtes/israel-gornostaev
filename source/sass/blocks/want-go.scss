@@ -1,4 +1,5 @@
 .want-go {
+  position: relative;
   padding-top: 244px;
   padding-left: 210px;
   padding-bottom: 130px;
@@ -76,6 +77,18 @@
   opacity: 0.5;
   letter-spacing: -0.04em;
   font-variant: small-caps;
+}
+
+.want-go__error-message {
+  position: absolute;
+  top: 502px;
+  left: 262px;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-size: 13px;
+  line-height: 19px;
+  color: #ff0000;
+  opacity: 0.75;
+  display: none;
 }
 
 .want-go__callback-button {
