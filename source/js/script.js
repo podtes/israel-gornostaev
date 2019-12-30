@@ -12,7 +12,6 @@ var successModal = overlay.querySelector('.modal-success');
 var successModalOKButton = successModal.querySelector('button[type="button"]');
 var successModalCloseButton = successModal.querySelector('.modal-order-callback__close-button');
 var nameInput = callbackModal.querySelector('input[name="name"]');
-var telephoneInput = callbackModal.querySelector('input[name="telephone"]');
 var form = callbackModal.querySelector('form');
 var wantGoCallbackButton = document.querySelector('.want-go__callback-button');
 var detailsCallbackButton = document.querySelector('.details__callback-button');
@@ -242,3 +241,15 @@ previousReviewButton.addEventListener('click', function () {
 
 wantGoCallbackButton.addEventListener('click', openSuccessModal);
 detailsCallbackButton.addEventListener('click', openSuccessModal);
+
+
+// валидация телефонного номера
+
+var phoneInputWantGo = document.querySelector('.want-go__phone-input');
+var maskOptions = {
+  mask: '+{7}(000)000-00-00',
+  lazy: true
+};
+var mask = IMask(phoneInputWantGo, maskOptions);
+
+// TODO: сделать всем инпутам лейблы и спрятать их.

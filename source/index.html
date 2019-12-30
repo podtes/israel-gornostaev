@@ -2,10 +2,11 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Программы обучения в Израиле">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Программы обучения в Израиле</title>
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="./css/style.min.css">
   <link rel="preload" href="./fonts/FiraSans.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="./fonts/FiraSans-Bold.woff2" as="font">
   <link rel="preload" href="./fonts/Montserrat-Bold.woff2" as="font">
@@ -17,7 +18,7 @@
   <div class="intro-header-wrapper">
     <header class="page-header">
       <div class="page-header__wrapper">
-        <a class="page-header__logo" href="#">
+        <a class="page-header__logo" href="#" tabindex="0">
           <img src="./img/logo-desktop@1x.png" srcset="./img/logo-desktop@2x.png 2x" alt="Логотип программы обучения в Израиле Masa" width="137" height="48">
         </a>
         <div class="page-header__callback-wrapper">
@@ -114,7 +115,7 @@
       <p>Оставьте свой телефон и мы свяжемся с вами, подберём куратора и ответим на все вопросы!</p>
       <form>
         <div class="want-go__form-wrapper">
-          <input type="tel" placeholder="телефон" required>
+          <input class="want-go__phone-input" id="want-go__phone-input-field" type="tel" placeholder="телефон" required>
           <button class="want-go__callback-button btn" type="submit">Перезвоните мне</button>
         </div>
       </form>
@@ -454,8 +455,8 @@
         </div>
         <form class="details__form" autocomplete="off">
           <div class="details__form-wrapper">
-            <input type="text" name="name" placeholder="имя" required>
-            <input type="tel" name="telephone" placeholder="телефон" required>
+            <input id="details__name-field" type="text" name="name" placeholder="имя" required>
+            <input type="tel" id="details__phone-input-field" name="telephone" placeholder="телефон" required>
             <button class="details__callback-button btn" type="submit">Перезвоните мне</button>
           </div>
         </form>
@@ -499,7 +500,7 @@
         <p class="modal-order-callback__message">Оставьте ваши контактные данные, мы свяжемся  с вами в течение рабочего дня и обязательно поможем найти ответ на ваш вопрос!</p>
         <form autocomplete="off" class="modal-order-callback__form">
           <input type="text" name="name" placeholder="имя" required>
-          <input type="tel" name="telephone" placeholder="телефон" required>
+          <input id="modal-order-callback__phone-input-field" type="tel" name="telephone" placeholder="телефон" required>
           <input class="btn" type="submit" value="Перезвоните мне">
           <label>
             <input class="modal-order-callback__checkbox" type="checkbox" name="agree" required>
@@ -518,6 +519,7 @@
         <button class="modal-order-callback__close-button"></button>
       </section>
     </div>
+    <script src="https://unpkg.com/imask"></script>
     <script src="./js/script.js"></script>
   </main>
 </body>

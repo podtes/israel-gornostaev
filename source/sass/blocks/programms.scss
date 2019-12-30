@@ -2,6 +2,8 @@
   padding-top: 105px;
   padding-left: 50px;
   padding-right: 50px;
+  background-color: #ffffff;
+  color: #000000;
   background-image: url("../../img/programms-sketch-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: right 43%;
@@ -82,6 +84,7 @@
   &:hover {
     color: transparent;
     background-clip: text;
+    // TODO: Линтер выдает ошибку здесь, хотя все работает ок.
     background-image: linear-gradient(132.19deg, #ffc341 20.46%, #ffd701 65.31%);
     opacity: 0.87;
   }
@@ -346,6 +349,7 @@
     }
   }
 
+  // TODO: Достаточно ли того, как сверстаны кнопки в мобильной версии сейчас? По макету все ок.
   .programms__button {
     margin: 0;
     padding: 0;
@@ -369,7 +373,6 @@
       height: 25px;
       top: -3px;
       left: 1px;
-
       //TODO: при переключениях кнопки дергаются из-за того, что в макете есть пара иконок мобильной версии, а в стайлгайде они только десктопные. Если везде оставить десктопные иконки, то будет ок, но не попадает по макету.
     }
   }

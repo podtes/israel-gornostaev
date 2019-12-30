@@ -1,5 +1,7 @@
 .live-israel {
   padding-bottom: 56px;
+  background-color: #ffffff;
+  color: #000000;
   background-image: url("../../img/watch-desktop@1x.png"),
     url("../../img/live-israel-Bg-desktop@1x.jpg");
   background-repeat: no-repeat,
@@ -232,7 +234,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
 
-    //TODO: как сделать слайдер?
+    //TODO: как сделать слайдер? Это самый непонятный момент.
   }
 
   .live-israel__first-couple-photos-wrapper {

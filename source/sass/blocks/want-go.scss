@@ -2,6 +2,8 @@
   padding-top: 244px;
   padding-left: 210px;
   padding-bottom: 130px;
+  background-color: #ffffff;
+  color: #000000;
   background-image: url("../../img/backpack-desktop@1x.png"),
     url("../../img/girl-flag-desktop@1x.jpg");
   background-repeat: no-repeat,
@@ -63,10 +65,6 @@
 
   &:valid {
     border-color: #484848;
-  }
-
-  &:invalid {
-    border-color: red;
   }
 }
 

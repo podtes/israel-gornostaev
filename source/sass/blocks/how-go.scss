@@ -1,8 +1,9 @@
 .how-go {
   padding-left: 698px;
-  //padding-right: 145px;
   padding-top: 191px;
   padding-bottom: 209px;
+  background-color: #ffffff;
+  color: #000000;
   background-image: url("../../img/img-how-desktop@1x.png"),
     url("../../img/bg-how-desktop@1x.png"),
     url("../../img/stamp-desktop@1x.png");
@@ -171,7 +172,7 @@
   border-left-style: solid;
   border-left-color: transparent;
   border-image: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
-  // TODO: должна ведь работать граница с градиентом сейчас.
+  // TODO: должна ведь работать граница с градиентом сейчас, но не работает
 }
 
 @media (max-width: $tab-width) {
