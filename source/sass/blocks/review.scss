@@ -1,16 +1,17 @@
 .reviews {
   position: relative;
-  padding-top: 319px;
-  padding-left: 141px;
+  padding-left: 97px;
   padding-right: 141px;
-  padding-bottom: 452px;
+  padding-bottom: 32px;
   text-align: center;
   background-image: url("../../img/reviews-sketch-desktop@1x.png"),
     url("../../img/reviews-bg-watercolor@1x.png");
   background-repeat: no-repeat,
     no-repeat;
-  background-position: top right,
-    50% bottom;
+  background-position: 843px 56px,
+    109px 37px;
+  background-size: auto,
+    1259px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../../img/reviews-sketch-desktop@2x.png"),
@@ -23,7 +24,7 @@
 .reviews h2 {
   margin: 0;
   padding: 0;
-  padding-left: 84px;
+  padding-left: 42px;
   font-family: "Montserrat", "Arial", sans-serif;
   font-weight: bold;
   font-size: 40px;
@@ -69,7 +70,7 @@
 
 .reviews__footer-wrapper {
   position: relative;
-  width: 62.6%;
+  width: 60.2%;
   bottom: 64px;
   left: 405px;
   display: flex;
@@ -87,14 +88,14 @@
 
 .reviews img {
   margin-right: 40px;
-  transform: translateY(-39px);
+  transform: translateY(-40px);
   width: 364px;
   height: 480px;
 }
 
 .reviews__dates-and-city {
   margin: 0;
-  margin-bottom: 34px;
+  margin-bottom: 30px;
   padding: 0;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-size: 15px;
@@ -116,6 +117,7 @@
 .reviews__second-paragraph {
   margin: 0;
   padding: 0;
+  padding-right: 50px;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-size: 17px;
   line-height: 29px;
@@ -125,11 +127,11 @@
 }
 
 .reviews__first-paragraph {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 .reviews__second-paragraph {
-  margin-bottom: 15px;
+  margin-bottom: 17px;
 }
 
 .reviews__more-info {
@@ -229,7 +231,7 @@
 
 @media (max-width: $tab-width) {
   .reviews {
-    padding-top: 318px;
+    padding-top: 0;
     padding-left: 35px;
     padding-right: 35px;
     padding-bottom: 30px;
@@ -303,6 +305,7 @@
 
   .reviews__first-paragraph,
   .reviews__second-paragraph {
+    padding-right: 0;
     font-size: 16px;
     line-height: 26px;
   }

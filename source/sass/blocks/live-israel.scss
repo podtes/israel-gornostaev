@@ -1,6 +1,5 @@
 .live-israel {
-  padding-left: 104px;
-  padding-bottom: 26px;
+  padding-bottom: 56px;
   background-image: url("../../img/watch-desktop@1x.png"),
     url("../../img/live-israel-Bg-desktop@1x.jpg");
   background-repeat: no-repeat,
@@ -31,7 +30,6 @@
 .live-israel h2 {
   margin: 0;
   margin-bottom: 24px;
-  margin-right: 102px;
   padding: 0;
   font-family: "Montserrat", "Arial", sans-serif;
   font-size: 40px;
@@ -45,9 +43,9 @@
 
 .live-israel__about {
   padding: 0;
-  margin: 0;
-  margin-bottom: 32px;
-  margin-left: 215px;
+  padding-right: 20px;
+  margin: 0 auto;
+  margin-bottom: 31px;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-size: 17px;
   line-height: 29px;
@@ -55,29 +53,42 @@
   opacity: 0.87;
   width: 720px;
   text-align: right;
+  letter-spacing: -0.005em;
 }
 
-.live-israel__list {
-  margin: 0;
+.live-israel__photos {
   padding: 0;
+  margin: 0 auto;
   list-style: none;
   display: flex;
+  max-width: 1158px;
   justify-content: flex-start;
 }
 
 .live-israel__photo-wrapper {
   padding-top: 13px;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+}
+
+.live-israel__first-couple-photos-wrapper {
+  margin-bottom: 30px;
+  display: flex;
+  max-width: 652px;
   justify-content: space-between;
-  width: 655px;
+}
+
+.live-israel__second-couple-photos-wrapper {
+  display: flex;
+  max-width: 655px;
+  justify-content: space-between;
 }
 
 .live-israel__first-photo {
   position: relative;
-  margin-right: 15px;
   margin-top: -54px;
-  min-width: 482px;
+  margin-right: 15px;
 }
 
 .live-israel__second-photo,
@@ -85,10 +96,18 @@
 .live-israel__fourth-photo,
 .live-israel__fifth-photo {
   position: relative;
-  margin-bottom: 29px;
 }
 
-.live-israel__list p {
+.live-israel__second-photo {
+  margin-right: 30px;
+  // TODO: при разрешении меньше 1070px уезжают подписи к фотографиям, ничего не могу с этим сделать так, чтобы не падала вся верстка фотографий.
+}
+
+.live-israel__fourth-photo {
+  margin-right: 30px;
+}
+
+.live-israel__photos p {
   position: absolute;
   display: block;
   padding: 0;
@@ -144,6 +163,11 @@
     background: none;
   }
 
+  .live-israel__photos {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .live-israel h2 {
     margin: 0 auto;
     margin-bottom: 25px;
@@ -152,15 +176,19 @@
 
   .live-israel__about {
     padding: 0;
-    margin: 0 auto;
-    margin-bottom: 20px;
+    margin: 0 30px;
     width: auto;
     text-align: left;
+  }
+
+  .live-israel__first-photo {
+    margin: 0;
   }
 }
 
 @media (max-width: $mob-width) {
   .live-israel {
+    text-align: center;
     padding-left: 16px;
     padding-right: 16px;
     padding-bottom: 79px;
@@ -174,47 +202,81 @@
   }
 
   .live-israel h2 {
-    margin: 0 auto;
     margin-bottom: 24px;
     font-size: 32px;
     line-height: 39px;
-
-    //TODO: То ли лыжи не едут, то ли я совсем не понимаю, как выставить по макету без <br>
+    //TODO: Cовсем не понимаю, как выставить по макету без <br>
   }
 
   .live-israel__about {
-    margin: 0;
     margin-bottom: 24px;
-    padding: 0;
+    margin-left: 0;
     font-size: 16px;
     line-height: 26px;
     width: 100%;
     text-align: left;
   }
 
+  .live-israel__photos {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 17px;
+    max-width: 100%;
+    justify-content: flex-start;
+    flex-direction: row;
+    transform: translateX(0);
+  }
+
   .live-israel__photo-wrapper {
+    padding: 0;
     flex-direction: row;
     flex-wrap: nowrap;
+
+    //TODO: как сделать слайдер?
   }
 
-  .live-israel__list li {
-    margin-right: 40px;
-    margin-bottom: 4px;
+  .live-israel__first-couple-photos-wrapper {
+    margin-bottom: 0;
+    display: flex;
+    max-width: inherit;
+    justify-content: flex-start;
   }
 
-  .live-israel__list p {
+  .live-israel__second-couple-photos-wrapper {
+    display: flex;
+    max-width: inherit;
+    justify-content: flex-start;
+  }
+
+  .live-israel__photos p {
     font-size: 18px;
     line-height: 21px;
     text-align: center;
   }
 
-  .live-israel__first-photo {
+  .live-israel__first-photo,
+  .live-israel__second-photo,
+  .live-israel__third-photo,
+  .live-israel__fourth-photo,
+  .live-israel__fifth-photo {
+    position: relative;
+    padding: 0 12px;
     margin: 0;
+    margin-right: 10px;
+    width: 288px;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .live-israel__first-photo {
+    display: flex;
+    position: relative;
+    margin-top: 0;
+    margin-right: 0;
     min-width: 288px;
   }
 
   .live-israel__first-photo img {
-    margin: 0 auto;
     width: 264px;
     height: 400px;
   }
@@ -225,13 +287,7 @@
     left: 40px;
   }
 
-  .live-israel__second-photo {
-    margin: 0;
-    min-width: 288px;
-  }
-
   .live-israel__second-photo img {
-    margin: 0 auto;
     width: 264px;
     height: 400px;
   }
@@ -242,16 +298,10 @@
     left: 66px;
   }
 
-  .live-israel__third-photo {
-    margin: 0;
-    overflow: hidden;
-    min-width: 288px;
-  }
-
   .live-israel__third-photo img {
-    margin: 0 auto;
-    width: 264px;
-    height: 400px;
+    position: absolute;
+    width: 411px;
+    height: 319px;
   }
 
   .live-israel__third-photo p {
@@ -260,15 +310,9 @@
     left: 40px;
   }
 
-  .live-israel__fourth-photo {
-    margin: 0;
-    min-width: 288px;
-  }
-
   .live-israel__fourth-photo img {
-    margin: 0 auto;
-    width: 264px;
-    height: 400px;
+    width: 411px;
+    height: 319px;
   }
 
   .live-israel__fourth-photo p {
@@ -277,13 +321,7 @@
     left: 40px;
   }
 
-  .live-israel__fifth-photo {
-    margin: 0;
-    min-width: 288px;
-  }
-
   .live-israel__fifth-photo img {
-    margin: 0 auto;
     width: 264px;
     height: 400px;
   }

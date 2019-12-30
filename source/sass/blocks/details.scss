@@ -1,12 +1,12 @@
 .details {
-  padding-left: 55px;
-  padding-bottom: 812px;
+  padding-left: 110px;
+  padding-bottom: 75px;
   background-image: url("../../img/map-desktop@1x.png"),
     url("../../img/details-bg-desktop@1x.jpg");
   background-repeat: no-repeat,
     no-repeat;
-  background-position: 92% 3px,
-    50% bottom;
+  background-position: right 6px,
+    50% -90px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../../img/map-desktop@2x.png"),
@@ -80,6 +80,7 @@
 .details img {
   width: 112px;
   height: 112px;
+  border-radius: 50%;
 }
 
 .details__kurator-info-wrapper {

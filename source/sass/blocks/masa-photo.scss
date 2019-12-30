@@ -1,14 +1,13 @@
 .masa-photo {
-  padding-bottom: 196px;
-  padding-top: 120px;
+  padding-bottom: 303px;
+  padding-top: 224px;
   background-image: url("../../img/cynthia-magana-138943-desktop@1x.png");
   background-repeat: no-repeat;
-  background-position: 50% -4%;
+  background-position: 3px 103px;
   background-size: contain;
   display: flex;
   justify-content: flex-end;
-
-  // TODO: При ширине свыше 1480px фон не растягивается.
+  // TODO: При ширине свыше 1600px фон не растягивается.
 }
 
 .masa-photo__wrapper {
@@ -21,6 +20,7 @@
   margin: 0;
   margin-bottom: 25px;
   padding: 0;
+  padding-left: 2px;
   font-family: "Montserrat", "Arial", sans-serif;
   font-size: 40px;
   line-height: 49px;
@@ -48,7 +48,7 @@
   padding-top: 21px;
   padding-bottom: 18px;
   padding-left: 71px;
-  padding-right: 41px;
+  padding-right: 44px;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-weight: 500;
   font-size: 17px;
@@ -70,7 +70,7 @@
 
 @media (max-width: $tab-width) {
   .masa-photo {
-    padding-top: 50px;
+    padding-top: 155px;
   }
 
   .masa-photo__wrapper {

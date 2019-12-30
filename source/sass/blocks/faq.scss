@@ -1,18 +1,19 @@
 .faq {
-  padding-left: 55px;
-  padding-bottom: 1286px;
+  padding-left: 110px;
+  padding-top: 30px;
+  padding-bottom: 118px;
   background-image: url("../../img/faq-img-desktop@1x.png"),
     url("../../img/bag-desktop@1x.png"),
     url("../../img/faq-bg-desktop@1x.jpg");
   background-repeat: no-repeat,
     no-repeat,
     no-repeat;
-  background-position: 92.4% top,
-    left 1922px,
-    50% 803px;
+  background-position: 721px 29px,
+    -41px 756px,
+    50% -50px;
   background-size: auto,
     auto,
-    contain;
+    cover;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../../img/faq-img-desktop@2x.png"),
@@ -20,7 +21,7 @@
       url("../../img/faq-bg-desktop@2x.jpg");
     background-size: 645px 803px,
       194px 177px,
-      contain;
+      cover;
   }
 }
 
@@ -41,7 +42,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  max-width: 42.5%;
+  max-width: 44.5%;
 }
 
 .faq li {
@@ -105,7 +106,7 @@
     width: 20px;
     height: 13px;
     top: 9px;
-    right: 30px;
+    right: 32px;
   }
 }
 
