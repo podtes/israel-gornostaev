@@ -318,5 +318,3 @@ var maskToWantGo = IMask(phoneInputWantGo, maskOptions);
 phoneInputWantGo.addEventListener('input', function () {
   validatePhoneInputHandler(phoneInputWantGo, errorMessageWantGo);
 });
-
-// TODO: сделать всем инпутам лейблы и спрятать их.
