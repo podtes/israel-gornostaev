@@ -1,6 +1,6 @@
 .want-go {
   position: relative;
-  padding-top: 244px;
+  padding-top: 160px;
   padding-left: 210px;
   padding-bottom: 130px;
   background-color: #ffffff;
@@ -9,8 +9,8 @@
     url("../../img/girl-flag-desktop@1x.jpg");
   background-repeat: no-repeat,
     no-repeat;
-  background-position: -73px 46%,
-    548px 34px;
+  background-position: -73px 30%,
+    548px -49px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../../img/backpack-desktop@2x.png"),
@@ -115,7 +115,7 @@
 
 @media (max-width: $mob-width) {
   .want-go {
-    padding-top: 79px;
+    padding-top: 49px;
     padding-bottom: 308px;
     padding-left: 17px;
     padding-right: 17px;
@@ -123,16 +123,14 @@
       url("../../img/girl-flag-bg-mobile@1x.jpg");
     background-repeat: no-repeat,
       no-repeat;
-    background-position: left 31px,
-      50% 370px;
+    background-position: left 1px,
+      50% 340px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../../img/backpack-mobile@2x.png"),
         url("../../img/girl-flag-bg-mobile@2x.jpg");
       background-repeat: no-repeat,
         no-repeat;
-      background-position: left 31px,
-        right 370px;
       background-size: 103px,
         contain;
     }
