@@ -13,10 +13,11 @@
 }
 
 .intro {
+  padding-top: 439px;
+  padding-bottom: 200px;
   background: url("../../img/hint-scroll-down-desktop@1x.png") 50% 528px no-repeat,
     url("../../img/girl-desktop@1x.png") 50% -100px no-repeat,
     url("../../img/israel-desktop@1x.png") 50% 60px no-repeat;
-  height: 811px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background: url("../../img/hint-scroll-down-desktop@1x.png") 50% 528px no-repeat,
@@ -29,7 +30,6 @@
 }
 
 .intro h2 {
-  position: relative;
   margin: 0 auto;
   padding: 0;
   font-family: "Fira Sans", "Arial", sans-serif;
@@ -38,7 +38,6 @@
   color: #ffffff;
   text-align: center;
   max-width: 350px;
-  transform: translateY(439px);
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
@@ -56,10 +55,11 @@
   }
 
   .intro {
+    padding-top: 239px;
+    padding-bottom: 150px;
     background: url("../../img/hint-scroll-down-mobile@1x.png") 50% 319px no-repeat,
       url("../../img/girl-mobile@1x.png") 50% -64px no-repeat,
       url("../../img/israel-mobile@1x.png") 48% 72px no-repeat;
-    height: 434px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background: url("../../img/hint-scroll-down-mobile@1x.png") 50% 319px no-repeat,
@@ -76,7 +76,6 @@
     padding: 0;
     font-size: 20px;
     line-height: 24px;
-    transform: translateY(239px);
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
   }
 }

@@ -205,10 +205,10 @@
 }
 
 .programms h2 {
-  margin: 0;
-  margin-left: 160px;
-  margin-bottom: 82px;
   padding: 0;
+  margin: 0;
+  padding-left: 160px;
+  margin-bottom: 82px;
   font-family: "Montserrat", "Arial", sans-serif;
   font-size: 40px;
   line-height: 49px;
@@ -292,6 +292,7 @@
 
   .programms h2 {
     margin-bottom: 12px;
+    padding-left: 0;
     font-size: 32px;
     line-height: 39px;
   }
