@@ -1,13 +1,12 @@
 .page-header__wrapper {
   position: relative;
-  padding-top: 32px;
+  padding-top: 48px;
   padding-bottom: 32px;
   padding-left: 110px;
   padding-right: 114px;
 }
 
 .page-header__callback-wrapper {
-  padding-top: 16px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -54,7 +53,9 @@
 
 .page-header__logo {
   position: absolute;
-  left: 44.8%;
+  transform: translate(-50%, -50%);
+  top: 60%;
+  left: 49.8%;
 }
 
 @media (max-width: $tab-width) {
@@ -87,8 +88,8 @@
 
   .page-header__logo {
     position: absolute;
-    left: 16px;
-    top: 20px;
+    left: 76px;
+    top: 45px;
     order: 0;
   }
 
