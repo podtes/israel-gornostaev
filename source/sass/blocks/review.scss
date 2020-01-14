@@ -2,7 +2,8 @@
   position: relative;
   padding-left: 97px;
   padding-right: 141px;
-  padding-bottom: 32px;
+  padding-bottom: 16px;
+  padding-top: 39px;
   text-align: center;
   background-color: #ffffff;
   color: #000000;
@@ -10,8 +11,8 @@
     url("../../img/reviews-bg-watercolor@1x.png");
   background-repeat: no-repeat,
     no-repeat;
-  background-position: 843px 56px,
-    109px 37px;
+  background-position: 843px 94px,
+    109px 75px;
   background-size: auto,
     1259px;
 
@@ -247,14 +248,14 @@
 @media (max-width: $mob-width) {
   .reviews {
     position: relative;
-    padding-top: 42px;
+    padding-top: 40px;
     padding-left: 15px;
     padding-right: 15px;
-    padding-bottom: 0;
+    padding-bottom: 33px;
     background-image: url("../../img/reviews-sketch-mobile@1x.png"),
       none;
     background-repeat: no-repeat;
-    background-position: 100% 67%;
+    background-position: 100% 566px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../../img/reviews-sketch-mobile@2x.png"),

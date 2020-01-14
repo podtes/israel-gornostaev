@@ -29,7 +29,7 @@
 
 .faq h2 {
   margin: 0;
-  margin-bottom: 46px;
+  margin-bottom: 8px;
   padding: 0;
   font-family: "Montserrat", "Arial", sans-serif;
   font-weight: bold;
@@ -51,7 +51,7 @@
   position: relative;
   display: block;
   margin: 0;
-  margin-bottom: 38px;
+  padding-top: 38px;
   list-style: none;
   border-bottom: 1px solid #dadada;
   cursor: pointer;
@@ -91,7 +91,7 @@
   &::before {
     position: absolute;
     content: "1";
-    top: -3px;
+    top: 34px;
     left: 0;
     font-family: "Fira Sans", "Arial", sans-serif;
     font-weight: bold;
@@ -107,7 +107,7 @@
     background: url("../../img/arrow-down.svg") no-repeat 0 0;
     width: 20px;
     height: 13px;
-    top: 9px;
+    top: 45px;
     right: 32px;
   }
 }
@@ -196,10 +196,10 @@
 @media (max-width: $mob-width) {
   .faq {
     text-align: center;
-    padding: 0 16px;
+    padding: 40px 16px;
     background-image: url("../../img/bag-mobile@1x.png");
     background-repeat: no-repeat;
-    background-position: -48px 660px;
+    background-position: -48px 700px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../../img/bag-mobile@2x.png");
@@ -213,7 +213,7 @@
   }
 
   .faq h2 {
-    margin-bottom: 38px;
+    margin-bottom: 0;
     font-size: 32px;
     line-height: 39px;
   }
@@ -263,7 +263,7 @@
 
   .faq__question h3 {
     &::after {
-      top: 9px;
+      top: 47px;
       right: -4px;
     }
   }

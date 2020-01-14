@@ -1,5 +1,6 @@
 .details {
   padding-left: 110px;
+  padding-top: 16px;
   padding-bottom: 75px;
   background-color: #ffffff;
   color: #000000;
@@ -7,8 +8,8 @@
     url("../../img/details-bg-desktop@1x.jpg");
   background-repeat: no-repeat,
     no-repeat;
-  background-position: right 6px,
-    50% -90px;
+  background-position: right 22px,
+    50% -74px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../../img/map-desktop@2x.png"),
@@ -33,6 +34,8 @@
 
 .details__choose-city {
   position: relative;
+  display: flex;
+  align-items: center;
   margin-bottom: 39px;
   padding-left: 22px;
   font-family: "Fira Sans", "Arial", sans-serif;
@@ -50,33 +53,38 @@
     top: 0;
     left: 4px;
   }
-
-  &::after {
-    position: absolute;
-    content: "";
-    background: url("../../img/gps-marker-mobile@1x.png") no-repeat 0 0;
-    width: 16px;
-    height: 15px;
-    top: 5px;
-    left: 220px;
-  }
 }
 
 .details__choose-city span {
-  &:first-child {
-    margin-right: 10px;
+  &:first-of-type {
+    margin-right: 15px;
   }
 
-  &:last-child {
+  &:nth-of-type(2) {
+    padding-bottom: 3px;
     font-weight: 500;
     font-variant: small-caps;
-    border-bottom: 2px dashed #1fc0fc;
+    border-bottom: 1px dashed #1fc0fc;
+    margin-right: 7px;
   }
+}
+
+.details__choose-city button {
+  font-size: 0;
+  line-height: 0;
+  background-image: url("../../img/gps-marker-mobile@1x.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: transparent;
+  width: 16px;
+  height: 15px;
+  border: none;
+  cursor: pointer;
 }
 
 .details__kurator-info {
   display: flex;
-  margin-bottom: 22px;
+  margin-bottom: 19px;
 }
 
 .details img {
@@ -210,12 +218,12 @@
   box-sizing: border-box;
 }
 
-.details__form input:first-child {
+.details__name-label input {
   margin-right: 23px;
   margin-bottom: 15px;
 }
 
-.details__form input:nth-child(2) {
+.details__phone-label input {
   margin-right: 24px;
 }
 
@@ -245,8 +253,6 @@
 }
 
 .details label {
-  position: absolute;
-  left: -99999px;
   font-size: 0;
   line-height: 0;
 }
@@ -266,12 +272,12 @@
     margin-bottom: 430px;
   }
 
-  .details__form input:first-child,
-  .details__form input:nth-child(2) {
+  .details__name-label input,
+  .details__phone-label input {
     margin-right: 0;
   }
 
-  .details__form input:nth-child(2) {
+  .details__phone-label input {
     margin-bottom: 30px;
   }
 
@@ -284,11 +290,11 @@
 @media (max-width: $mob-width) {
   .details {
     padding-left: 0;
-    padding-top: 66px;
+    padding-top: 33px;
     padding-bottom: 63px;
     background-image: url("../../img/map-desktop@1x.png"),
       none;
-    background-position: 66% 699px;
+    background-position: 66% 665px;
     background-size: 655px;
     text-align: center;
 
@@ -314,10 +320,15 @@
       top: 0;
       left: 20px;
     }
+  }
 
-    &::after {
-      top: 5px;
-      left: 236px;
+  .details__choose-city span {
+    &:first-of-type {
+      margin-right: 15px;
+    }
+
+    &:nth-of-type(2) {
+      padding-bottom: 0;
     }
   }
 
@@ -391,14 +402,14 @@
     padding-right: 15px;
   }
 
-  .details__form input:first-child,
-  .details__form input:nth-child(2) {
+  .details__phone-label input,
+  .details__name-label input {
     margin-right: 0;
     margin-bottom: 10px;
     width: 100%;
   }
 
-  .details__form input:nth-child(2) {
+  .details__phone-label input {
     margin-bottom: 24px;
   }
 

@@ -407,6 +407,7 @@
         <h2>Узнать подробности</h2>
         <div class="details__choose-city">
           <span>Ваш город: </span><span>новосибирск</span>
+          <button type="button">геолокация в выбранном городе</button>
         </div>
         <div class="details__kurator-info">
           <img src="./img/kurator-mobile@1x.jpg" srcset="./img/kurator-mobile@2x.jpg 2x" alt="Куратор Анна Горелик" width="112" height="112">
@@ -456,11 +457,13 @@
             </p>
           </div>
           <form class="details__form" autocomplete="off">
-            <label for="details__name-field">Имя</label>
-            <label for="details__phone-input-field">Телефон</label>
             <div class="details__form-wrapper">
-              <input type="text" name="name" id="details__name-field" placeholder="имя" required>
-              <input type="tel" id="details__phone-input-field" name="telephone" placeholder="телефон" required>
+              <label class="details__name-label" for="details__name-field">Имя
+                <input type="text" name="name" id="details__name-field" placeholder="имя" required>
+              </label>
+              <label class="details__phone-label" for="details__phone-input-field">Телефон
+                <input type="tel" id="details__phone-input-field" name="telephone" placeholder="телефон" required>
+              </label>
               <span class="details__error-message">Ошибка: неверный формат</span>
               <button class="details__callback-button btn" type="submit">Перезвоните мне</button>
             </div>
