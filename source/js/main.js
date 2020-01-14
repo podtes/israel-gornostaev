@@ -7,7 +7,6 @@ var callbackOpenButton = pageHeader.querySelector('.page-header__callback');
 var callbackCloseButton = document.querySelector('.modal-order-callback__close-button');
 var overlay = document.querySelector('.modal-position');
 var callbackModal = overlay.querySelector('.modal-order-callback');
-var callbackMeButton = callbackModal.querySelector('input[type="submit"]');
 var successModal = overlay.querySelector('.modal-success');
 var successModalOKButton = successModal.querySelector('button[type="button"]');
 var successModalCloseButton = successModal.querySelector('.modal-order-callback__close-button');
@@ -15,12 +14,9 @@ var nameInput = callbackModal.querySelector('input[name="name"]');
 var form = callbackModal.querySelector('form');
 var wantGoCallbackButton = document.querySelector('.want-go__callback-button');
 var detailsCallbackButton = document.querySelector('.details__callback-button');
-var firstQuestionButton = document.querySelector('.faq__question--first');
-var secondQuestionButton = document.querySelector('.faq__question--second');
-var thirdQuestionButton = document.querySelector('.faq__question--third');
-var fourthQuestionButton = document.querySelector('.faq__question--fourth');
-var fifthQuestionButton = document.querySelector('.faq__question--fifth');
-var sixthQuestionButton = document.querySelector('.faq__question--sixth');
+
+var faqQuestionButtons = document.querySelectorAll('.faq__question');
+
 var reviewSlides = document.querySelectorAll('.reviews__item');
 var nextReviewButton = document.querySelector('.reviews__next-review');
 var currentReviewCount = document.querySelector('.reviews__start-review');
@@ -140,6 +136,16 @@ var validatePhoneInputHandler = function (field, message) {
   }
 };
 
+// обработчики кнопок FAQ
+var faqQuestionButtonClickHandler = function (evt) {
+  evt.currentTarget.classList.toggle('faq__question--active');
+};
+var faqQuestionButtonPressEnterHandler = function (evt) {
+  if (evt.keyCode === ENTER_KEYCODE) {
+    evt.target.classList.toggle('faq__question--active');
+  }
+};
+
 
 callbackOpenButton.addEventListener('click', callbackOpenButtonClickHandler);
 callbackCloseButton.addEventListener('click', callbackCloseButtonClickHandler);
@@ -201,60 +207,12 @@ programmReligionButton.addEventListener('click', function () {
 });
 
 // логика открытия и закрытия частых вопросов
-firstQuestionButton.addEventListener('click', function () {
-  firstQuestionButton.classList.toggle('faq__question--active');
-});
-firstQuestionButton.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === 13) {
-    firstQuestionButton.classList.toggle('faq__question--active');
+if (faqQuestionButtons) {
+  for (var i = 0; i < faqQuestionButtons.length; i++) {
+    faqQuestionButtons[i].addEventListener('click', faqQuestionButtonClickHandler);
+    faqQuestionButtons[i].addEventListener('keydown', faqQuestionButtonPressEnterHandler);
   }
-});
-
-secondQuestionButton.addEventListener('click', function () {
-  secondQuestionButton.classList.toggle('faq__question--active');
-});
-secondQuestionButton.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === 13) {
-    secondQuestionButton.classList.toggle('faq__question--active');
-  }
-});
-
-thirdQuestionButton.addEventListener('click', function () {
-  thirdQuestionButton.classList.toggle('faq__question--active');
-});
-thirdQuestionButton.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === 13) {
-    thirdQuestionButton.classList.toggle('faq__question--active');
-  }
-});
-
-fourthQuestionButton.addEventListener('click', function () {
-  fourthQuestionButton.classList.toggle('faq__question--active');
-});
-fourthQuestionButton.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === 13) {
-    fourthQuestionButton.classList.toggle('faq__question--active');
-  }
-});
-
-fifthQuestionButton.addEventListener('click', function () {
-  fifthQuestionButton.classList.toggle('faq__question--active');
-});
-fifthQuestionButton.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === 13) {
-    fifthQuestionButton.classList.toggle('faq__question--active');
-  }
-});
-
-sixthQuestionButton.addEventListener('click', function () {
-  sixthQuestionButton.classList.toggle('faq__question--active');
-});
-sixthQuestionButton.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === 13) {
-    sixthQuestionButton.classList.toggle('faq__question--active');
-  }
-});
-
+}
 
 // логика переключения слайдера отзывов
 nextReviewButton.addEventListener('click', function () {

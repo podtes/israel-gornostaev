@@ -160,7 +160,7 @@
   position: relative;
   margin: 0;
   padding: 0;
-  padding-left: 15px;
+  padding-left: 16px;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-size: 15px;
   line-height: 21px;
@@ -169,10 +169,16 @@
   max-width: 520px;
   letter-spacing: -0.01em;
   border-left-width: 4px;
-  border-left-style: solid;
-  border-left-color: transparent;
-  border-image: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
-  // TODO: должна ведь работать граница с градиентом сейчас, но не работает
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -1px;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);
+  }
 }
 
 @media (max-width: $tab-width) {

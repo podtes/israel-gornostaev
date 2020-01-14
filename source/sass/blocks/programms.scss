@@ -1,5 +1,5 @@
 .programms {
-  padding-bottom: 83px;
+  padding-bottom: 62px;
   padding-top: 105px;
   padding-left: 50px;
   padding-right: 50px;
@@ -16,13 +16,13 @@
 }
 
 .programms__wrapper {
-  padding-left: 184px;
+  padding-left: 160px;
   display: flex;
 }
 
 .programms ul {
   margin: 0;
-  margin-right: 18px;
+  margin-right: 42px;
   padding: 0;
   padding-top: 3px;
   min-width: 250px;
@@ -31,28 +31,20 @@
 
 .programms__item {
   display: block;
-  margin-bottom: 47px;
+  margin-bottom: 5px;
+  padding-left: 0;
+  box-sizing: border-box;
 
   &:last-child {
     margin-bottom: 0;
   }
 }
 
-.programms__item--active {
-  position: relative;
-
-  &::before {
-    position: absolute;
-    content: "";
-    background: url("../../img/programms-button-desktop.png") no-repeat 50% 50%;
-    width: 228px;
-    height: 68px;
-    top: -19px;
-    left: -24px;
-  }
-}
-
 .programms__item--active .programms__button {
+  background-image: url("../../img/programms-button-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
@@ -62,6 +54,11 @@
   opacity: 1;
 
   &:hover {
+    background-image: url("../../img/programms-button-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-clip: border-box;
     color: #ffffff;
     opacity: 1;
     cursor: auto;
@@ -69,10 +66,15 @@
 }
 
 .programms__button {
+  width: 229px;
   position: relative;
   margin: 0;
   padding: 0;
-  padding-left: 48px;
+  padding-top: 24px;
+  padding-bottom: 25px;
+  padding-left: 73px;
+  padding-right: 30px;
+  text-align: left;
   background-color: transparent;
   border: none;
   font-family: "Fira Sans", "Arial", sans-serif;
@@ -81,11 +83,12 @@
   color: #484848;
   opacity: 0.87;
   cursor: pointer;
+  word-break: break-all;
+  box-sizing: border-box;
 
   &:hover {
     color: transparent;
     background-clip: text;
-    // TODO: Линтер выдает ошибку здесь, хотя все работает ок.
     background-image: linear-gradient(132.19deg, #ffc341 20.46%, #ffd701 65.31%);
     opacity: 0.87;
   }
@@ -102,8 +105,8 @@
     background: url("../../img/general.png") no-repeat 50% 50%;
     width: 28px;
     height: 33px;
-    top: -5px;
-    left: 0;
+    top: 16px;
+    left: 24px;
   }
 
   &:hover::before {
@@ -124,8 +127,8 @@
     background: url("../../img/study.png") no-repeat 50% 50%;
     width: 36px;
     height: 35px;
-    top: -7px;
-    left: -4px;
+    top: 14px;
+    left: 19px;
   }
 
   &:hover::before {
@@ -146,8 +149,8 @@
     background: url("../../img/work.png") no-repeat 50% 50%;
     width: 32px;
     height: 25px;
-    top: -4px;
-    left: -2px;
+    top: 18px;
+    left: 21px;
   }
 
   &:hover::before {
@@ -168,8 +171,8 @@
     background: url("../../img/volunteer.png") no-repeat 50% 50%;
     width: 32px;
     height: 29px;
-    top: -7px;
-    left: -2px;
+    top: 16px;
+    left: 22px;
   }
 
   &:hover::before {
@@ -190,8 +193,8 @@
     background: url("../../img/religion.png") no-repeat 50% 50%;
     width: 23px;
     height: 25px;
-    top: -6px;
-    left: 2px;
+    top: 18px;
+    left: 26px;
   }
 
   &:hover::before {
@@ -209,7 +212,7 @@
   padding: 0;
   margin: 0;
   padding-left: 160px;
-  margin-bottom: 82px;
+  margin-bottom: 65px;
   font-family: "Montserrat", "Arial", sans-serif;
   font-size: 40px;
   line-height: 49px;
@@ -221,6 +224,7 @@
 
 .programms__about {
   display: none;
+  padding-top: 17px;
 
   &--active {
     display: block;
