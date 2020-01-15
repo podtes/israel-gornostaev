@@ -56,6 +56,14 @@
   transform: translate(-50%, -50%);
   top: 60%;
   left: 49.8%;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
 
 @media (max-width: $tab-width) {

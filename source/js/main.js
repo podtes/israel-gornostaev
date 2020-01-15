@@ -9,11 +9,11 @@ var overlay = document.querySelector('.modal-position');
 var callbackModal = overlay.querySelector('.modal-order-callback');
 var successModal = overlay.querySelector('.modal-success');
 var successModalOKButton = successModal.querySelector('button[type="button"]');
-var successModalCloseButton = successModal.querySelector('.modal-order-callback__close-button');
+var successModalCloseButton = successModal.querySelector('.modal-success__close-button');
 var nameInput = callbackModal.querySelector('input[name="name"]');
-var form = callbackModal.querySelector('form');
-var wantGoCallbackButton = document.querySelector('.want-go__callback-button');
-var detailsCallbackButton = document.querySelector('.details__callback-button');
+var callbackModalForm = callbackModal.querySelector('form');
+var wantGoForm = document.querySelector('.want-go').querySelector('form');
+var detailsForm = document.querySelector('.details').querySelector('form');
 
 var faqQuestionButtons = document.querySelectorAll('.faq__question');
 
@@ -41,13 +41,6 @@ var programmStudyText = document.querySelector('.programms__about--study');
 var programmWorkText = document.querySelector('.programms__about--work');
 var programmVolunteerText = document.querySelector('.programms__about--volunteer');
 var programmReligionText = document.querySelector('.programms__about--religion');
-
-var phoneInputModal = document.getElementById('modal-order-callback__phone-input-field');
-var phoneInputDetails = document.getElementById('details__phone-input-field');
-var phoneInputWantGo = document.getElementById('want-go__phone-input-field');
-var errorMessageWantGo = document.querySelector('.want-go__error-message');
-var errorMessageDetails = document.querySelector('.details__error-message');
-var errorMessageModal = document.querySelector('.modal-order-callback__error-message');
 
 // логика открытия и закрытия модальных окон
 var closeCallbackModal = function () {
@@ -81,7 +74,7 @@ var callbackCloseButtonClickHandler = function () {
   closeCallbackModal();
 };
 var callbackCloseButtonPressEnterHandler = function (evt) {
-  if (evt.keycode === ENTER_KEYCODE) {
+  if (evt.keyCode === ENTER_KEYCODE) {
     closeCallbackModal();
   }
 };
@@ -123,29 +116,24 @@ var overlayClickHandler = function (evt) {
   }
 };
 
-var validatePhoneInputHandler = function (field, message) {
-  if (field.value.length > 0 && field.value.length < 16) {
-    field.style.border = '2px solid #ff0000';
-    message.style.display = 'block';
-  } else if (field.value.length === 0) {
-    field.style.border = '2px solid #e3e3e3';
-    message.style.display = 'none';
-  } else {
-    field.style.border = '2px solid #484848';
-    message.style.display = 'none';
+// обработчики кнопок FAQ
+var removefaqQuestionButtonActiveClass = function () {
+  for (var i = 0; i < faqQuestionButtons.length; i++) {
+    if (faqQuestionButtons[i].classList.contains('faq__question--active')) {
+      faqQuestionButtons[i].classList.remove('faq__question--active');
+    }
   }
 };
-
-// обработчики кнопок FAQ
 var faqQuestionButtonClickHandler = function (evt) {
+  removefaqQuestionButtonActiveClass();
   evt.currentTarget.classList.toggle('faq__question--active');
 };
 var faqQuestionButtonPressEnterHandler = function (evt) {
+  removefaqQuestionButtonActiveClass();
   if (evt.keyCode === ENTER_KEYCODE) {
     evt.target.classList.toggle('faq__question--active');
   }
 };
-
 
 callbackOpenButton.addEventListener('click', callbackOpenButtonClickHandler);
 callbackCloseButton.addEventListener('click', callbackCloseButtonClickHandler);
@@ -157,11 +145,24 @@ successModalCloseButton.addEventListener('click', closeSuccessModal);
 successModalOKButton.addEventListener('keydown', successModalOKButtonPressEnterHandler);
 successModalCloseButton.addEventListener('keydown', successModalCloseButtonPressEnterHandler);
 
-form.addEventListener('submit', function (evt) {
+// обработка отправки формы и открытие модального окна с сообщением успеха из шапки
+callbackModalForm.addEventListener('submit', function (evt) {
   closeCallbackModal();
   evt.preventDefault();
+  callbackModalForm.reset();
   openSuccessModal();
-  // TODO: проблема с отправкой формы, окно с успешным сообщением открывается, но сразу же закрывается, пока просто отключил действие по умолчанию.
+});
+
+// открытие модального окна c сообщением успеха из секции want-go и details
+wantGoForm.addEventListener('submit', function (evt) {
+  evt.preventDefault();
+  openSuccessModal();
+  wantGoForm.reset();
+});
+detailsForm.addEventListener('submit', function (evt) {
+  evt.preventDefault();
+  openSuccessModal();
+  detailsForm.reset();
 });
 
 // переключение программ обучения
@@ -248,31 +249,4 @@ previousReviewButton.addEventListener('click', function () {
       }
     }
   }
-});
-
-// открытие модального окна из секции want-go и details
-wantGoCallbackButton.addEventListener('click', openSuccessModal);
-detailsCallbackButton.addEventListener('click', openSuccessModal);
-
-
-// валидация инпута в модальном окне
-var maskOptions = {
-  mask: '+{7}(000)000-00-00',
-  lazy: true
-};
-var maskToModal = IMask(phoneInputModal, maskOptions);
-phoneInputModal.addEventListener('input', function () {
-  validatePhoneInputHandler(phoneInputModal, errorMessageModal);
-});
-
-// валидация инпута в секции подробностей
-var maskToDetails = IMask(phoneInputDetails, maskOptions);
-phoneInputDetails.addEventListener('input', function () {
-  validatePhoneInputHandler(phoneInputDetails, errorMessageDetails);
-});
-
-// валидация инпута в секции хочу поехать
-var maskToWantGo = IMask(phoneInputWantGo, maskOptions);
-phoneInputWantGo.addEventListener('input', function () {
-  validatePhoneInputHandler(phoneInputWantGo, errorMessageWantGo);
 });

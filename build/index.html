@@ -29,10 +29,11 @@
       <div class="intro">
         <h1 class="visually-hidden">Программа обучения еврейской молодежи в Израиле Masa</h1>
         <h2>Учёба, путешествие и карьера для еврейской молодёжи</h2>
+        <a href="#about-section">Прокрутка вниз к описанию программы</a>
       </div>
     </div>
     <main>
-      <section class="about">
+      <section class="about" id="about-section">
         <h2>О программе</h2>
         <p>«Маса» — совместный проект правительства Израиля и Еврейского агентства Сохнут. Более 250 учебных программ (60 на русском) и возможность стажировки в Израиле. В течение освоения программ предусмотрен грант от 4200 до 8400$.</p>
         <button type="button">play</button>
@@ -42,19 +43,19 @@
         <div class="programms__wrapper">
           <ul>
             <li class="programms__item programms__item--general">
-              <button class="programms__button programms__button--general">Общие</button>
+              <button type="button" class="programms__button programms__button--general">Общие</button>
             </li>
             <li class="programms__item programms__item--study programms__item--active">
-              <button class="programms__button programms__button--study">Академические</button>
+              <button type="button" class="programms__button programms__button--study">Академические</button>
             </li>
             <li class="programms__item programms__item--work">
-              <button class="programms__button programms__button--work">Стажировки</button>
+              <button type="button" class="programms__button programms__button--work">Стажировки</button>
             </li>
             <li class="programms__item programms__item--volunteer">
-              <button class="programms__button programms__button--volunteer">Волонтёрство</button>
+              <button type="button" class="programms__button programms__button--volunteer">Волонтёрство</button>
             </li>
             <li class="programms__item programms__item--religion">
-              <button class="programms__button programms__button--religion">Религиозные</button>
+              <button type="button" class="programms__button programms__button--religion">Религиозные</button>
             </li>
           </ul>
           <div class="programms__about programms__about--general">
@@ -128,23 +129,23 @@
           <ul>
             <li class="how-go__condition">
               <p>
-                Быть в возрасте от 16 до 30 лет
+                <span>Быть в возрасте от 16 до 30 лет</span>
               </p>
             </li>
             <li class="how-go__condition">
               <p>
-                Иметь оконченное среднее образование
+                <span>Иметь оконченное среднее образование</span>
               </p>
             </li>
             <li class="how-go__condition">
               <p>
-                Иметь документально подтверждённые еврейские корни и пройти консульскую проверку
+                <span>Иметь документально подтверждённые еврейские корни и пройти консульскую проверку</span>
               </p>
             </li>
             <li class="how-go__condition">
               <p>
-                За последние 2 года быть не больше 3х месяцев
-                подряд непрерывно в Израиле.
+                <span>За последние 2 года быть не больше 3х месяцев
+                подряд непрерывно в Израиле.</span>
               </p>
             </li>
           </ul>
@@ -368,8 +369,8 @@
               <span class="reviews__start-review">3 </span><span class="reviews__finish-review">/ 6</span>
             </p>
             <div class="reviews__buttons-wrapper">
-              <button class="reviews__previous-review">предыдущий отзыв</button>
-              <button class="reviews__next-review">следующий отзыв</button>
+              <button type="button" class="reviews__previous-review">предыдущий отзыв</button>
+              <button type="button" class="reviews__next-review">следующий отзыв</button>
             </div>
           </div>
           <ul class="reviews__social-list">
@@ -415,21 +416,21 @@
             <ul class="details__social-list">
               <li>
                 <a href="#">Наш фейсбук
-                  <svg class="reviews__icon-facebook" width="24" height="24">
+                  <svg class="details__icon-facebook" width="24" height="24">
                     <use xlink:href="./img/sprite_auto.svg#icon-facebook"></use>
                   </svg>
                 </a>
               </li>
               <li>
                 <a href="#">Наш вацап
-                  <svg class="reviews__icon-whatsup" width="24" height="24">
+                  <svg class="details__icon-whatsup" width="24" height="24">
                     <use xlink:href="./img/sprite_auto.svg#icon-whatsapp"></use>
                   </svg>
                 </a>
               </li>
               <li>
                 <a href="#">Наш телеграм
-                  <svg class="reviews__icon-telegram" width="24" height="24">
+                  <svg class="details__icon-telegram" width="24" height="24">
                     <use xlink:href="./img/sprite_auto.svg#icon-telegram"></use>
                   </svg>
                 </a>
@@ -505,22 +506,23 @@
             <input id="modal-order-callback__phone-input-field" type="tel" name="telephone" placeholder="телефон" required="">
             <span class="modal-order-callback__error-message">Ошибка: неверный формат</span>
             <input class="btn" type="submit" value="Перезвоните мне">
-            <label>
-              <input class="modal-order-callback__checkbox" type="checkbox" name="agree" required="">
+            <label class="modal-order-callback__checkbox-label">
+              <input type="checkbox" name="agree" required="">
               <span class="modal-order-callback__custom-checkbox"></span>
               Нажимая на кнопку, вы даёте согласие на обработку персональных данных
             </label>
           </form>
-          <button class="modal-order-callback__close-button"></button>
+          <button type="button" class="modal-order-callback__close-button"></button>
         </section>
         <section class="modal-success">
           <span></span>
           <h2 class="modal-success__title">Заявка принята</h2>
           <p class="modal-success__message">Мы приняли ваши данные и вскоре мы перезвоним вам для уточнения деталей!</p>
-          <button class="btn" type="button">понятно</button>
-          <button class="modal-order-callback__close-button"></button>
+          <button type="button" class="btn">понятно</button>
+          <button type="button" class="modal-success__close-button"></button>
         </section>
       </div>
+      <script src="./js/vendor.js"></script>
       <script src="./js/main.js"></script>
     </main>
   </body>

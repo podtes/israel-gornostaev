@@ -85,6 +85,7 @@
 
 @media (max-width: $mob-width) {
   .masa-photo {
+    text-align: center;
     padding-top: 0;
     padding-bottom: 40px;
     background-image: url("../../img/cynthia-mobile@1x.png");
@@ -112,6 +113,7 @@
     padding: 0;
     padding-left: 12px;
     margin-bottom: 57px;
+    text-align: left;
     font-size: 16px;
     line-height: 26px;
     font-weight: normal;

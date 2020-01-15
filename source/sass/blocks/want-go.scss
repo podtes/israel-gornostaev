@@ -58,6 +58,7 @@
   border-radius: 80px;
   width: 100%;
   max-width: 477px;
+  -webkit-appearance: none;
 
   &:focus {
     border-color: #ffd701;
@@ -94,6 +95,7 @@
 .want-go__callback-button {
   padding: 20px 38px;
   transform: translateX(-216px);
+  font-variant: small-caps;
 }
 
 .want-go label {

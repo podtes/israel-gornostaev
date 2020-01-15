@@ -48,9 +48,28 @@
   letter-spacing: -0.02em;
 }
 
-.modal-success button[type="button"] {
+.modal-success button:first-of-type {
   margin-left: 48px;
   padding: 19px 98px;
+}
+
+.modal-success__close-button {
+  position: absolute;
+  background: url("../../img/close-button.svg") no-repeat 50% 50%;
+  width: 18px;
+  height: 18px;
+  top: 32px;
+  right: 32px;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
 
 @media (max-width: $tab-width) {
@@ -85,8 +104,13 @@
     line-height: 22px;
   }
 
-  .modal-success button[type="button"] {
+  .modal-success button:first-of-type {
     margin: 0 auto;
     padding: 19px 98px;
+  }
+
+  .modal-success__close-button {
+    top: 23px;
+    right: 24px;
   }
 }

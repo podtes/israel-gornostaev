@@ -53,6 +53,7 @@
   border: 2px solid #e3e3e3;
   box-sizing: border-box;
   border-radius: 80px;
+  -webkit-appearance: none;
 
   &:focus {
     border-color: #ffd701;
@@ -99,7 +100,7 @@
   padding: 19px 63px;
 }
 
-.modal-order-callback__form label {
+.modal-order-callback__checkbox-label {
   display: block;
   margin-left: 84px;
   margin-right: 20px;
@@ -112,7 +113,7 @@
   text-align: left;
 }
 
-.modal-order-callback__checkbox {
+.modal-order-callback__checkbox-label input {
   position: absolute;
   left: -9999px;
 

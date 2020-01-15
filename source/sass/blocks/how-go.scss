@@ -1,5 +1,5 @@
 .how-go {
-  padding-left: 698px;
+  padding-left: 700px;
   padding-top: 191px;
   padding-bottom: 129px;
   background-color: #ffffff;
@@ -67,7 +67,7 @@
   padding: 0;
   padding-right: 60px;
   font-family: "Fira Sans", "Arial", sans-serif;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 17px;
   line-height: 29px;
   color: #484848;
@@ -78,8 +78,8 @@
   margin: 0;
   margin-bottom: 48px;
   padding: 0;
-  padding-left: 43px;
-  padding-right: 60px;
+  padding-left: 41px;
+  padding-right: 65px;
   list-style: none;
   border-left: 2px dashed #dadada;
   letter-spacing: -0.005em;
@@ -93,7 +93,6 @@
   font-size: 15px;
   line-height: 21px;
   color: #484848;
-  opacity: 0.87;
 
   &::after {
     display: flex;
@@ -114,6 +113,10 @@
     line-height: 29px;
     color: #ffc341;
   }
+}
+
+.how-go__condition span {
+  opacity: 0.87;
 }
 
 .how-go__condition {
@@ -160,7 +163,7 @@
   position: relative;
   margin: 0;
   padding: 0;
-  padding-left: 16px;
+  padding-left: 15px;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-size: 15px;
   line-height: 21px;
@@ -174,7 +177,7 @@
     position: absolute;
     content: "";
     top: 0;
-    left: -1px;
+    left: -3px;
     width: 4px;
     height: 100%;
     background: linear-gradient(108.42deg, #ffc341 20.46%, #ffd701 65.31%);

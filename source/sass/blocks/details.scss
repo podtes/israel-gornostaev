@@ -61,7 +61,6 @@
   }
 
   &:nth-of-type(2) {
-    padding-bottom: 3px;
     font-weight: 500;
     font-variant: small-caps;
     border-bottom: 1px dashed #1fc0fc;
@@ -147,7 +146,7 @@
 
 .details__about-kurator {
   margin: 0;
-  margin-bottom: 127px;
+  margin-bottom: 128px;
   padding: 0;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-size: 17px;
@@ -216,6 +215,7 @@
   border: 2px solid #e3e3e3;
   border-radius: 80px;
   box-sizing: border-box;
+  -webkit-appearance: none;
 }
 
 .details__name-label input {
@@ -255,6 +255,20 @@
 .details label {
   font-size: 0;
   line-height: 0;
+}
+
+.details__icon-facebook,
+.details__icon-whatsup,
+.details__icon-telegram {
+  fill: #d6d6d6;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
 
 @media (max-width: $tab-width) {
