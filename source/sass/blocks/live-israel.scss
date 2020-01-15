@@ -185,6 +185,7 @@
 
 @media (max-width: $mob-width) {
   .live-israel {
+    position: relative;
     text-align: center;
     padding-left: 16px;
     padding-right: 16px;
@@ -202,11 +203,10 @@
     margin-bottom: 24px;
     font-size: 32px;
     line-height: 39px;
-    //TODO: Cовсем не понимаю, как выставить по макету без <br>
   }
 
   .live-israel__about {
-    margin-bottom: 24px;
+    margin-bottom: 441px;
     margin-left: 0;
     font-size: 16px;
     line-height: 26px;
@@ -215,34 +215,30 @@
   }
 
   .live-israel__photos {
+    position: absolute;
     padding: 0;
     margin: 0;
     margin-bottom: 17px;
     max-width: 100%;
     justify-content: flex-start;
     flex-direction: row;
-    transform: translateX(0);
+    left: 50%;
+    transform: translate(-50%, -100%);
   }
 
   .live-israel__photo-wrapper {
     padding: 0;
-    flex-direction: row;
-    flex-wrap: nowrap;
-
-    //TODO: как сделать слайдер? Это самый непонятный момент.
+    display: block;
   }
 
   .live-israel__first-couple-photos-wrapper {
-    margin-bottom: 0;
-    display: flex;
-    max-width: inherit;
-    justify-content: flex-start;
+    margin: 0;
+    display: block;
   }
 
   .live-israel__second-couple-photos-wrapper {
-    display: flex;
-    max-width: inherit;
-    justify-content: flex-start;
+    margin: 0;
+    display: block;
   }
 
   .live-israel__photos p {
@@ -257,20 +253,16 @@
   .live-israel__fourth-photo,
   .live-israel__fifth-photo {
     position: relative;
-    padding: 0 12px;
+    padding: 0;
     margin: 0;
-    margin-right: 10px;
-    width: 288px;
-    height: 400px;
-    overflow: hidden;
+    display: none;
   }
 
   .live-israel__first-photo {
-    display: flex;
-    position: relative;
-    margin-top: 0;
-    margin-right: 0;
-    min-width: 288px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -54%);
+    width: 264px;
   }
 
   .live-israel__first-photo img {
@@ -281,7 +273,14 @@
   .live-israel__first-photo p {
     max-width: 208px;
     top: 314px;
-    left: 40px;
+    left: 28px;
+  }
+
+  .live-israel__second-photo {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -4%);
+    width: 264px;
   }
 
   .live-israel__second-photo img {
@@ -291,14 +290,24 @@
 
   .live-israel__second-photo p {
     max-width: 208px;
-    top: 373px;
-    left: 66px;
+    top: 350px;
+    left: 53px;
+  }
+
+  .live-israel__third-photo {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -4%);
+    width: 264px;
+    overflow: hidden;
+    display: block;
+
   }
 
   .live-israel__third-photo img {
-    position: absolute;
-    width: 411px;
-    height: 319px;
+    transform: translateX(-100px);
+    max-width: 441px;
+    height: 400px;
   }
 
   .live-israel__third-photo p {
@@ -358,6 +367,5 @@
   .live-israel__indicator span {
     font-size: 0;
     line-height: 0;
-    //TODO:  для доступности с читалок и чтобы не было пустых элементов, хотя не понятно должны ли быть вообще эти индикаторы интерактивными
   }
 }

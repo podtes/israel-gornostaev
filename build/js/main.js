@@ -112,12 +112,12 @@ var overlayClickHandler = function (evt) {
   if (callbackModal.classList.contains('modal-open') && evt.target === overlay) {
     closeCallbackModal();
   } else if (successModal.classList.contains('modal-open') && evt.target === overlay) {
-    closeCallbackModal();
+    closeSuccessModal();
   }
 };
 
 // обработчики кнопок FAQ
-var removefaqQuestionButtonActiveClass = function (evt) {
+var removefaqQuestionButtonActiveClass = function () {
   for (var i = 0; i < faqQuestionButtons.length; i++) {
     if (faqQuestionButtons[i].classList.contains('faq__question--active')) {
       faqQuestionButtons[i].classList.remove('faq__question--active');
@@ -148,6 +148,21 @@ successModalOKButton.addEventListener('click', closeSuccessModal);
 successModalCloseButton.addEventListener('click', closeSuccessModal);
 successModalOKButton.addEventListener('keydown', successModalOKButtonPressEnterHandler);
 successModalCloseButton.addEventListener('keydown', successModalCloseButtonPressEnterHandler);
+
+
+// валидация полей ввода
+var validatePhoneInputHandler = function (field, message) {
+  if (field.value.length > 0 && field.value.length < 16) {
+    field.style.border = '2px solid #ff0000';
+    message.style.display = 'block';
+  } else if (field.value.length === 0) {
+    field.style.border = '2px solid #e3e3e3';
+    message.style.display = 'none';
+  } else {
+    field.style.border = '2px solid #484848';
+    message.style.display = 'none';
+  }
+};
 
 // обработка отправки формы и открытие модального окна с сообщением успеха из шапки
 callbackModalForm.addEventListener('submit', function (evt) {
@@ -221,15 +236,15 @@ if (faqQuestionButtons) {
 
 // логика переключения слайдера отзывов
 nextReviewButton.addEventListener('click', function () {
-  for (var i = 0; i < reviewSlides.length; i++) {
-    if (reviewSlides[i].classList.contains('reviews__item--active')) {
-      if (i !== reviewSlides.length - 1) {
-        reviewSlides[i].classList.remove('reviews__item--active');
-        reviewSlides[i + 1].classList.add('reviews__item--active');
-        currentReviewCount.innerHTML = i + 2 + ' ';
+  for (var j = 0; j < reviewSlides.length; j++) {
+    if (reviewSlides[j].classList.contains('reviews__item--active')) {
+      if (j !== reviewSlides.length - 1) {
+        reviewSlides[j].classList.remove('reviews__item--active');
+        reviewSlides[j + 1].classList.add('reviews__item--active');
+        currentReviewCount.innerHTML = j + 2 + ' ';
         break;
       } else {
-        reviewSlides[i].classList.remove('reviews__item--active');
+        reviewSlides[j].classList.remove('reviews__item--active');
         reviewSlides[0].classList.add('reviews__item--active');
         currentReviewCount.innerHTML = 1 + ' ';
         break;
@@ -238,12 +253,12 @@ nextReviewButton.addEventListener('click', function () {
   }
 });
 previousReviewButton.addEventListener('click', function () {
-  for (var i = 0; i < reviewSlides.length; i++) {
-    if (reviewSlides[i].classList.contains('reviews__item--active')) {
-      if (i !== 0) {
-        reviewSlides[i].classList.remove('reviews__item--active');
-        reviewSlides[i - 1].classList.add('reviews__item--active');
-        currentReviewCount.innerHTML = i + ' ';
+  for (var j = 0; j < reviewSlides.length; j++) {
+    if (reviewSlides[j].classList.contains('reviews__item--active')) {
+      if (j !== 0) {
+        reviewSlides[j].classList.remove('reviews__item--active');
+        reviewSlides[j - 1].classList.add('reviews__item--active');
+        currentReviewCount.innerHTML = j + ' ';
         break;
       } else {
         reviewSlides[0].classList.remove('reviews__item--active');
