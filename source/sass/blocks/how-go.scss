@@ -265,8 +265,8 @@
 
     & p::after {
       content: "1";
-      top: -8px;
-      left: -51px;
+      top: -9px;
+      left: -53px;
     }
 
     &:nth-child(2) {
@@ -274,7 +274,7 @@
 
       & p::after {
         content: "2";
-        top: 3px;
+        top: 2px;
       }
     }
 
@@ -282,7 +282,7 @@
       margin-bottom: 26px;
 
       & p::after {
-        top: 14px;
+        top: 13px;
         content: "3";
       }
     }
@@ -295,7 +295,7 @@
       }
 
       & p::after {
-        top: 14px;
+        top: 13px;
         content: "4";
       }
     }
@@ -307,8 +307,13 @@
   }
 
   .how-go__budget {
-    padding-left: 4px;
+    padding-left: 8px;
     font-size: 14px;
     line-height: 22px;
+
+    &::before {
+      top: -2px;
+      left: -6px;
+    }
   }
 }

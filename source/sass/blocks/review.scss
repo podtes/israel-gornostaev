@@ -221,7 +221,6 @@
 .reviews__icon-twitter,
 .reviews__icon-instagram {
   fill: #d6d6d6;
-  // TODO: не меняется цвет иконки на серый
 
   &:hover {
     opacity: 0.7;
@@ -299,9 +298,9 @@
   }
 
   .reviews img {
-    margin-right: 0;
+    margin: 0 auto;
     margin-bottom: 35px;
-    transform: translate(25px, -23px);
+    transform: translateY(-23px);
     width: 240px;
     height: 320px;
   }
@@ -335,8 +334,8 @@
 
   .reviews__counter-buttons-wrapper {
     position: absolute;
-    top: 434px;
-    left: 112px;
+    top: 432px;
+    left: 35%;
   }
 
   .reviews__social-list {

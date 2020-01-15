@@ -307,7 +307,7 @@
     display: flex;
     width: auto;
     margin-right: 0;
-    margin-bottom: 32px;
+    margin-bottom: 14px;
     transform: translateX(-56px);
   }
 
@@ -332,44 +332,77 @@
   }
 
   .programms__item {
-    padding: 11px 11px;
     margin-bottom: 0;
-  }
-
-  .programms__item--active {
-    background: linear-gradient(141.47deg, #ffc341 20.46%, #ffd701 65.31%);
-    border-radius: 60px;
-
-    &::before {
-      display: none;
-    }
+    margin-right: 0;
   }
 
   .programms__item--active .programms__button {
     font-size: 16px;
     line-height: 19px;
+    font-style: normal;
+    font-variant: small-caps;
+    opacity: 1;
+    background: linear-gradient(141.47deg, #ffc341 20.46%, #ffd701 65.31%);
+    border-radius: 60px;
 
     &:hover {
-      color: #ffffff;
-      opacity: 1;
-      cursor: auto;
+      background: linear-gradient(141.47deg, #ffc341 20.46%, #ffd701 65.31%);
     }
   }
 
-  // TODO: Достаточно ли того, как сверстаны кнопки в мобильной версии сейчас? По макету все ок.
   .programms__button {
-    margin: 0;
-    padding: 0;
-    padding-left: 40px;
-    color: #484848;
-    opacity: 0.4;
+    width: auto;
+    padding: 15px;
+    padding-left: 50px;
+    padding-right: 12px;
+    word-break: normal;
 
     &:hover {
-      color: #ffd701;
+      color: transparent;
+      background-image: linear-gradient(132.19deg, #ffc341 20.46%, #ffd701 65.31%);
+      opacity: 0.87;
     }
 
     &:active {
       opacity: 0.5;
+    }
+  }
+
+  .programms__button--general {
+    &::before {
+      width: 28px;
+      height: 33px;
+      top: 8px;
+      left: 10px;
+    }
+
+    &:hover::before {
+      background: url("../../img/general-hover.png") no-repeat 50% 50%;
+    }
+  }
+
+  .programms__item--active .programms__button--general {
+    &::before {
+      background: url("../../img/general-active.png") no-repeat 50% 50%;
+    }
+  }
+
+  .programms__button--study {
+    &::before {
+      width: 36px;
+      height: 35px;
+      top: 7px;
+      left: 9px;
+    }
+
+    &:hover::before {
+      background: url("../../img/study-hover.png") no-repeat 50% 50%;
+    }
+  }
+
+  .programms__item--active .programms__button--study {
+    &::before {
+      background: url("../../img/study-mobile.png") no-repeat 50% 50%;
     }
   }
 
@@ -378,19 +411,56 @@
       background: url("../../img/work-mobile.png") no-repeat 50% 50%;
       width: 32px;
       height: 25px;
-      top: -3px;
-      left: 1px;
-      //TODO: при переключениях кнопки дергаются из-за того, что в макете есть пара иконок мобильной версии, а в стайлгайде они только десктопные. Если везде оставить десктопные иконки, то будет ок, но не попадает по макету.
+      top: 12px;
+      left: 12px;
+    }
+
+    &:hover::before {
+      background: url("../../img/work-hover.png") no-repeat 50% 50%;
     }
   }
 
-  .programms__item--active .programms__button--study {
+  .programms__item--active .programms__button--work {
     &::before {
-      background: url("../../img/study-mobile.png") no-repeat 50% 50%;
+      background: url("../../img/work-active.png") no-repeat 50% 50%;
+    }
+  }
+  // TODO: дальше нет мобильных иконок, чтобы их выставить в соответствии с макетом.
+  .programms__button--volunteer {
+    &::before {
       width: 32px;
-      height: 32px;
-      top: -5px;
-      left: 0;
+      height: 29px;
+      top: 16px;
+      left: 22px;
+    }
+
+    &:hover::before {
+      background: url("../../img/volunteer-hover.png") no-repeat 50% 50%;
+    }
+  }
+
+  .programms__item--active .programms__button--volunteer {
+    &::before {
+      background: url("../../img/volunteer-active.png") no-repeat 50% 50%;
+    }
+  }
+
+  .programms__button--religion {
+    &::before {
+      width: 23px;
+      height: 25px;
+      top: 18px;
+      left: 26px;
+    }
+
+    &:hover::before {
+      background: url("../../img/religion-hover.png") no-repeat 50% 50%;
+    }
+  }
+
+  .programms__item--active .programms__button--religion {
+    &::before {
+      background: url("../../img/religion-active.png") no-repeat 50% 50%;
     }
   }
 }

@@ -56,15 +56,26 @@
 }
 
 .details__choose-city span {
-  &:first-of-type {
-    margin-right: 15px;
+  margin-right: 15px;
+}
+
+.details__choose-city a {
+  display: block;
+  color: #484848;
+  text-decoration: none;
+  font-weight: 500;
+  font-variant: small-caps;
+  border-bottom: 1px dashed #1fc0fc;
+  margin-right: 7px;
+  cursor: pointer;
+  opacity: 0.74;
+
+  &:hover {
+    opacity: 0.6;
   }
 
-  &:nth-of-type(2) {
-    font-weight: 500;
-    font-variant: small-caps;
-    border-bottom: 1px dashed #1fc0fc;
-    margin-right: 7px;
+  &:active {
+    opacity: 0.45;
   }
 }
 
@@ -83,7 +94,7 @@
 
 .details__kurator-info {
   display: flex;
-  margin-bottom: 19px;
+  margin-bottom: 20px;
 }
 
 .details img {
@@ -140,7 +151,7 @@
   left: -5px;
 }
 
-.details a {
+.details__social-list a {
   font-size: 0;
 }
 
@@ -211,11 +222,15 @@
   line-height: 20px;
   font-variant: small-caps;
   color: #484848;
-  opacity: 0.5;
+  opacity: 0.87;
   border: 2px solid #e3e3e3;
   border-radius: 80px;
   box-sizing: border-box;
   -webkit-appearance: none;
+}
+
+.details__form input::placeholder {
+  opacity: 0.5;
 }
 
 .details__name-label input {
