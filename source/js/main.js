@@ -15,6 +15,14 @@ var callbackModalForm = callbackModal.querySelector('form');
 var wantGoForm = document.querySelector('.want-go').querySelector('form');
 var detailsForm = document.querySelector('.details').querySelector('form');
 
+var phoneInputModal = document.getElementById('modal-order-callback__phone-input-field');
+var phoneInputDetails = document.getElementById('details__phone-input-field');
+var phoneInputWantGo = document.getElementById('want-go__phone-input-field');
+var errorMessageWantGo = document.querySelector('.want-go__error-message');
+var errorMessageDetails = document.querySelector('.details__error-message');
+var errorMessageModal = document.querySelector('.modal-order-callback__error-message');
+
+
 var faqQuestionButtons = document.querySelectorAll('.faq__question');
 
 var reviewSlides = document.querySelectorAll('.reviews__item');
@@ -41,6 +49,21 @@ var programmStudyText = document.querySelector('.programms__about--study');
 var programmWorkText = document.querySelector('.programms__about--work');
 var programmVolunteerText = document.querySelector('.programms__about--volunteer');
 var programmReligionText = document.querySelector('.programms__about--religion');
+
+var photosLiveIsrael = document.querySelectorAll('.live-israel__photo');
+var indicatorsLiveIsrael = document.querySelectorAll('.live-israel__indicator');
+
+var indicatorFirst = document.querySelector('.live-israel__indicator--first');
+var indicatorSecond = document.querySelector('.live-israel__indicator--second');
+var indicatorThird = document.querySelector('.live-israel__indicator--third');
+var indicatorFourth = document.querySelector('.live-israel__indicator--fourth');
+var indicatorFifth = document.querySelector('.live-israel__indicator--fifth');
+
+var photoLiveIsraelFirst = document.querySelector('.live-israel__photo--first');
+var photoLiveIsraelSecond = document.querySelector('.live-israel__photo--second');
+var photoLiveIsraelThird = document.querySelector('.live-israel__photo--third');
+var photoLiveIsraelFourth = document.querySelector('.live-israel__photo--fourth');
+var photoLiveIsraelFifth = document.querySelector('.live-israel__photo--fifth');
 
 // логика открытия и закрытия модальных окон
 var closeCallbackModal = function () {
@@ -116,6 +139,19 @@ var overlayClickHandler = function (evt) {
   }
 };
 
+// открытие модального окна c сообщением успеха из секции want-go и details
+wantGoForm.addEventListener('submit', function (evt) {
+  evt.preventDefault();
+  openSuccessModal();
+  wantGoForm.reset();
+});
+detailsForm.addEventListener('submit', function (evt) {
+  evt.preventDefault();
+  openSuccessModal();
+  detailsForm.reset();
+});
+
+
 // обработчики кнопок FAQ
 var removefaqQuestionButtonActiveClass = function () {
   for (var i = 0; i < faqQuestionButtons.length; i++) {
@@ -149,7 +185,6 @@ successModalCloseButton.addEventListener('click', closeSuccessModal);
 successModalOKButton.addEventListener('keydown', successModalOKButtonPressEnterHandler);
 successModalCloseButton.addEventListener('keydown', successModalCloseButtonPressEnterHandler);
 
-
 // валидация полей ввода
 var validatePhoneInputHandler = function (field, message) {
   if (field.value.length > 0 && field.value.length < 16) {
@@ -164,24 +199,35 @@ var validatePhoneInputHandler = function (field, message) {
   }
 };
 
+// валидация инпута в модальном окне
+var maskOptions = {
+  mask: '+{7}(000)000-00-00',
+  lazy: true
+};
+var maskToModal = IMask(phoneInputModal, maskOptions);
+phoneInputModal.addEventListener('input', function () {
+  validatePhoneInputHandler(phoneInputModal, errorMessageModal);
+});
+
+// валидация инпута в секции подробностей
+var maskToDetails = IMask(phoneInputDetails, maskOptions);
+phoneInputDetails.addEventListener('input', function () {
+  validatePhoneInputHandler(phoneInputDetails, errorMessageDetails);
+});
+
+// валидация инпута в секции хочу поехать
+var maskToWantGo = IMask(phoneInputWantGo, maskOptions);
+phoneInputWantGo.addEventListener('input', function () {
+  validatePhoneInputHandler(phoneInputWantGo, errorMessageWantGo);
+});
+
+
 // обработка отправки формы и открытие модального окна с сообщением успеха из шапки
 callbackModalForm.addEventListener('submit', function (evt) {
   closeCallbackModal();
   evt.preventDefault();
   callbackModalForm.reset();
   openSuccessModal();
-});
-
-// открытие модального окна c сообщением успеха из секции want-go и details
-wantGoForm.addEventListener('submit', function (evt) {
-  evt.preventDefault();
-  openSuccessModal();
-  wantGoForm.reset();
-});
-detailsForm.addEventListener('submit', function (evt) {
-  evt.preventDefault();
-  openSuccessModal();
-  detailsForm.reset();
 });
 
 // переключение программ обучения
@@ -268,4 +314,42 @@ previousReviewButton.addEventListener('click', function () {
       }
     }
   }
+});
+
+// логика переключения слайдера секции live-israel
+var hideActivePhotoAndIndicator = function () {
+  for (var i = 0; i < photosLiveIsrael.length; i++) {
+    photosLiveIsrael[i].style.display = 'none';
+  }
+  for (var j = 0; j < indicatorsLiveIsrael.length; j++) {
+    if (indicatorsLiveIsrael[j].classList.contains('live-israel__indicator--active')) {
+      indicatorsLiveIsrael[j].classList.remove('live-israel__indicator--active');
+    }
+  }
+};
+
+indicatorFirst.addEventListener('click', function () {
+  hideActivePhotoAndIndicator();
+  indicatorFirst.classList.add('live-israel__indicator--active');
+  photoLiveIsraelFirst.style.display = 'block';
+});
+indicatorSecond.addEventListener('click', function () {
+  hideActivePhotoAndIndicator();
+  indicatorSecond.classList.add('live-israel__indicator--active');
+  photoLiveIsraelSecond.style.display = 'block';
+});
+indicatorThird.addEventListener('click', function () {
+  hideActivePhotoAndIndicator();
+  indicatorThird.classList.add('live-israel__indicator--active');
+  photoLiveIsraelThird.style.display = 'block';
+});
+indicatorFourth.addEventListener('click', function () {
+  hideActivePhotoAndIndicator();
+  indicatorFourth.classList.add('live-israel__indicator--active');
+  photoLiveIsraelFourth.style.display = 'block';
+});
+indicatorFifth.addEventListener('click', function () {
+  hideActivePhotoAndIndicator();
+  indicatorFifth.classList.add('live-israel__indicator--active');
+  photoLiveIsraelFifth.style.display = 'block';
 });

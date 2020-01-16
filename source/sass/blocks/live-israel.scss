@@ -82,26 +82,81 @@
   justify-content: space-between;
 }
 
-.live-israel__first-photo {
+.live-israel__photo--first {
   position: relative;
   margin-top: -54px;
   margin-right: 15px;
+  width: 482px;
+  height: 733px;
+  background-image: url("../../img/live-israel1-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 482px 733px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../../img/live-israel1-desktop@2x.png");
+  }
 }
 
-.live-israel__second-photo,
-.live-israel__third-photo,
-.live-israel__fourth-photo,
-.live-israel__fifth-photo {
+.live-israel__photo--second,
+.live-israel__photo--third,
+.live-israel__photo--fourth,
+.live-israel__photo--fifth {
   position: relative;
 }
 
-.live-israel__second-photo {
+.live-israel__photo--second {
   margin-right: 30px;
-  // TODO: при разрешении меньше 1070px уезжают подписи к фотографиям, ничего не могу с этим сделать так, чтобы не падала вся верстка фотографий.
+  width: 211px;
+  height: 319px;
+  background-image: url("../../img/live-israel2-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 211px 319px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../../img/live-israel2-desktop@2x.png");
+  }
 }
 
-.live-israel__fourth-photo {
+.live-israel__photo--third {
+  width: 411px;
+  height: 319px;
+  background-image: url("../../img/live-israel3-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 411px 319px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../../img/live-israel3-desktop@2x.png");
+  }
+}
+
+.live-israel__photo--fourth {
   margin-right: 30px;
+  width: 411px;
+  height: 319px;
+  background-image: url("../../img/live-israel4-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 411px 319px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../../img/live-israel4-desktop@2x.png");
+  }
+}
+
+.live-israel__photo--fifth {
+  width: 211px;
+  height: 319px;
+  background-image: url("../../img/live-israel5-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 214px 319px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../../img/live-israel5-desktop@2x.png");
+  }
 }
 
 .live-israel__photos p {
@@ -117,31 +172,31 @@
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
-.live-israel__first-photo p {
+.live-israel__photo--first p {
   max-width: 360px;
   top: 651px;
   left: 40px;
 }
 
-.live-israel__second-photo p {
+.live-israel__photo--second p {
   max-width: 10px;
   top: 237px;
   left: 24px;
 }
 
-.live-israel__third-photo p {
+.live-israel__photo--third p {
   max-width: 320px;
   top: 237px;
   left: 28px;
 }
 
-.live-israel__fourth-photo p {
+.live-israel__photo--fourth p {
   max-width: 360px;
   top: 237px;
   left: 32px;
 }
 
-.live-israel__fifth-photo p {
+.live-israel__photo--fifth p {
   max-width: 120px;
   top: 237px;
   left: 24px;
@@ -178,7 +233,7 @@
     text-align: left;
   }
 
-  .live-israel__first-photo {
+  .live-israel__photo--first {
     margin: 0;
   }
 }
@@ -247,95 +302,122 @@
     text-align: center;
   }
 
-  .live-israel__first-photo,
-  .live-israel__second-photo,
-  .live-israel__third-photo,
-  .live-israel__fourth-photo,
-  .live-israel__fifth-photo {
+  .live-israel__photo {
     position: relative;
     padding: 0;
     margin: 0;
     display: none;
   }
 
-  .live-israel__first-photo {
+  .live-israel__photo--first {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -54%);
-    width: 264px;
-  }
-
-  .live-israel__first-photo img {
-    width: 264px;
+    width: 288px;
     height: 400px;
-  }
-
-  .live-israel__first-photo p {
-    max-width: 208px;
-    top: 314px;
-    left: 28px;
-  }
-
-  .live-israel__second-photo {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -4%);
-    width: 264px;
-  }
-
-  .live-israel__second-photo img {
-    width: 264px;
-    height: 400px;
-  }
-
-  .live-israel__second-photo p {
-    max-width: 208px;
-    top: 350px;
-    left: 53px;
-  }
-
-  .live-israel__third-photo {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -4%);
-    width: 264px;
-    overflow: hidden;
+    background-image: url("../../img/live-israel1-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 288px 400px;
     display: block;
 
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/live-israel1-mobile@2x.png");
+    }
   }
 
-  .live-israel__third-photo img {
-    transform: translateX(-100px);
-    max-width: 441px;
+  .live-israel__photo--first p {
+    max-width: 208px;
+    top: 313px;
+    left: 40px;
+  }
+
+  .live-israel__photo--second {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -4%);
+    width: 288px;
     height: 400px;
+    background-image: url("../../img/live-israel2-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 288px 400px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/live-israel2-mobile@2x.png");
+    }
   }
 
-  .live-israel__third-photo p {
+  .live-israel__photo--second p {
     max-width: 208px;
-    top: 314px;
-    left: 40px;
+    top: 365px;
+    left: 71px;
   }
 
-  .live-israel__fourth-photo img {
-    width: 411px;
-    height: 319px;
-  }
-
-  .live-israel__fourth-photo p {
-    max-width: 208px;
-    top: 314px;
-    left: 40px;
-  }
-
-  .live-israel__fifth-photo img {
-    width: 264px;
+  .live-israel__photo--third {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -4%);
+    width: 288px;
     height: 400px;
+    background-image: url("../../img/live-israel3-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 288px 400px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/live-israel3-mobile@2x.png");
+    }
   }
 
-  .live-israel__fifth-photo p {
-    max-width: 208px;
+  .live-israel__photo--third p {
+    max-width: 308px;
+    top: 327px;
+    left: 0;
+  }
+
+  .live-israel__photo--fourth {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -4%);
+    width: 288px;
+    height: 400px;
+    background-image: url("../../img/live-israel4-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 288px 400px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/live-israel4-mobile@2x.png");
+    }
+  }
+
+  .live-israel__photo--fourth p {
+    max-width: 370px;
     top: 314px;
-    left: 40px;
+    left: -4px;
+  }
+
+  .live-israel__photo--fifth {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -4%);
+    width: 288px;
+    height: 400px;
+    background-image: url("../../img/live-israel5-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 288px 400px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/live-israel5-mobile@2x.png");
+    }
+  }
+
+  .live-israel__photo--fifth p {
+    max-width: 208px;
+    top: 356px;
+    left: 56px;
   }
 
   .live-israel__indicators {
@@ -355,6 +437,7 @@
     border-radius: 50%;
     background-color: #484848;
     opacity: 0.2;
+    cursor: pointer;
   }
 
   .live-israel__indicator--active {
