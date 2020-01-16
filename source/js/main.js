@@ -65,12 +65,19 @@ var photoLiveIsraelThird = document.querySelector('.live-israel__photo--third');
 var photoLiveIsraelFourth = document.querySelector('.live-israel__photo--fourth');
 var photoLiveIsraelFifth = document.querySelector('.live-israel__photo--fifth');
 
+var resetForm = function (form, message) {
+  form.reset();
+  message.style.display = 'none';
+}
+
 // логика открытия и закрытия модальных окон
 var closeCallbackModal = function () {
   overlay.classList.remove('modal-open');
   callbackModal.classList.remove('modal-open');
   document.removeEventListener('keydown', openCallbackModalPressEscHandler);
   overlay.removeEventListener('click', overlayClickHandler);
+  phoneInputModal.style.border = '2px solid #e3e3e3';
+  resetForm(callbackModalForm, errorMessageModal);
 };
 var openCallbackModal = function () {
   overlay.classList.add('modal-open');
@@ -144,11 +151,13 @@ wantGoForm.addEventListener('submit', function (evt) {
   evt.preventDefault();
   openSuccessModal();
   wantGoForm.reset();
+  phoneInputWantGo.style.border = '2px solid #e3e3e3';
 });
 detailsForm.addEventListener('submit', function (evt) {
   evt.preventDefault();
   openSuccessModal();
   detailsForm.reset();
+  phoneInputDetails.style.border = '2px solid #e3e3e3';
 });
 
 
@@ -186,16 +195,20 @@ successModalOKButton.addEventListener('keydown', successModalOKButtonPressEnterH
 successModalCloseButton.addEventListener('keydown', successModalCloseButtonPressEnterHandler);
 
 // валидация полей ввода
-var validatePhoneInputHandler = function (field, message) {
+var validatePhoneInputHandler = function (field, message, form) {
   if (field.value.length > 0 && field.value.length < 16) {
     field.style.border = '2px solid #ff0000';
     message.style.display = 'block';
+    field.setCustomValidity('Неверный формат!');
+    form.evt.preventDefault();
   } else if (field.value.length === 0) {
     field.style.border = '2px solid #e3e3e3';
     message.style.display = 'none';
+    field.setCustomValidity('');
   } else {
     field.style.border = '2px solid #484848';
     message.style.display = 'none';
+    field.setCustomValidity('');
   }
 };
 
@@ -206,19 +219,19 @@ var maskOptions = {
 };
 window.iMaskJS(phoneInputModal, maskOptions);
 phoneInputModal.addEventListener('input', function () {
-  validatePhoneInputHandler(phoneInputModal, errorMessageModal);
+  validatePhoneInputHandler(phoneInputModal, errorMessageModal, callbackModalForm);
 });
 
 // валидация инпута в секции подробностей
 window.iMaskJS(phoneInputDetails, maskOptions);
 phoneInputDetails.addEventListener('input', function () {
-  validatePhoneInputHandler(phoneInputDetails, errorMessageDetails);
+  validatePhoneInputHandler(phoneInputDetails, errorMessageDetails, detailsForm);
 });
 
 // валидация инпута в секции хочу поехать
 window.iMaskJS(phoneInputWantGo, maskOptions);
 phoneInputWantGo.addEventListener('input', function () {
-  validatePhoneInputHandler(phoneInputWantGo, errorMessageWantGo);
+  validatePhoneInputHandler(phoneInputWantGo, errorMessageWantGo, wantGoForm);
 });
 
 
