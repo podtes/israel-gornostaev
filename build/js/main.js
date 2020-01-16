@@ -204,19 +204,19 @@ var maskOptions = {
   mask: '+{7}(000)000-00-00',
   lazy: true
 };
-var maskToModal = IMask(phoneInputModal, maskOptions);
+window.iMaskJS(phoneInputModal, maskOptions);
 phoneInputModal.addEventListener('input', function () {
   validatePhoneInputHandler(phoneInputModal, errorMessageModal);
 });
 
 // валидация инпута в секции подробностей
-var maskToDetails = IMask(phoneInputDetails, maskOptions);
+window.iMaskJS(phoneInputDetails, maskOptions);
 phoneInputDetails.addEventListener('input', function () {
   validatePhoneInputHandler(phoneInputDetails, errorMessageDetails);
 });
 
 // валидация инпута в секции хочу поехать
-var maskToWantGo = IMask(phoneInputWantGo, maskOptions);
+window.iMaskJS(phoneInputWantGo, maskOptions);
 phoneInputWantGo.addEventListener('input', function () {
   validatePhoneInputHandler(phoneInputWantGo, errorMessageWantGo);
 });
@@ -353,3 +353,9 @@ indicatorFifth.addEventListener('click', function () {
   indicatorFifth.classList.add('live-israel__indicator--active');
   photoLiveIsraelFifth.style.display = 'block';
 });
+
+for (var i = 0; i < indicatorsLiveIsrael.length; i++) {
+  indicatorsLiveIsrael[i].addEventListener('click', function () {
+    photosLiveIsrael[i].style.display = 'block';
+  });
+}
