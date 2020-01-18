@@ -335,7 +335,8 @@
   .reviews__counter-buttons-wrapper {
     position: absolute;
     top: 432px;
-    left: 35%;
+    transform: translateX(-47%);
+    left: 50%;
   }
 
   .reviews__social-list {

@@ -236,10 +236,18 @@
 .details__name-label input {
   margin-right: 23px;
   margin-bottom: 15px;
+
+  &:focus {
+    border-color: #ffd701;
+  }
 }
 
 .details__phone-label input {
   margin-right: 24px;
+
+  &:focus {
+    border-color: #ffd701;
+  }
 }
 
 .details__error-message {
@@ -378,7 +386,7 @@
     max-width: 100%;
   }
 
-  .details__kurator-info-wrapper p:nth-child(2) {
+  .details__kurator-info-wrapper p:last-child {
     margin-bottom: 14px;
   }
 

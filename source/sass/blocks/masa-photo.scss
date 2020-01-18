@@ -67,7 +67,6 @@
   top: 18px;
   left: 39px;
   fill: #ffffff;
-  //TODO: Не работает заливка белым, вообще не меняется цвет заливки на любых иконках. Вроде правильно ведь все.
 }
 
 @media (max-width: $tab-width) {
@@ -121,15 +120,15 @@
   }
 
   .masa-photo__watch-btn {
-    padding-top: 21px;
-    padding-bottom: 18px;
-    padding-left: 88px;
-    padding-right: 59px;
-    margin-left: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 17px;
+    padding-left: 77px;
   }
 
   .masa-photo__icon-insta {
     top: 18px;
-    left: 57px;
+    left: 22%;
   }
 }

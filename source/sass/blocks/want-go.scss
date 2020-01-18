@@ -59,6 +59,13 @@
   width: 100%;
   max-width: 477px;
   appearance: none;
+  letter-spacing: -0.04em;
+  font-variant: small-caps;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+  color: #484848;
+  opacity: 0.87;
 
   &:focus {
     border-color: #ffd701;
@@ -70,14 +77,9 @@
   }
 }
 
-.want-go input[placeholder] {
-  font-family: "Fira Sans", "Arial", sans-serif;
-  font-size: 17px;
-  line-height: 20px;
+.want-go input::placeholder {
   color: #484848;
   opacity: 0.5;
-  letter-spacing: -0.04em;
-  font-variant: small-caps;
 }
 
 .want-go__error-message {

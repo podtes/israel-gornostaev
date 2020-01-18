@@ -54,24 +54,30 @@
   box-sizing: border-box;
   border-radius: 80px;
   appearance: none;
+  font-family: "Fira Sans", "Arial", sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+  color: #484848;
+  opacity: 0.87;
+  letter-spacing: -0.04em;
 
   &:focus {
     border-color: #ffd701;
-    // TODO: тут нужно будет поставить градиент на бордер
   }
 
   &:valid {
     border-color: #484848;
   }
-
-  &:first-of-type {
-    margin-bottom: 8px;
-  }
-
-  &:nth-child(2) {
-    margin-bottom: 24px;
-  }
 }
+
+.modal-order-callback__form input[type="text"] {
+  margin-bottom: 8px;
+}
+
+.modal-order-callback__form input[type="tel"] {
+  margin-bottom: 24px;
+}
+
 
 .modal-order-callback__error-message {
   position: absolute;
@@ -85,13 +91,8 @@
   display: none;
 }
 
-.modal-order-callback__form input[placeholder] {
-  font-family: "Fira Sans", "Arial", sans-serif;
-  font-size: 17px;
-  line-height: 20px;
-  color: #484848;
+.modal-order-callback__form input::placeholder {
   opacity: 0.5;
-  letter-spacing: -0.04em;
 }
 
 .modal-order-callback__form input[type="submit"] {
@@ -187,14 +188,14 @@
     border: 2px solid #e3e3e3;
     box-sizing: border-box;
     border-radius: 80px;
+  }
 
-    &:first-of-type {
-      margin-bottom: 8px;
-    }
+  .modal-order-callback__form input[type="text"] {
+    margin-bottom: 8px;
+  }
 
-    &:nth-child(2) {
-      margin-bottom: 24px;
-    }
+  .modal-order-callback__form input[type="tel"] {
+    margin-bottom: 24px;
   }
 
   .modal-order-callback__error-message {

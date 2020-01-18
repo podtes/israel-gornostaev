@@ -8,7 +8,7 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
       typeof define === 'function' && define.amd ? define(['exports'], factory) :
         (global = global || self, factory(global.IMask = {}));
-  }(this, function (exports) { 'use strict';
+  }(this, (function (exports) { 'use strict';
 
     var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -16,15 +16,13 @@
       return module = { exports: {} }, fn(module, module.exports), module.exports;
     }
 
-    var O = 'object';
-
     var check = function (it) {
       return it && it.Math == Math && it;
     }; // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
 
 
     var global_1 = // eslint-disable-next-line no-undef
-      check(typeof globalThis == O && globalThis) || check(typeof window == O && window) || check(typeof self == O && self) || check(typeof commonjsGlobal == O && commonjsGlobal) || // eslint-disable-next-line no-new-func
+      check(typeof globalThis == 'object' && globalThis) || check(typeof window == 'object' && window) || check(typeof self == 'object' && self) || check(typeof commonjsGlobal == 'object' && commonjsGlobal) || // eslint-disable-next-line no-new-func
       Function('return this')();
 
     var fails = function (exec) {
@@ -195,7 +193,7 @@
       f: f$2
     };
 
-    var hide = descriptors ? function (object, key, value) {
+    var createNonEnumerableProperty = descriptors ? function (object, key, value) {
       return objectDefineProperty.f(object, key, createPropertyDescriptor(1, value));
     } : function (object, key, value) {
       object[key] = value;
@@ -204,7 +202,7 @@
 
     var setGlobal = function (key, value) {
       try {
-        hide(global_1, key, value);
+        createNonEnumerableProperty(global_1, key, value);
       } catch (error) {
         global_1[key] = value;
       }
@@ -212,22 +210,32 @@
       return value;
     };
 
+    var SHARED = '__core-js_shared__';
+    var store = global_1[SHARED] || setGlobal(SHARED, {});
+    var sharedStore = store;
+
+    var functionToString = Function.toString; // this helper broken in `3.4.1-3.4.4`, so we can't use `shared` helper
+
+    if (typeof sharedStore.inspectSource != 'function') {
+      sharedStore.inspectSource = function (it) {
+        return functionToString.call(it);
+      };
+    }
+
+    var inspectSource = sharedStore.inspectSource;
+
+    var WeakMap = global_1.WeakMap;
+    var nativeWeakMap = typeof WeakMap === 'function' && /native code/.test(inspectSource(WeakMap));
+
     var shared = createCommonjsModule(function (module) {
-      var SHARED = '__core-js_shared__';
-      var store = global_1[SHARED] || setGlobal(SHARED, {});
       (module.exports = function (key, value) {
-        return store[key] || (store[key] = value !== undefined ? value : {});
+        return sharedStore[key] || (sharedStore[key] = value !== undefined ? value : {});
       })('versions', []).push({
-        version: '3.1.3',
+        version: '3.4.8',
         mode:  'global',
         copyright: '© 2019 Denis Pushkarev (zloirock.ru)'
       });
     });
-
-    var functionToString = shared('native-function-to-string', Function.toString);
-
-    var WeakMap = global_1.WeakMap;
-    var nativeWeakMap = typeof WeakMap === 'function' && /native code/.test(functionToString.call(WeakMap));
 
     var id = 0;
     var postfix = Math.random();
@@ -264,29 +272,29 @@
     };
 
     if (nativeWeakMap) {
-      var store = new WeakMap$1();
-      var wmget = store.get;
-      var wmhas = store.has;
-      var wmset = store.set;
+      var store$1 = new WeakMap$1();
+      var wmget = store$1.get;
+      var wmhas = store$1.has;
+      var wmset = store$1.set;
 
       set = function (it, metadata) {
-        wmset.call(store, it, metadata);
+        wmset.call(store$1, it, metadata);
         return metadata;
       };
 
       get = function (it) {
-        return wmget.call(store, it) || {};
+        return wmget.call(store$1, it) || {};
       };
 
       has$1 = function (it) {
-        return wmhas.call(store, it);
+        return wmhas.call(store$1, it);
       };
     } else {
       var STATE = sharedKey('state');
       hiddenKeys[STATE] = true;
 
       set = function (it, metadata) {
-        hide(it, STATE, metadata);
+        createNonEnumerableProperty(it, STATE, metadata);
         return metadata;
       };
 
@@ -310,17 +318,14 @@
     var redefine = createCommonjsModule(function (module) {
       var getInternalState = internalState.get;
       var enforceInternalState = internalState.enforce;
-      var TEMPLATE = String(functionToString).split('toString');
-      shared('inspectSource', function (it) {
-        return functionToString.call(it);
-      });
+      var TEMPLATE = String(String).split('String');
       (module.exports = function (O, key, value, options) {
         var unsafe = options ? !!options.unsafe : false;
         var simple = options ? !!options.enumerable : false;
         var noTargetGet = options ? !!options.noTargetGet : false;
 
         if (typeof value == 'function') {
-          if (typeof key == 'string' && !has(value, 'name')) hide(value, 'name', key);
+          if (typeof key == 'string' && !has(value, 'name')) createNonEnumerableProperty(value, 'name', key);
           enforceInternalState(value).source = TEMPLATE.join(typeof key == 'string' ? key : '');
         }
 
@@ -333,9 +338,9 @@
           simple = true;
         }
 
-        if (simple) O[key] = value;else hide(O, key, value); // add fake Function#toString for correct work wrapped methods / constructors with methods like LoDash isNative
+        if (simple) O[key] = value;else createNonEnumerableProperty(O, key, value); // add fake Function#toString for correct work wrapped methods / constructors with methods like LoDash isNative
       })(Function.prototype, 'toString', function toString() {
-        return typeof this == 'function' && getInternalState(this).source || functionToString.call(this);
+        return typeof this == 'function' && getInternalState(this).source || inspectSource(this);
       });
     });
 
@@ -367,7 +372,7 @@
     var max = Math.max;
     var min$1 = Math.min; // Helper for a popular repeating case of the spec:
     // Let integer be ? ToInteger(index).
-    // If integer < 0, let result be max((length + integer), 0); else let result be min(length, length).
+    // If integer < 0, let result be max((length + integer), 0); else let result be min(integer, length).
 
     var toAbsoluteIndex = function (index, length) {
       var integer = toInteger(index);
@@ -493,19 +498,19 @@
 
 
     /*
-      options.target      - name of the target object
-      options.global      - target is the global object
-      options.stat        - export as static methods of target
-      options.proto       - export as prototype methods of target
-      options.real        - real prototype method for the `pure` version
-      options.forced      - export even if the native feature is available
-      options.bind        - bind methods to the target, required for the `pure` version
-      options.wrap        - wrap constructors to preventing global pollution, required for the `pure` version
-      options.unsafe      - use the simple assignment of property instead of delete + defineProperty
-      options.sham        - add a flag to not completely full polyfills
-      options.enumerable  - export as enumerable property
-      options.noTargetGet - prevent calling a getter on target
-    */
+	  options.target      - name of the target object
+	  options.global      - target is the global object
+	  options.stat        - export as static methods of target
+	  options.proto       - export as prototype methods of target
+	  options.real        - real prototype method for the `pure` version
+	  options.forced      - export even if the native feature is available
+	  options.bind        - bind methods to the target, required for the `pure` version
+	  options.wrap        - wrap constructors to preventing global pollution, required for the `pure` version
+	  options.unsafe      - use the simple assignment of property instead of delete + defineProperty
+	  options.sham        - add a flag to not completely full polyfills
+	  options.enumerable  - export as enumerable property
+	  options.noTargetGet - prevent calling a getter on target
+	*/
 
 
     var _export = function (options, source) {
@@ -539,7 +544,7 @@
 
 
         if (options.sham || targetProperty && targetProperty.sham) {
-          hide(sourceProperty, 'sham', true);
+          createNonEnumerableProperty(sourceProperty, 'sham', true);
         } // extend global
 
 
@@ -563,11 +568,26 @@
       return Object(requireObjectCoercible(argument));
     };
 
-    var nativeAssign = Object.assign; // `Object.assign` method
+    var nativeAssign = Object.assign;
+    var defineProperty = Object.defineProperty; // `Object.assign` method
     // https://tc39.github.io/ecma262/#sec-object.assign
-    // should work with symbols and should have deterministic property order (V8 bug)
 
     var objectAssign = !nativeAssign || fails(function () {
+      // should have correct order of operations (Edge bug)
+      if (descriptors && nativeAssign({
+        b: 1
+      }, nativeAssign(defineProperty({}, 'a', {
+        enumerable: true,
+        get: function () {
+          defineProperty(this, 'b', {
+            value: 3,
+            enumerable: false
+          });
+        }
+      }), {
+        b: 2
+      })).b !== 1) return true; // should work with symbols and should have deterministic property order (V8 bug)
+
       var A = {};
       var B = {}; // eslint-disable-next-line no-undef
 
@@ -716,6 +736,18 @@
     }, {
       repeat: stringRepeat
     });
+
+    (function (Object) {
+      typeof globalThis !== 'object' && (this ? get() : (Object.defineProperty(Object.prototype, '_T_', {
+        configurable: true,
+        get: get
+      }), _T_));
+
+      function get() {
+        this.globalThis = this;
+        delete Object.prototype._T_;
+      }
+    })(Object);
 
     function _typeof(obj) {
       if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
@@ -940,6 +972,10 @@
     }
 
     function _iterableToArrayLimit(arr, i) {
+      if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
+        return;
+      }
+
       var _arr = [];
       var _n = true;
       var _d = false;
@@ -988,11 +1024,6 @@
       FORCE_LEFT: 'FORCE_LEFT',
       RIGHT: 'RIGHT',
       FORCE_RIGHT: 'FORCE_RIGHT'
-      /**
-       Direction
-       @enum {string}
-       */
-
     };
     /** */
 
@@ -1058,11 +1089,6 @@
 
       return false;
     }
-    /* eslint-disable no-undef */
-
-    var g = typeof window !== 'undefined' && window || typeof global !== 'undefined' && global.global === global && global || typeof self !== 'undefined' && self.self === self && self || {};
-    /* eslint-enable no-undef */
-
     /** Selection range */
 
     /** Provides details of changing input */
@@ -1297,6 +1323,21 @@
         return ContinuousTailDetails;
       }();
 
+    /**
+     * Applies mask on element.
+     * @constructor
+     * @param {HTMLInputElement|HTMLTextAreaElement|MaskElement} el - Element to apply mask
+     * @param {Object} opts - Custom mask options
+     * @return {InputMask}
+     */
+    function IMask(el) {
+      var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      // currently available only for input-like elements
+      return new IMask.InputMask(el, opts);
+    }
+
+    /** Supported mask type */
+
     /** Provides common masking stuff */
     var Masked =
       /*#__PURE__*/
@@ -1314,6 +1355,10 @@
 
         /** Does additional processing in the end of editing */
 
+        /** Format typed value to string */
+
+        /** Parse strgin to get typed value */
+
         /** Enable characters overwriting */
 
         /** */
@@ -1322,7 +1367,7 @@
 
           this._value = '';
 
-          this._update(opts);
+          this._update(Object.assign({}, Masked.DEFAULTS, {}, opts));
 
           this.isInitialized = true;
         }
@@ -1450,7 +1495,7 @@
 
 
               if (!appended) {
-                details.rawInserted = details.inserted = '';
+                details = new ChangeDetails();
                 this.state = consistentState;
                 if (checkTail && consistentTail) checkTail.state = consistentTail;
               }
@@ -1506,16 +1551,29 @@
           value: function withValueRefresh(fn) {
             if (this._refreshing || !this.isInitialized) return fn();
             this._refreshing = true;
-            var unmasked = this.unmaskedValue;
+            var rawInput = this.rawInputValue;
             var value = this.value;
-            var ret = fn(); // try to update with raw value first to keep fixed chars
+            var ret = fn();
+            this.rawInputValue = rawInput; // append lost trailing chars at end
 
-            if (this.resolve(value) !== value) {
-              // or fallback to unmasked
-              this.unmaskedValue = unmasked;
+            if (this.value !== value && value.indexOf(this._value) === 0) {
+              this.append(value.slice(this._value.length), {}, '');
             }
 
             delete this._refreshing;
+            return ret;
+          }
+          /** */
+
+        }, {
+          key: "runIsolated",
+          value: function runIsolated(fn) {
+            if (this._isolated || !this.isInitialized) return fn(this);
+            this._isolated = true;
+            var state = this.state;
+            var ret = fn(this);
+            this.state = state;
+            delete this._isolated;
             return ret;
           }
           /**
@@ -1548,6 +1606,20 @@
           key: "doCommit",
           value: function doCommit() {
             if (this.commit) this.commit(this.value, this);
+          }
+          /** */
+
+        }, {
+          key: "doFormat",
+          value: function doFormat(value) {
+            return this.format ? this.format(value, this) : value;
+          }
+          /** */
+
+        }, {
+          key: "doParse",
+          value: function doParse(str) {
+            return this.parse ? this.parse(str, this) : str;
           }
           /** */
 
@@ -1598,10 +1670,10 @@
         }, {
           key: "typedValue",
           get: function get() {
-            return this.unmaskedValue;
+            return this.doParse(this.value);
           },
           set: function set(value) {
-            this.unmaskedValue = value;
+            this.value = this.doFormat(value);
           }
           /** Value that includes raw user input */
 
@@ -1630,35 +1702,56 @@
 
         return Masked;
       }();
+    Masked.DEFAULTS = {
+      format: function format(v) {
+        return v;
+      },
+      parse: function parse(v) {
+        return v;
+      }
+    };
+    IMask.Masked = Masked;
 
     /** Get Masked class by mask type */
+
     function maskedClass(mask) {
       if (mask == null) {
         throw new Error('mask property should be defined');
-      }
+      } // $FlowFixMe
 
-      if (mask instanceof RegExp) return g.IMask.MaskedRegExp;
-      if (isString(mask)) return g.IMask.MaskedPattern;
-      if (mask instanceof Date || mask === Date) return g.IMask.MaskedDate;
-      if (mask instanceof Number || typeof mask === 'number' || mask === Number) return g.IMask.MaskedNumber;
-      if (Array.isArray(mask) || mask === Array) return g.IMask.MaskedDynamic; // $FlowFixMe
 
-      if (mask.prototype instanceof g.IMask.Masked) return mask; // $FlowFixMe
+      if (mask instanceof RegExp) return IMask.MaskedRegExp; // $FlowFixMe
 
-      if (mask instanceof Function) return g.IMask.MaskedFunction;
+      if (isString(mask)) return IMask.MaskedPattern; // $FlowFixMe
+
+      if (mask instanceof Date || mask === Date) return IMask.MaskedDate; // $FlowFixMe
+
+      if (mask instanceof Number || typeof mask === 'number' || mask === Number) return IMask.MaskedNumber; // $FlowFixMe
+
+      if (Array.isArray(mask) || mask === Array) return IMask.MaskedDynamic; // $FlowFixMe
+
+      if (IMask.Masked && mask.prototype instanceof IMask.Masked) return mask; // $FlowFixMe
+
+      if (mask instanceof Function) return IMask.MaskedFunction;
       console.warn('Mask not found for mask', mask); // eslint-disable-line no-console
+      // $FlowFixMe
 
-      return g.IMask.Masked;
+      return IMask.Masked;
     }
     /** Creates new {@link Masked} depending on mask type */
 
     function createMask(opts) {
+      // $FlowFixMe
+      if (IMask.Masked && opts instanceof IMask.Masked) return opts;
       opts = Object.assign({}, opts);
-      var mask = opts.mask;
-      if (mask instanceof g.IMask.Masked) return mask;
+      var mask = opts.mask; // $FlowFixMe
+
+      if (IMask.Masked && mask instanceof IMask.Masked) return mask;
       var MaskedClass = maskedClass(mask);
+      if (!MaskedClass) throw new Error('Masked class is not found for provided mask, appropriate module needs to be import manually before creating mask.');
       return new MaskedClass(opts);
     }
+    IMask.createMask = createMask;
 
     var DEFAULT_INPUT_DEFINITIONS = {
       '0': /\d/,
@@ -2039,7 +2132,8 @@
         }, {
           key: "appendTo",
           value: function appendTo(masked) {
-            if (!(masked instanceof g.IMask.MaskedPattern)) {
+            // $FlowFixMe
+            if (!(masked instanceof IMask.MaskedPattern)) {
               var tail = new ContinuousTailDetails(this.toString());
               return tail.appendTo(masked);
             }
@@ -2832,7 +2926,10 @@
       return !value || block.nearestInputPos(0, DIRECTION.NONE) !== value.length;
     }
 
+    IMask.MaskedPattern = MaskedPattern;
+
     /** Pattern which accepts ranges */
+
     var MaskedRange =
       /*#__PURE__*/
       function (_MaskedPattern) {
@@ -2972,6 +3069,7 @@
 
         return MaskedRange;
       }(MaskedPattern);
+    IMask.MaskedRange = MaskedRange;
 
     /** Date mask */
 
@@ -2979,10 +3077,6 @@
       /*#__PURE__*/
       function (_MaskedPattern) {
         _inherits(MaskedDate, _MaskedPattern);
-
-        /** Parse string to Date */
-
-        /** Format Date to string */
 
         /** Pattern mask for date according to {@link MaskedDate#format} */
 
@@ -3057,17 +3151,17 @@
         }, {
           key: "isDateExist",
           value: function isDateExist(str) {
-            return this.format(this.parse(str)) === str;
+            return this.format(this.parse(str, this), this) === str;
           }
           /** Parsed Date */
 
         }, {
           key: "date",
           get: function get() {
-            return this.isComplete ? this.parse(this.value) : null;
+            return this.typedValue;
           },
           set: function set(date) {
-            this.value = this.format(date);
+            this.typedValue = date;
           }
           /**
            @override
@@ -3076,10 +3170,10 @@
         }, {
           key: "typedValue",
           get: function get() {
-            return this.date;
+            return this.isComplete ? _get(_getPrototypeOf(MaskedDate.prototype), "typedValue", this) : null;
           },
           set: function set(value) {
-            this.date = value;
+            _set(_getPrototypeOf(MaskedDate.prototype), "typedValue", value, this, true);
           }
         }]);
 
@@ -3125,6 +3219,8 @@
         }
       };
     };
+
+    IMask.MaskedDate = MaskedDate;
 
     /**
      Generic element API to use with mask
@@ -3206,6 +3302,7 @@
 
         return MaskElement;
       }();
+    IMask.MaskElement = MaskElement;
 
     /** Bridge between HTMLElement and {@link Masked} */
 
@@ -3231,10 +3328,8 @@
           _this._handlers = {};
           return _this;
         }
-        /**
-         Is element in focus
-         @readonly
-         */
+        /** */
+        // $FlowFixMe https://github.com/facebook/flow/issues/2839
 
 
         _createClass(HTMLMaskElement, [{
@@ -3296,9 +3391,20 @@
             }
           }
         }, {
+          key: "rootElement",
+          get: function get() {
+            return this.input.getRootNode ? this.input.getRootNode() : document;
+          }
+          /**
+           Is element in focus
+           @readonly
+           */
+
+        }, {
           key: "isActive",
           get: function get() {
-            return this.input === document.activeElement;
+            //$FlowFixMe
+            return this.input === this.rootElement.activeElement;
           }
           /**
            Returns HTMLElement selection start
@@ -3340,6 +3446,82 @@
       focus: 'focus',
       commit: 'blur'
     };
+    IMask.HTMLMaskElement = HTMLMaskElement;
+
+    var HTMLContenteditableMaskElement =
+      /*#__PURE__*/
+      function (_HTMLMaskElement) {
+        _inherits(HTMLContenteditableMaskElement, _HTMLMaskElement);
+
+        function HTMLContenteditableMaskElement() {
+          _classCallCheck(this, HTMLContenteditableMaskElement);
+
+          return _possibleConstructorReturn(this, _getPrototypeOf(HTMLContenteditableMaskElement).apply(this, arguments));
+        }
+
+        _createClass(HTMLContenteditableMaskElement, [{
+          key: "_unsafeSelect",
+
+          /**
+           Sets HTMLElement selection
+           @override
+           */
+          value: function _unsafeSelect(start, end) {
+            if (!this.rootElement.createRange) return;
+            var range = this.rootElement.createRange();
+            range.setStart(this.input.firstChild || this.input, start);
+            range.setEnd(this.input.lastChild || this.input, end);
+            var root = this.rootElement;
+            var selection = root.getSelection && root.getSelection();
+
+            if (selection) {
+              selection.removeAllRanges();
+              selection.addRange(range);
+            }
+          }
+          /**
+           HTMLElement value
+           @override
+           */
+
+        }, {
+          key: "_unsafeSelectionStart",
+
+          /**
+           Returns HTMLElement selection start
+           @override
+           */
+          get: function get() {
+            var root = this.rootElement;
+            var selection = root.getSelection && root.getSelection();
+            return selection && selection.anchorOffset;
+          }
+          /**
+           Returns HTMLElement selection end
+           @override
+           */
+
+        }, {
+          key: "_unsafeSelectionEnd",
+          get: function get() {
+            var root = this.rootElement;
+            var selection = root.getSelection && root.getSelection();
+            return selection && this._unsafeSelectionStart + String(selection).length;
+          }
+        }, {
+          key: "value",
+          get: function get() {
+            // $FlowFixMe
+            return this.input.textContent;
+          },
+          set: function set(value) {
+            this.input.textContent = value;
+          }
+        }]);
+
+        return HTMLContenteditableMaskElement;
+      }(HTMLMaskElement);
+    IMask.HTMLContenteditableMaskElement = HTMLContenteditableMaskElement;
 
     /** Listens to element events and controls changes between element and {@link Masked} */
 
@@ -3363,7 +3545,7 @@
         function InputMask(el, opts) {
           _classCallCheck(this, InputMask);
 
-          this.el = el instanceof MaskElement ? el : new HTMLMaskElement(el);
+          this.el = el instanceof MaskElement ? el : el.isContentEditable && el.tagName !== 'INPUT' && el.tagName !== 'TEXTAREA' ? new HTMLContenteditableMaskElement(el) : new HTMLMaskElement(el);
           this.masked = createMask(opts);
           this._listeners = {};
           this._value = '';
@@ -3373,6 +3555,7 @@
           this._onChange = this._onChange.bind(this);
           this._onDrop = this._onDrop.bind(this);
           this._onFocus = this._onFocus.bind(this);
+          this._onClick = this._onClick.bind(this);
           this.alignCursor = this.alignCursor.bind(this);
           this.alignCursorFriendly = this.alignCursorFriendly.bind(this);
 
@@ -3403,7 +3586,7 @@
               selectionChange: this._saveSelection,
               input: this._onInput,
               drop: this._onDrop,
-              click: this.alignCursorFriendly,
+              click: this._onClick,
               focus: this._onFocus,
               commit: this._onChange
             });
@@ -3639,9 +3822,13 @@
         }, {
           key: "_onFocus",
           value: function _onFocus(ev) {
-            if (this.selectionStart !== this.cursorPos) return; // skip if range is selected
+            this.alignCursorFriendly();
+          }
+          /** Restore last selection on focus */
 
-            if (this._selection) this.cursorPos = this._selection.end;
+        }, {
+          key: "_onClick",
+          value: function _onClick(ev) {
             this.alignCursorFriendly();
           }
           /** Unbind view events and removes element reference */
@@ -3652,7 +3839,8 @@
             this._unbindEvents(); // $FlowFixMe why not do so?
 
 
-            this._listeners.length = 0;
+            this._listeners.length = 0; // $FlowFixMe
+
             delete this.el;
           }
         }, {
@@ -3734,6 +3922,7 @@
 
         return InputMask;
       }();
+    IMask.InputMask = InputMask;
 
     /** Pattern which validates enum values */
 
@@ -3783,6 +3972,7 @@
 
         return MaskedEnum;
       }(MaskedPattern);
+    IMask.MaskedEnum = MaskedEnum;
 
     /**
      Number mask
@@ -4134,16 +4324,6 @@
           set: function set(unmaskedValue) {
             _set(_getPrototypeOf(MaskedNumber.prototype), "unmaskedValue", unmaskedValue.replace('.', this.radix), this, true);
           }
-          /** Parsed Number */
-
-        }, {
-          key: "number",
-          get: function get() {
-            return Number(this.unmaskedValue);
-          },
-          set: function set(number) {
-            this.unmaskedValue = String(number);
-          }
           /**
            @override
            */
@@ -4151,10 +4331,20 @@
         }, {
           key: "typedValue",
           get: function get() {
-            return this.number;
+            return Number(this.unmaskedValue);
           },
-          set: function set(value) {
-            this.number = value;
+          set: function set(n) {
+            _set(_getPrototypeOf(MaskedNumber.prototype), "unmaskedValue", String(n), this, true);
+          }
+          /** Parsed Number */
+
+        }, {
+          key: "number",
+          get: function get() {
+            return this.typedValue;
+          },
+          set: function set(number) {
+            this.typedValue = number;
           }
           /**
            Is negative allowed
@@ -4179,6 +4369,7 @@
       normalizeZeros: true,
       padFractionalZeros: false
     };
+    IMask.MaskedNumber = MaskedNumber;
 
     /** Masking by RegExp */
 
@@ -4211,6 +4402,7 @@
 
         return MaskedRegExp;
       }(Masked);
+    IMask.MaskedRegExp = MaskedRegExp;
 
     /** Masking by custom Function */
 
@@ -4241,6 +4433,7 @@
 
         return MaskedFunction;
       }(Masked);
+    IMask.MaskedFunction = MaskedFunction;
 
     /** Dynamic mask for choosing apropriate mask in run-time */
     var MaskedDynamic =
@@ -4582,62 +4775,44 @@
         return masked.compiledMasks[inputs[0].index];
       }
     };
-
-    /**
-     * Applies mask on element.
-     * @constructor
-     * @param {HTMLInputElement|HTMLTextAreaElement|MaskElement} el - Element to apply mask
-     * @param {Object} opts - Custom mask options
-     * @return {InputMask}
-     */
-
-    function IMask(el) {
-      var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-      // currently available only for input-like elements
-      return new InputMask(el, opts);
-    }
-    /** {@link InputMask} */
-
-
-    IMask.InputMask = InputMask;
-    /** {@link Masked} */
-
-    IMask.Masked = Masked;
-    /** {@link MaskedPattern} */
-
-    IMask.MaskedPattern = MaskedPattern;
-    /** {@link MaskedEnum} */
-
-    IMask.MaskedEnum = MaskedEnum;
-    /** {@link MaskedRange} */
-
-    IMask.MaskedRange = MaskedRange;
-    /** {@link MaskedNumber} */
-
-    IMask.MaskedNumber = MaskedNumber;
-    /** {@link MaskedDate} */
-
-    IMask.MaskedDate = MaskedDate;
-    /** {@link MaskedRegExp} */
-
-    IMask.MaskedRegExp = MaskedRegExp;
-    /** {@link MaskedFunction} */
-
-    IMask.MaskedFunction = MaskedFunction;
-    /** {@link MaskedDynamic} */
-
     IMask.MaskedDynamic = MaskedDynamic;
-    /** {@link createMask} */
 
-    IMask.createMask = createMask;
-    /** {@link MaskElement} */
+    /** Mask pipe source and destination types */
 
-    IMask.MaskElement = MaskElement;
-    /** {@link HTMLMaskElement} */
+    var PIPE_TYPE = {
+      MASKED: 'value',
+      UNMASKED: 'unmaskedValue',
+      TYPED: 'typedValue'
+    };
+    /** Creates new pipe function depending on mask type, source and destination options */
 
-    IMask.HTMLMaskElement = HTMLMaskElement;
-    g.IMask = IMask;
+    function createPipe(mask) {
+      var from = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : PIPE_TYPE.MASKED;
+      var to = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : PIPE_TYPE.MASKED;
+      var masked = createMask(mask);
+      return function (value) {
+        return masked.runIsolated(function (m) {
+          m[from] = value;
+          return m[to];
+        });
+      };
+    }
+    /** Pipes value through mask depending on mask type, source and destination options */
 
+    function pipe(value) {
+      for (var _len = arguments.length, pipeArgs = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        pipeArgs[_key - 1] = arguments[_key];
+      }
+
+      return createPipe.apply(void 0, pipeArgs)(value);
+    }
+    IMask.PIPE_TYPE = PIPE_TYPE;
+    IMask.createPipe = createPipe;
+    IMask.pipe = pipe;
+
+    globalThis.IMask = IMask;
+
+    exports.HTMLContenteditableMaskElement = HTMLContenteditableMaskElement;
     exports.HTMLMaskElement = HTMLMaskElement;
     exports.InputMask = InputMask;
     exports.MaskElement = MaskElement;
@@ -4650,13 +4825,15 @@
     exports.MaskedPattern = MaskedPattern;
     exports.MaskedRange = MaskedRange;
     exports.MaskedRegExp = MaskedRegExp;
+    exports.PIPE_TYPE = PIPE_TYPE;
     exports.createMask = createMask;
+    exports.createPipe = createPipe;
     exports.default = IMask;
+    exports.pipe = pipe;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
-  }));
-  //# sourceMappingURL=imask.js.map
+  })));
 
   window.iMaskJS = IMask;
 })();

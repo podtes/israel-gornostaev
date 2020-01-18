@@ -105,7 +105,8 @@
     background: url("../../img/general.png") no-repeat 50% 50%;
     width: 28px;
     height: 33px;
-    top: 16px;
+    top: 52%;
+    transform: translateY(-58%);
     left: 24px;
   }
 
@@ -127,7 +128,8 @@
     background: url("../../img/study.png") no-repeat 50% 50%;
     width: 36px;
     height: 35px;
-    top: 14px;
+    top: 50%;
+    transform: translateY(-58%);
     left: 19px;
   }
 
@@ -149,7 +151,8 @@
     background: url("../../img/work.png") no-repeat 50% 50%;
     width: 32px;
     height: 25px;
-    top: 18px;
+    top: 49%;
+    transform: translateY(-58%);
     left: 21px;
   }
 
@@ -171,7 +174,8 @@
     background: url("../../img/volunteer.png") no-repeat 50% 50%;
     width: 32px;
     height: 29px;
-    top: 16px;
+    top: 49%;
+    transform: translateY(-58%);
     left: 22px;
   }
 
@@ -193,7 +197,8 @@
     background: url("../../img/religion.png") no-repeat 50% 50%;
     width: 23px;
     height: 25px;
-    top: 18px;
+    top: 49%;
+    transform: translateY(-58%);
     left: 26px;
   }
 
@@ -374,6 +379,7 @@
       height: 33px;
       top: 8px;
       left: 10px;
+      transform: translateY(0);
     }
 
     &:hover::before {
@@ -393,6 +399,7 @@
       height: 35px;
       top: 7px;
       left: 9px;
+      transform: translateY(0);
     }
 
     &:hover::before {
@@ -413,6 +420,7 @@
       height: 25px;
       top: 12px;
       left: 12px;
+      transform: translateY(0);
     }
 
     &:hover::before {
@@ -430,8 +438,9 @@
     &::before {
       width: 32px;
       height: 29px;
-      top: 16px;
-      left: 22px;
+      top: 7px;
+      left: 12px;
+      transform: translateY(0);
     }
 
     &:hover::before {
@@ -449,8 +458,9 @@
     &::before {
       width: 23px;
       height: 25px;
-      top: 18px;
-      left: 26px;
+      top: 11px;
+      left: 20px;
+      transform: translateY(0);
     }
 
     &:hover::before {

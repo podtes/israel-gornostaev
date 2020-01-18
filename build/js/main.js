@@ -31,52 +31,24 @@ var currentReviewCount = document.querySelector('.reviews__start-review');
 var previousReviewButton = document.querySelector('.reviews__previous-review');
 
 var programmButtonItems = document.querySelectorAll('.programms__item');
-var programmGeneralButtonItem = document.querySelector('.programms__item--general');
-var programmStudyButtonItem = document.querySelector('.programms__item--study');
-var programmWorkButtonItem = document.querySelector('.programms__item--work');
-var programmVolunteerButtonItem = document.querySelector('.programms__item--volunteer');
-var programmReligionButtonItem = document.querySelector('.programms__item--religion');
-
-var programmGeneralButton = programmGeneralButtonItem.querySelector('.programms__button--general');
-var programmStudyButton = programmStudyButtonItem.querySelector('.programms__button--study');
-var programmWorkButton = programmWorkButtonItem.querySelector('.programms__button--work');
-var programmVolunteerButton = programmVolunteerButtonItem .querySelector('.programms__button--volunteer');
-var programmReligionButton = programmReligionButtonItem.querySelector('.programms__button--religion');
-
+var programmsButtons = document.querySelectorAll('.programms__button');
 var programmsTexts = document.querySelectorAll('.programms__about');
-var programmGeneralText = document.querySelector('.programms__about--general');
-var programmStudyText = document.querySelector('.programms__about--study');
-var programmWorkText = document.querySelector('.programms__about--work');
-var programmVolunteerText = document.querySelector('.programms__about--volunteer');
-var programmReligionText = document.querySelector('.programms__about--religion');
 
 var photosLiveIsrael = document.querySelectorAll('.live-israel__photo');
 var indicatorsLiveIsrael = document.querySelectorAll('.live-israel__indicator');
 
-var indicatorFirst = document.querySelector('.live-israel__indicator--first');
-var indicatorSecond = document.querySelector('.live-israel__indicator--second');
-var indicatorThird = document.querySelector('.live-israel__indicator--third');
-var indicatorFourth = document.querySelector('.live-israel__indicator--fourth');
-var indicatorFifth = document.querySelector('.live-israel__indicator--fifth');
-
-var photoLiveIsraelFirst = document.querySelector('.live-israel__photo--first');
-var photoLiveIsraelSecond = document.querySelector('.live-israel__photo--second');
-var photoLiveIsraelThird = document.querySelector('.live-israel__photo--third');
-var photoLiveIsraelFourth = document.querySelector('.live-israel__photo--fourth');
-var photoLiveIsraelFifth = document.querySelector('.live-israel__photo--fifth');
-
-var resetForm = function (form, message) {
-  form.reset();
-  message.style.display = 'none';
-}
 
 // логика открытия и закрытия модальных окон
+var resetForm = function (form, errorMessage) {
+  form.reset();
+  errorMessage.style.display = 'none';
+};
 var closeCallbackModal = function () {
   overlay.classList.remove('modal-open');
   callbackModal.classList.remove('modal-open');
   document.removeEventListener('keydown', openCallbackModalPressEscHandler);
   overlay.removeEventListener('click', overlayClickHandler);
-  phoneInputModal.style.border = '2px solid #e3e3e3';
+  phoneInputModal.style.border = '';
   resetForm(callbackModalForm, errorMessageModal);
 };
 var openCallbackModal = function () {
@@ -86,7 +58,6 @@ var openCallbackModal = function () {
   document.addEventListener('keydown', openCallbackModalPressEscHandler);
   overlay.addEventListener('click', overlayClickHandler);
 };
-
 var openCallbackModalPressEscHandler = function (evt) {
   if (evt.keyCode === ESC_KEYCODE) {
     closeCallbackModal();
@@ -108,7 +79,6 @@ var callbackCloseButtonPressEnterHandler = function (evt) {
     closeCallbackModal();
   }
 };
-
 var openSuccessModal = function () {
   overlay.classList.add('modal-open');
   successModal.classList.add('modal-open');
@@ -121,7 +91,6 @@ var closeSuccessModal = function () {
   document.removeEventListener('keydown', openSuccessModalPressEscHandler);
   overlay.removeEventListener('click', overlayClickHandler);
 };
-
 var openSuccessModalPressEscHandler = function (evt) {
   if (evt.keyCode === ESC_KEYCODE) {
     closeSuccessModal();
@@ -137,7 +106,6 @@ var successModalCloseButtonPressEnterHandler = function (evt) {
     closeSuccessModal();
   }
 };
-
 var overlayClickHandler = function (evt) {
   if (callbackModal.classList.contains('modal-open') && evt.target === overlay) {
     closeCallbackModal();
@@ -145,21 +113,6 @@ var overlayClickHandler = function (evt) {
     closeSuccessModal();
   }
 };
-
-// открытие модального окна c сообщением успеха из секции want-go и details
-wantGoForm.addEventListener('submit', function (evt) {
-  evt.preventDefault();
-  openSuccessModal();
-  wantGoForm.reset();
-  phoneInputWantGo.style.border = '2px solid #e3e3e3';
-});
-detailsForm.addEventListener('submit', function (evt) {
-  evt.preventDefault();
-  openSuccessModal();
-  detailsForm.reset();
-  phoneInputDetails.style.border = '2px solid #e3e3e3';
-});
-
 
 // обработчики кнопок FAQ
 var removefaqQuestionButtonActiveClass = function () {
@@ -184,64 +137,22 @@ var faqQuestionButtonPressEnterHandler = function (evt) {
   }
 };
 
-callbackOpenButton.addEventListener('click', callbackOpenButtonClickHandler);
-callbackCloseButton.addEventListener('click', callbackCloseButtonClickHandler);
-callbackOpenButton.addEventListener('keydown', callbackOpenButtonPressEnterHandler);
-callbackCloseButton.addEventListener('keydown', callbackCloseButtonPressEnterHandler);
-
-successModalOKButton.addEventListener('click', closeSuccessModal);
-successModalCloseButton.addEventListener('click', closeSuccessModal);
-successModalOKButton.addEventListener('keydown', successModalOKButtonPressEnterHandler);
-successModalCloseButton.addEventListener('keydown', successModalCloseButtonPressEnterHandler);
-
 // валидация полей ввода
-var validatePhoneInputHandler = function (field, message, form) {
+var validatePhoneInputHandler = function (field, errorMessage) {
   if (field.value.length > 0 && field.value.length < 16) {
     field.style.border = '2px solid #ff0000';
-    message.style.display = 'block';
+    errorMessage.style.display = 'block';
     field.setCustomValidity('Неверный формат!');
-    form.evt.preventDefault();
   } else if (field.value.length === 0) {
-    field.style.border = '2px solid #e3e3e3';
-    message.style.display = 'none';
+    field.style.border = '';
+    errorMessage.style.display = 'none';
     field.setCustomValidity('');
   } else {
     field.style.border = '2px solid #484848';
-    message.style.display = 'none';
+    errorMessage.style.display = 'none';
     field.setCustomValidity('');
   }
 };
-
-// валидация инпута в модальном окне
-var maskOptions = {
-  mask: '+{7}(000)000-00-00',
-  lazy: true
-};
-window.iMaskJS(phoneInputModal, maskOptions);
-phoneInputModal.addEventListener('input', function () {
-  validatePhoneInputHandler(phoneInputModal, errorMessageModal, callbackModalForm);
-});
-
-// валидация инпута в секции подробностей
-window.iMaskJS(phoneInputDetails, maskOptions);
-phoneInputDetails.addEventListener('input', function () {
-  validatePhoneInputHandler(phoneInputDetails, errorMessageDetails, detailsForm);
-});
-
-// валидация инпута в секции хочу поехать
-window.iMaskJS(phoneInputWantGo, maskOptions);
-phoneInputWantGo.addEventListener('input', function () {
-  validatePhoneInputHandler(phoneInputWantGo, errorMessageWantGo, wantGoForm);
-});
-
-
-// обработка отправки формы и открытие модального окна с сообщением успеха из шапки
-callbackModalForm.addEventListener('submit', function (evt) {
-  closeCallbackModal();
-  evt.preventDefault();
-  callbackModalForm.reset();
-  openSuccessModal();
-});
 
 // переключение программ обучения
 var deactiveateProgrammButton = function () {
@@ -258,40 +169,108 @@ var deactiveateProgrammButton = function () {
     }
   }
 };
-
-programmGeneralButton.addEventListener('click', function () {
-  deactiveateProgrammButton();
-  programmGeneralButtonItem.classList.add('programms__item--active');
-  programmGeneralText.classList.add('programms__about--active');
-});
-programmStudyButton.addEventListener('click', function () {
-  deactiveateProgrammButton();
-  programmStudyButtonItem.classList.add('programms__item--active');
-  programmStudyText.classList.add('programms__about--active');
-});
-programmWorkButton.addEventListener('click', function () {
-  deactiveateProgrammButton();
-  programmWorkButtonItem.classList.add('programms__item--active');
-  programmWorkText.classList.add('programms__about--active');
-});
-programmVolunteerButton.addEventListener('click', function () {
-  deactiveateProgrammButton();
-  programmVolunteerButtonItem.classList.add('programms__item--active');
-  programmVolunteerText.classList.add('programms__about--active');
-});
-programmReligionButton.addEventListener('click', function () {
-  deactiveateProgrammButton();
-  programmReligionButtonItem.classList.add('programms__item--active');
-  programmReligionText.classList.add('programms__about--active');
-});
+var showActiveProgramm = function (button, buttonItem, text) {
+  button.addEventListener('click', function () {
+    deactiveateProgrammButton();
+    buttonItem.classList.add('programms__item--active');
+    text.classList.add('programms__about--active');
+  });
+};
+var addListerersOnProgrammsButtons = function () {
+  for (var i = 0; i < programmButtonItems.length; i++) {
+    showActiveProgramm(programmsButtons[i], programmButtonItems[i], programmsTexts[i]);
+  }
+};
 
 // логика открытия и закрытия частых вопросов
-if (faqQuestionButtons) {
-  for (var i = 0; i < faqQuestionButtons.length; i++) {
-    faqQuestionButtons[i].addEventListener('click', faqQuestionButtonClickHandler);
-    faqQuestionButtons[i].addEventListener('keydown', faqQuestionButtonPressEnterHandler);
+var switchFaqQuestions = function () {
+  if (faqQuestionButtons) {
+    for (var i = 0; i < faqQuestionButtons.length; i++) {
+      faqQuestionButtons[i].addEventListener('click', faqQuestionButtonClickHandler);
+      faqQuestionButtons[i].addEventListener('keydown', faqQuestionButtonPressEnterHandler);
+    }
   }
-}
+};
+
+// логика переключения слайдера секции live-israel
+var hideActivePhotoAndIndicator = function () {
+  for (var i = 0; i < photosLiveIsrael.length; i++) {
+    photosLiveIsrael[i].style.display = 'none';
+  }
+  for (var j = 0; j < indicatorsLiveIsrael.length; j++) {
+    if (indicatorsLiveIsrael[j].classList.contains('live-israel__indicator--active')) {
+      indicatorsLiveIsrael[j].classList.remove('live-israel__indicator--active');
+    }
+  }
+};
+var showActiveSlide = function (indicator, photo) {
+  indicator.addEventListener('click', function () {
+    hideActivePhotoAndIndicator();
+    indicator.classList.add('live-israel__indicator--active');
+    photo.style.display = 'block';
+  });
+};
+var addListerersOnLiveIsraelIndicators = function () {
+  for (var i = 0; i < indicatorsLiveIsrael.length; i++) {
+    showActiveSlide(indicatorsLiveIsrael[i], photosLiveIsrael[i]);
+  }
+};
+
+// открытие модального окна c сообщением успеха из секции want-go и details
+wantGoForm.addEventListener('submit', function (evt) {
+  evt.preventDefault();
+  openSuccessModal();
+  wantGoForm.reset();
+  phoneInputWantGo.style.border = '';
+});
+detailsForm.addEventListener('submit', function (evt) {
+  evt.preventDefault();
+  openSuccessModal();
+  detailsForm.reset();
+  phoneInputDetails.style.border = '';
+});
+
+// листенеры открытия и закрытия модальных окон
+callbackOpenButton.addEventListener('click', callbackOpenButtonClickHandler);
+callbackCloseButton.addEventListener('click', callbackCloseButtonClickHandler);
+callbackOpenButton.addEventListener('keydown', callbackOpenButtonPressEnterHandler);
+callbackCloseButton.addEventListener('keydown', callbackCloseButtonPressEnterHandler);
+
+successModalOKButton.addEventListener('click', closeSuccessModal);
+successModalCloseButton.addEventListener('click', closeSuccessModal);
+successModalOKButton.addEventListener('keydown', successModalOKButtonPressEnterHandler);
+successModalCloseButton.addEventListener('keydown', successModalCloseButtonPressEnterHandler);
+
+// валидация инпута в модальном окне
+var maskOptions = {
+  mask: '+{7}(000)000-00-00',
+  lazy: true
+};
+window.iMaskJS(phoneInputModal, maskOptions);
+phoneInputModal.addEventListener('input', function () {
+  validatePhoneInputHandler(phoneInputModal, errorMessageModal);
+});
+
+// валидация инпута в секции подробностей
+window.iMaskJS(phoneInputDetails, maskOptions);
+phoneInputDetails.addEventListener('input', function () {
+  validatePhoneInputHandler(phoneInputDetails, errorMessageDetails);
+});
+
+// валидация инпута в секции хочу поехать
+window.iMaskJS(phoneInputWantGo, maskOptions);
+phoneInputWantGo.addEventListener('input', function () {
+  validatePhoneInputHandler(phoneInputWantGo, errorMessageWantGo);
+});
+
+
+// обработка отправки формы и открытие модального окна с сообщением успеха из шапки
+callbackModalForm.addEventListener('submit', function (evt) {
+  closeCallbackModal();
+  evt.preventDefault();
+  callbackModalForm.reset();
+  openSuccessModal();
+});
 
 // логика переключения слайдера отзывов
 nextReviewButton.addEventListener('click', function () {
@@ -329,40 +308,6 @@ previousReviewButton.addEventListener('click', function () {
   }
 });
 
-// логика переключения слайдера секции live-israel
-var hideActivePhotoAndIndicator = function () {
-  for (var i = 0; i < photosLiveIsrael.length; i++) {
-    photosLiveIsrael[i].style.display = 'none';
-  }
-  for (var j = 0; j < indicatorsLiveIsrael.length; j++) {
-    if (indicatorsLiveIsrael[j].classList.contains('live-israel__indicator--active')) {
-      indicatorsLiveIsrael[j].classList.remove('live-israel__indicator--active');
-    }
-  }
-};
-
-indicatorFirst.addEventListener('click', function () {
-  hideActivePhotoAndIndicator();
-  indicatorFirst.classList.add('live-israel__indicator--active');
-  photoLiveIsraelFirst.style.display = 'block';
-});
-indicatorSecond.addEventListener('click', function () {
-  hideActivePhotoAndIndicator();
-  indicatorSecond.classList.add('live-israel__indicator--active');
-  photoLiveIsraelSecond.style.display = 'block';
-});
-indicatorThird.addEventListener('click', function () {
-  hideActivePhotoAndIndicator();
-  indicatorThird.classList.add('live-israel__indicator--active');
-  photoLiveIsraelThird.style.display = 'block';
-});
-indicatorFourth.addEventListener('click', function () {
-  hideActivePhotoAndIndicator();
-  indicatorFourth.classList.add('live-israel__indicator--active');
-  photoLiveIsraelFourth.style.display = 'block';
-});
-indicatorFifth.addEventListener('click', function () {
-  hideActivePhotoAndIndicator();
-  indicatorFifth.classList.add('live-israel__indicator--active');
-  photoLiveIsraelFifth.style.display = 'block';
-});
+addListerersOnProgrammsButtons();
+switchFaqQuestions();
+addListerersOnLiveIsraelIndicators();
