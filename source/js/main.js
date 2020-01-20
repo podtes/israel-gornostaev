@@ -22,7 +22,6 @@ var errorMessageWantGo = document.querySelector('.want-go__error-message');
 var errorMessageDetails = document.querySelector('.details__error-message');
 var errorMessageModal = document.querySelector('.modal-order-callback__error-message');
 
-
 var faqQuestionButtons = document.querySelectorAll('.faq__question');
 
 var reviewSlides = document.querySelectorAll('.reviews__item');
@@ -44,11 +43,12 @@ var resetForm = function (form, errorMessage) {
   errorMessage.style.display = 'none';
 };
 var closeCallbackModal = function () {
+  phoneInputModal.style.border = '';
+  phoneInputModal.value = '';
   overlay.classList.remove('modal-open');
   callbackModal.classList.remove('modal-open');
   document.removeEventListener('keydown', openCallbackModalPressEscHandler);
   overlay.removeEventListener('click', overlayClickHandler);
-  phoneInputModal.style.border = '';
   resetForm(callbackModalForm, errorMessageModal);
 };
 var openCallbackModal = function () {
@@ -139,7 +139,7 @@ var faqQuestionButtonPressEnterHandler = function (evt) {
 
 // валидация полей ввода
 var validatePhoneInputHandler = function (field, errorMessage) {
-  if (field.value.length > 3 && field.value.length < 17) {
+  if (field.value.length > 4 && field.value.length < 17) {
     field.style.border = '2px solid #ff0000';
     errorMessage.style.display = 'block';
     field.setCustomValidity('Неверный формат!');
