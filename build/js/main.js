@@ -139,14 +139,14 @@ var faqQuestionButtonPressEnterHandler = function (evt) {
 
 // валидация полей ввода
 var validatePhoneInputHandler = function (field, errorMessage) {
-  if (field.value.length > 0 && field.value.length < 16) {
+  if (field.value.length > 3 && field.value.length < 17) {
     field.style.border = '2px solid #ff0000';
     errorMessage.style.display = 'block';
     field.setCustomValidity('Неверный формат!');
-  } else if (field.value.length === 0) {
+  } else if (field.value.length <= 3 && field.value.length >= 1) {
     field.style.border = '';
     errorMessage.style.display = 'none';
-    field.setCustomValidity('');
+    field.setCustomValidity('Введите номер телефона!');
   } else {
     field.style.border = '2px solid #484848';
     errorMessage.style.display = 'none';
@@ -242,24 +242,35 @@ successModalOKButton.addEventListener('keydown', successModalOKButtonPressEnterH
 successModalCloseButton.addEventListener('keydown', successModalCloseButtonPressEnterHandler);
 
 // валидация инпута в модальном окне
-var maskOptions = {
-  mask: '+{7}(000)000-00-00',
-  lazy: true
-};
-window.iMaskJS(phoneInputModal, maskOptions);
 phoneInputModal.addEventListener('input', function () {
+  validatePhoneInputHandler(phoneInputModal, errorMessageModal);
+});
+phoneInputModal.addEventListener('focus', function () {
+  validatePhoneInputHandler(phoneInputModal, errorMessageModal);
+});
+phoneInputModal.addEventListener('blur', function () {
   validatePhoneInputHandler(phoneInputModal, errorMessageModal);
 });
 
 // валидация инпута в секции подробностей
-window.iMaskJS(phoneInputDetails, maskOptions);
 phoneInputDetails.addEventListener('input', function () {
+  validatePhoneInputHandler(phoneInputDetails, errorMessageDetails);
+});
+phoneInputDetails.addEventListener('focus', function () {
+  validatePhoneInputHandler(phoneInputDetails, errorMessageDetails);
+});
+phoneInputDetails.addEventListener('blur', function () {
   validatePhoneInputHandler(phoneInputDetails, errorMessageDetails);
 });
 
 // валидация инпута в секции хочу поехать
-window.iMaskJS(phoneInputWantGo, maskOptions);
 phoneInputWantGo.addEventListener('input', function () {
+  validatePhoneInputHandler(phoneInputWantGo, errorMessageWantGo);
+});
+phoneInputWantGo.addEventListener('focus', function () {
+  validatePhoneInputHandler(phoneInputWantGo, errorMessageWantGo);
+});
+phoneInputWantGo.addEventListener('blur', function () {
   validatePhoneInputHandler(phoneInputWantGo, errorMessageWantGo);
 });
 

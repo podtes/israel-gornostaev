@@ -237,6 +237,10 @@
   margin-right: 23px;
   margin-bottom: 15px;
 
+  &:valid {
+    border-color: #484848;
+  }
+
   &:focus {
     border-color: #ffd701;
   }

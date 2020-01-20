@@ -61,17 +61,21 @@
   opacity: 0.87;
   letter-spacing: -0.04em;
 
-  &:focus {
-    border-color: #ffd701;
-  }
-
   &:valid {
     border-color: #484848;
+  }
+
+  &:focus {
+    border-color: #ffd701;
   }
 }
 
 .modal-order-callback__form input[type="text"] {
   margin-bottom: 8px;
+
+  &:valid {
+    border-color: #484848;
+  }
 }
 
 .modal-order-callback__form input[type="tel"] {
