@@ -115,7 +115,7 @@ var overlayClickHandler = function (evt) {
 };
 
 // обработчики кнопок FAQ
-var removefaqQuestionButtonActiveClass = function () {
+var removeFaqQuestionButtonActiveClass = function () {
   for (var i = 0; i < faqQuestionButtons.length; i++) {
     if (faqQuestionButtons[i].classList.contains('faq__question--active')) {
       faqQuestionButtons[i].classList.remove('faq__question--active');
@@ -126,14 +126,18 @@ var faqQuestionButtonClickHandler = function (evt) {
   if (evt.currentTarget.classList.contains('faq__question--active')) {
     evt.currentTarget.classList.remove('faq__question--active');
   } else {
-    removefaqQuestionButtonActiveClass();
+    removeFaqQuestionButtonActiveClass();
     evt.currentTarget.classList.toggle('faq__question--active');
   }
 };
 var faqQuestionButtonPressEnterHandler = function (evt) {
-  removefaqQuestionButtonActiveClass();
   if (evt.keyCode === ENTER_KEYCODE) {
-    evt.target.classList.toggle('faq__question--active');
+    if (evt.target.classList.contains('faq__question--active')) {
+      evt.target.classList.remove('faq__question--active');
+    } else {
+      removeFaqQuestionButtonActiveClass();
+      evt.target.classList.toggle('faq__question--active');
+    }
   }
 };
 
