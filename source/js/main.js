@@ -39,150 +39,192 @@ var indicatorsLiveIsrael = document.querySelectorAll('.live-israel__indicator');
 
 // логика открытия и закрытия модальных окон
 var resetForm = function (form, errorMessage) {
-  form.reset();
-  errorMessage.style.display = 'none';
+  if (form) {
+    form.reset();
+    errorMessage.style.display = 'none';
+  }
 };
 var closeCallbackModal = function () {
-  phoneInputModal.style.border = '';
-  phoneInputModal.value = '';
-  overlay.classList.remove('modal-open');
-  callbackModal.classList.remove('modal-open');
-  document.removeEventListener('keydown', openCallbackModalPressEscHandler);
-  overlay.removeEventListener('click', overlayClickHandler);
-  resetForm(callbackModalForm, errorMessageModal);
+  if (callbackModal) {
+    phoneInputModal.style.border = '';
+    phoneInputModal.value = '';
+    overlay.classList.remove('modal-open');
+    callbackModal.classList.remove('modal-open');
+    document.removeEventListener('keydown', openCallbackModalPressEscHandler);
+    overlay.removeEventListener('click', overlayClickHandler);
+    resetForm(callbackModalForm, errorMessageModal);
+  }
 };
 var openCallbackModal = function () {
-  overlay.classList.add('modal-open');
-  callbackModal.classList.add('modal-open');
-  nameInput.focus();
-  document.addEventListener('keydown', openCallbackModalPressEscHandler);
-  overlay.addEventListener('click', overlayClickHandler);
+  if (callbackModal) {
+    overlay.classList.add('modal-open');
+    callbackModal.classList.add('modal-open');
+    nameInput.focus();
+    document.addEventListener('keydown', openCallbackModalPressEscHandler);
+    overlay.addEventListener('click', overlayClickHandler);
+  }
 };
 var openCallbackModalPressEscHandler = function (evt) {
-  if (evt.keyCode === ESC_KEYCODE) {
-    closeCallbackModal();
+  if (callbackModal) {
+    if (evt.keyCode === ESC_KEYCODE) {
+      closeCallbackModal();
+    }
   }
 };
 var callbackOpenButtonClickHandler = function () {
-  openCallbackModal();
-};
-var callbackOpenButtonPressEnterHandler = function (evt) {
-  if (evt.keyCode === ENTER_KEYCODE) {
+  if (callbackModal) {
     openCallbackModal();
   }
 };
+var callbackOpenButtonPressEnterHandler = function (evt) {
+  if (callbackModal) {
+    if (evt.keyCode === ENTER_KEYCODE) {
+      openCallbackModal();
+    }
+  }
+};
 var callbackCloseButtonClickHandler = function () {
-  closeCallbackModal();
+  if (callbackModal) {
+    closeCallbackModal();
+  }
 };
 var callbackCloseButtonPressEnterHandler = function (evt) {
-  if (evt.keyCode === ENTER_KEYCODE) {
-    closeCallbackModal();
+  if (callbackModal) {
+    if (evt.keyCode === ENTER_KEYCODE) {
+      closeCallbackModal();
+    }
   }
 };
 var openSuccessModal = function () {
-  overlay.classList.add('modal-open');
-  successModal.classList.add('modal-open');
-  document.addEventListener('keydown', openSuccessModalPressEscHandler);
-  overlay.addEventListener('click', overlayClickHandler);
+  if (successModal) {
+    overlay.classList.add('modal-open');
+    successModal.classList.add('modal-open');
+    document.addEventListener('keydown', openSuccessModalPressEscHandler);
+    overlay.addEventListener('click', overlayClickHandler);
+  }
 };
 var closeSuccessModal = function () {
-  overlay.classList.remove('modal-open');
-  successModal.classList.remove('modal-open');
-  document.removeEventListener('keydown', openSuccessModalPressEscHandler);
-  overlay.removeEventListener('click', overlayClickHandler);
+  if (successModal) {
+    overlay.classList.remove('modal-open');
+    successModal.classList.remove('modal-open');
+    document.removeEventListener('keydown', openSuccessModalPressEscHandler);
+    overlay.removeEventListener('click', overlayClickHandler);
+  }
 };
 var openSuccessModalPressEscHandler = function (evt) {
-  if (evt.keyCode === ESC_KEYCODE) {
-    closeSuccessModal();
+  if (successModal) {
+    if (evt.keyCode === ESC_KEYCODE) {
+      closeSuccessModal();
+    }
   }
 };
 var successModalOKButtonPressEnterHandler = function (evt) {
-  if (evt.keyCode === ENTER_KEYCODE) {
-    closeSuccessModal();
+  if (successModal) {
+    if (evt.keyCode === ENTER_KEYCODE) {
+      closeSuccessModal();
+    }
   }
 };
 var successModalCloseButtonPressEnterHandler = function (evt) {
-  if (evt.keyCode === ENTER_KEYCODE) {
-    closeSuccessModal();
+  if (successModal) {
+    if (evt.keyCode === ENTER_KEYCODE) {
+      closeSuccessModal();
+    }
   }
 };
 var overlayClickHandler = function (evt) {
-  if (callbackModal.classList.contains('modal-open') && evt.target === overlay) {
-    closeCallbackModal();
-  } else if (successModal.classList.contains('modal-open') && evt.target === overlay) {
-    closeSuccessModal();
+  if (overlay) {
+    if (callbackModal.classList.contains('modal-open') && evt.target === overlay) {
+      closeCallbackModal();
+    } else if (successModal.classList.contains('modal-open') && evt.target === overlay) {
+      closeSuccessModal();
+    }
   }
 };
 
 // обработчики кнопок FAQ
 var removeFaqQuestionButtonActiveClass = function () {
-  for (var i = 0; i < faqQuestionButtons.length; i++) {
-    if (faqQuestionButtons[i].classList.contains('faq__question--active')) {
-      faqQuestionButtons[i].classList.remove('faq__question--active');
+  if (faqQuestionButtons) {
+    for (var i = 0; i < faqQuestionButtons.length; i++) {
+      if (faqQuestionButtons[i].classList.contains('faq__question--active')) {
+        faqQuestionButtons[i].classList.remove('faq__question--active');
+      }
     }
   }
 };
 var faqQuestionButtonClickHandler = function (evt) {
-  if (evt.currentTarget.classList.contains('faq__question--active')) {
-    evt.currentTarget.classList.remove('faq__question--active');
-  } else {
-    removeFaqQuestionButtonActiveClass();
-    evt.currentTarget.classList.toggle('faq__question--active');
+  if (faqQuestionButtons) {
+    if (evt.currentTarget.classList.contains('faq__question--active')) {
+      evt.currentTarget.classList.remove('faq__question--active');
+    } else {
+      removeFaqQuestionButtonActiveClass();
+      evt.currentTarget.classList.toggle('faq__question--active');
+    }
   }
 };
 var faqQuestionButtonPressEnterHandler = function (evt) {
-  if (evt.keyCode === ENTER_KEYCODE) {
-    if (evt.target.classList.contains('faq__question--active')) {
-      evt.target.classList.remove('faq__question--active');
-    } else {
-      removeFaqQuestionButtonActiveClass();
-      evt.target.classList.toggle('faq__question--active');
+  if (faqQuestionButtons) {
+    if (evt.keyCode === ENTER_KEYCODE) {
+      if (evt.target.classList.contains('faq__question--active')) {
+        evt.target.classList.remove('faq__question--active');
+      } else {
+        removeFaqQuestionButtonActiveClass();
+        evt.target.classList.toggle('faq__question--active');
+      }
     }
   }
 };
 
 // валидация полей ввода
 var validatePhoneInputHandler = function (field, errorMessage) {
-  if (field.value.length > 4 && field.value.length < 17) {
-    field.style.border = '2px solid #ff0000';
-    errorMessage.style.display = 'block';
-    field.setCustomValidity('Неверный формат!');
-  } else if (field.value.length <= 3 && field.value.length >= 1) {
-    field.style.border = '';
-    errorMessage.style.display = 'none';
-    field.setCustomValidity('Введите номер телефона!');
-  } else {
-    field.style.border = '2px solid #484848';
-    errorMessage.style.display = 'none';
-    field.setCustomValidity('');
+  if (field) {
+    if (field.value.length > 4 && field.value.length < 17) {
+      field.style.border = '2px solid #ff0000';
+      errorMessage.style.display = 'block';
+      field.setCustomValidity('Неверный формат!');
+    } else if (field.value.length <= 3 && field.value.length >= 1) {
+      field.style.border = '';
+      errorMessage.style.display = 'none';
+      field.setCustomValidity('Введите номер телефона!');
+    } else {
+      field.style.border = '2px solid #484848';
+      errorMessage.style.display = 'none';
+      field.setCustomValidity('');
+    }
   }
 };
 
 // переключение программ обучения
 var deactiveateProgrammButton = function () {
-  for (var i = 0; i < programmsTexts.length; i++) {
-    if (programmsTexts[i].classList.contains('programms__about--active')) {
-      programmsTexts[i].classList.remove('programms__about--active');
-      break;
+  if (programmsTexts && programmsButtons) {
+    for (var i = 0; i < programmsTexts.length; i++) {
+      if (programmsTexts[i].classList.contains('programms__about--active')) {
+        programmsTexts[i].classList.remove('programms__about--active');
+        break;
+      }
     }
-  }
-  for (var j = 0; j < programmButtonItems.length; j++) {
-    if (programmButtonItems[j].classList.contains('programms__item--active')) {
-      programmButtonItems[j].classList.remove('programms__item--active');
-      break;
+    for (var j = 0; j < programmButtonItems.length; j++) {
+      if (programmButtonItems[j].classList.contains('programms__item--active')) {
+        programmButtonItems[j].classList.remove('programms__item--active');
+        break;
+      }
     }
   }
 };
 var showActiveProgramm = function (button, buttonItem, text) {
-  button.addEventListener('click', function () {
-    deactiveateProgrammButton();
-    buttonItem.classList.add('programms__item--active');
-    text.classList.add('programms__about--active');
-  });
+  if (button) {
+    button.addEventListener('click', function () {
+      deactiveateProgrammButton();
+      buttonItem.classList.add('programms__item--active');
+      text.classList.add('programms__about--active');
+    });
+  }
 };
 var addListerersOnProgrammsButtons = function () {
-  for (var i = 0; i < programmButtonItems.length; i++) {
-    showActiveProgramm(programmsButtons[i], programmButtonItems[i], programmsTexts[i]);
+  if (programmButtonItems) {
+    for (var i = 0; i < programmButtonItems.length; i++) {
+      showActiveProgramm(programmsButtons[i], programmButtonItems[i], programmsTexts[i]);
+    }
   }
 };
 
@@ -198,12 +240,14 @@ var switchFaqQuestions = function () {
 
 // логика переключения слайдера секции live-israel
 var hideActivePhotoAndIndicator = function () {
-  for (var i = 0; i < photosLiveIsrael.length; i++) {
-    photosLiveIsrael[i].style.display = 'none';
-  }
-  for (var j = 0; j < indicatorsLiveIsrael.length; j++) {
-    if (indicatorsLiveIsrael[j].classList.contains('live-israel__indicator--active')) {
-      indicatorsLiveIsrael[j].classList.remove('live-israel__indicator--active');
+  if (photosLiveIsrael) {
+    for (var i = 0; i < photosLiveIsrael.length; i++) {
+      photosLiveIsrael[i].style.display = 'none';
+    }
+    for (var j = 0; j < indicatorsLiveIsrael.length; j++) {
+      if (indicatorsLiveIsrael[j].classList.contains('live-israel__indicator--active')) {
+        indicatorsLiveIsrael[j].classList.remove('live-israel__indicator--active');
+      }
     }
   }
 };
@@ -215,8 +259,10 @@ var showActiveSlide = function (indicator, photo) {
   });
 };
 var addListerersOnLiveIsraelIndicators = function () {
-  for (var i = 0; i < indicatorsLiveIsrael.length; i++) {
-    showActiveSlide(indicatorsLiveIsrael[i], photosLiveIsrael[i]);
+  if (indicatorsLiveIsrael) {
+    for (var i = 0; i < indicatorsLiveIsrael.length; i++) {
+      showActiveSlide(indicatorsLiveIsrael[i], photosLiveIsrael[i]);
+    }
   }
 };
 
