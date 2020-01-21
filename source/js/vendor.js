@@ -21,6 +21,9 @@
       });
       i = newValue.indexOf('_');
       if (i !== -1) {
+        if (i < 5 && (i = 3)) {
+          newValue = newValue;
+        }
         newValue = newValue.slice(0, i);
       }
       var reg = matrix.substr(0, input.value.length).replace(/_+/g,
