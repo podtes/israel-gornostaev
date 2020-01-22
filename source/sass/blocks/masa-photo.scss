@@ -1,13 +1,17 @@
 .masa-photo {
-  padding-bottom: 302px;
-  padding-top: 224px;
   background-color: #ffffff;
   color: #000000;
+}
+
+.masa-photo__bg-wrapper {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding-bottom: 302px;
+  padding-top: 224px;
   background-image: url("../img/cynthia-magana-138943-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: 3px 103px;
   background-size: contain;
-  // TODO: При ширине свыше 1600px фон не растягивается.
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/cynthia-magana-138943-desktop@2x.png");
@@ -76,10 +80,15 @@
     padding-top: 155px;
   }
 
-  .masa-photo__wrapper {
+  .masa-photo__bg-wrapper {
     padding-top: 0;
-    padding-bottom: 0;
-    padding-right: 25px;
+    padding-bottom: 267px;
+  }
+
+  .masa-photo__wrapper {
+    padding: 0;
+    padding-left: 45%;
+    padding-top: 211px;
     max-width: 397px;
   }
 }
@@ -89,12 +98,15 @@
     text-align: center;
     padding-top: 0;
     padding-bottom: 40px;
+  }
+
+  .masa-photo__bg-wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
     background-image: url("../../img/cynthia-mobile@1x.png");
     background-repeat: no-repeat;
-    background-position: 22% 27%;
+    background-position: 22% 44px;
     background-size: 632px 272px;
-    display: block;
-    //TODO: кончается фон на разрешении 672px
   }
 
   .masa-photo__wrapper {
@@ -113,7 +125,8 @@
   .masa-photo p {
     margin: 0;
     padding: 0;
-    padding-left: 12px;
+    max-width: 332px;
+    padding-left: 4%;
     margin-bottom: 57px;
     text-align: left;
     font-size: 16px;

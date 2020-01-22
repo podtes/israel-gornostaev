@@ -1,31 +1,33 @@
 .how-go {
-  padding-top: 191px;
-  padding-bottom: 108px;
   background-color: #ffffff;
   color: #000000;
-  background-image: url("../img/img-how-desktop@1x.png"),
-    url("../img/bg-how-desktop@1x.png"),
-    url("../img/stamp-desktop@1x.png");
+  background-image: url("../img/stamp-desktop@1x.png"),
+    url("../img/bg-how-desktop@1x.png");
   background-repeat: no-repeat,
-    no-repeat,
     no-repeat;
-  background-position: 12px 160px,
-    0 -40px,
-    112% 370px;
-  background-size: 581px,
-    cover,
-    337px;
+  background-position: 1150px 371px,
+    0 -40px;
+  background-size: 337px,
+    cover;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../img/img-how-desktop@2x.png"),
-      url("../img/bg-how-desktop@2x.png"),
-      url("../img/stamp-desktop@2x.png");
-    background-position: 12px 160px,
-      0 -40px,
-      112% 370px;
-    background-size: 581px,
-      cover,
-      337px;
+    background-image: url("../img/stamp-desktop@2x.png"),
+      url("../img/bg-how-desktop@2x.png");
+  }
+}
+
+.how-go__bg-wrapper {
+  padding-top: 191px;
+  padding-bottom: 108px;
+  max-width: 1366px;
+  margin: 0 auto;
+  background-image: url("../img/img-how-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-position: 12px 161px;
+  background-size: 581px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/img-how-desktop@2x.png");
   }
 }
 
@@ -186,22 +188,29 @@
 
 @media (max-width: $tab-width) {
   .how-go {
-    padding-left: 100px;
+    padding-left: 50px;
     padding-right: 50px;
     padding-top: 75px;
     padding-bottom: 0;
-    background-image: none,
-      none,
-      url("../img/stamp-desktop@1x.png");
+    background-image: url("../img/stamp-desktop@1x.png"),
+      none;
     background-repeat: no-repeat,
-      no-repeat,
       no-repeat;
-    background-position: 0 0,
+    background-position: right 50%,
       0 0,
-      right top;
-    background-size: 0,
-      0,
-      337px;
+      0 0;
+    background-size: 337px,
+      0;
+  }
+
+  .how-go__bg-wrapper {
+    padding-top: 0;
+    padding-left: 0;
+    background-image: none;
+  }
+
+  .how-go__wrapper {
+    padding-left: 0;
   }
 }
 
@@ -212,23 +221,33 @@
     padding-top: 80px;
     padding-bottom: 48px;
     background-image: none,
-      none,
       url("../img/stamp-mobile@1x.png");
     background-repeat: no-repeat,
-      no-repeat,
       no-repeat;
     background-position: 0 0,
-      0 0,
       right 354px;
     background-size: 0,
-      0,
       216px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: none,
-        none,
         url("../img/stamp-mobile@2x.png");
     }
+  }
+
+  .how-go__bg-wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-image: none;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: none;
+    }
+  }
+
+  .how-go__wrapper {
+    padding-left: 0;
+    max-width: 525px;
   }
 
   .how-go h2 {

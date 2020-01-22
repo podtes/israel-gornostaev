@@ -3,8 +3,8 @@
   padding-bottom: 56px;
   background-color: #ffffff;
   color: #000000;
-  background-image: url("../../img/watch-desktop@1x.png"),
-    url("../../img/live-israel-Bg-desktop@1x.jpg");
+  background-image: url("../img/watch-desktop@1x.png"),
+    url("../img/live-israel-Bg-desktop@1x.jpg");
   background-repeat: no-repeat,
     no-repeat;
   background-position: 103% 714px,
@@ -13,8 +13,8 @@
     contain;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/watch-desktop@1x.png"),
-      url("../../img/live-israel-Bg-desktop@2x.jpg");
+    background-image: url("../img/watch-desktop@1x.png"),
+      url("../img/live-israel-Bg-desktop@2x.jpg");
   }
 }
 
@@ -90,13 +90,13 @@
   margin-right: 15px;
   width: 482px;
   height: 733px;
-  background-image: url("../../img/live-israel1-desktop@1x.png");
+  background-image: url("../img/live-israel1-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 482px 733px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/live-israel1-desktop@2x.png");
+    background-image: url("../img/live-israel1-desktop@2x.png");
   }
 }
 
@@ -111,26 +111,26 @@
   margin-right: 30px;
   width: 211px;
   height: 319px;
-  background-image: url("../../img/live-israel2-desktop@1x.png");
+  background-image: url("../img/live-israel2-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 211px 319px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/live-israel2-desktop@2x.png");
+    background-image: url("../img/live-israel2-desktop@2x.png");
   }
 }
 
 .live-israel__photo--third {
   width: 411px;
   height: 319px;
-  background-image: url("../../img/live-israel3-desktop@1x.png");
+  background-image: url("../img/live-israel3-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 411px 319px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/live-israel3-desktop@2x.png");
+    background-image: url("../img/live-israel3-desktop@2x.png");
   }
 }
 
@@ -138,26 +138,26 @@
   margin-right: 30px;
   width: 411px;
   height: 319px;
-  background-image: url("../../img/live-israel4-desktop@1x.png");
+  background-image: url("../img/live-israel4-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 411px 319px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/live-israel4-desktop@2x.png");
+    background-image: url("../img/live-israel4-desktop@2x.png");
   }
 }
 
 .live-israel__photo--fifth {
   width: 211px;
   height: 319px;
-  background-image: url("../../img/live-israel5-desktop@1x.png");
+  background-image: url("../img/live-israel5-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 214px 319px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/live-israel5-desktop@2x.png");
+    background-image: url("../img/live-israel5-desktop@2x.png");
   }
 }
 
@@ -317,14 +317,14 @@
     transform: translate(-50%, -54%);
     width: 288px;
     height: 400px;
-    background-image: url("../../img/live-israel1-mobile@1x.png");
+    background-image: url("../img/live-israel1-mobile@1x.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 288px 400px;
     display: block;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/live-israel1-mobile@2x.png");
+      background-image: url("../img/live-israel1-mobile@2x.png");
     }
   }
 
@@ -340,13 +340,13 @@
     transform: translate(-50%, -4%);
     width: 288px;
     height: 400px;
-    background-image: url("../../img/live-israel2-mobile@1x.png");
+    background-image: url("../img/live-israel2-mobile@1x.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 288px 400px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/live-israel2-mobile@2x.png");
+      background-image: url("../img/live-israel2-mobile@2x.png");
     }
   }
 
@@ -362,13 +362,13 @@
     transform: translate(-50%, -4%);
     width: 288px;
     height: 400px;
-    background-image: url("../../img/live-israel3-mobile@1x.png");
+    background-image: url("../img/live-israel3-mobile@1x.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 288px 400px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/live-israel3-mobile@2x.png");
+      background-image: url("../img/live-israel3-mobile@2x.png");
     }
   }
 
@@ -384,13 +384,13 @@
     transform: translate(-50%, -4%);
     width: 288px;
     height: 400px;
-    background-image: url("../../img/live-israel4-mobile@1x.png");
+    background-image: url("../img/live-israel4-mobile@1x.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 288px 400px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/live-israel4-mobile@2x.png");
+      background-image: url("../img/live-israel4-mobile@2x.png");
     }
   }
 
@@ -406,13 +406,13 @@
     transform: translate(-50%, -4%);
     width: 288px;
     height: 400px;
-    background-image: url("../../img/live-israel5-mobile@1x.png");
+    background-image: url("../img/live-israel5-mobile@1x.png");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: 288px 400px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/live-israel5-mobile@2x.png");
+      background-image: url("../img/live-israel5-mobile@2x.png");
     }
   }
 

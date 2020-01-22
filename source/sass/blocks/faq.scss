@@ -1,30 +1,38 @@
 .faq {
-  padding-top: 30px;
-  padding-bottom: 118px;
-  padding-left: 54px;
   text-align: center;
   background-color: #ffffff;
   color: #000000;
+  background-image: url("../img/faq-bg-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% -50px;
+  background-size: cover;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/faq-bg-desktop@2x.jpg");
+    background-size: cover;
+  }
+}
+
+.faq__bg-wrapper {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 118px;
+  padding-left: 54px;
   background-image: url("../img/faq-img-desktop@1x.png"),
-    url("../img/bag-desktop@1x.png"),
-    url("../img/faq-bg-desktop@1x.jpg");
+    url("../img/bag-desktop@1x.png");
   background-repeat: no-repeat,
-    no-repeat,
     no-repeat;
   background-position: right 29px,
-    left 756px,
-    50% -50px;
+    left 756px;
   background-size: auto,
-    auto,
-    cover;
+    auto;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/faq-img-desktop@2x.png"),
-      url("../img/bag-desktop@2x.png"),
-      url("../img/faq-bg-desktop@2x.jpg");
+      url("../img/bag-desktop@2x.png");
     background-size: 645px 803px,
-      153px 177px,
-      cover;
+      153px 177px;
   }
 }
 
@@ -177,12 +185,24 @@
     background-image: none,
       url("../img/bag-desktop@1x.png"),
       none;
+    background-size: 200px 200px;
+    background-position: left 200px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: none,
         url("../img/bag-desktop@2x.png"),
         none;
     }
+  }
+
+  .faq__bg-wrapper {
+    padding-left: 0;
+    padding-bottom: 0;
+    background-image: none;
+  }
+
+  .faq h2 {
+    text-align: center;
   }
 
   .faq ul {
@@ -202,11 +222,24 @@
     padding: 40px 16px;
     background-image: url("../img/bag-mobile@1x.png");
     background-repeat: no-repeat;
-    background-position: -48px 700px;
+    background-position: -47px 87.2%;
+    background-size: 193px 177px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/bag-mobile@2x.png");
-      background-size: 194px 177px;
+      background-image: ("../img/bag-desktop@2x.png");
+    }
+  }
+
+  .faq__bg-wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    background-image: none,
+      none;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: none,
+        none;
     }
   }
 
@@ -216,6 +249,7 @@
   }
 
   .faq h2 {
+    text-align: center;
     margin-bottom: 0;
     font-size: 32px;
     line-height: 39px;

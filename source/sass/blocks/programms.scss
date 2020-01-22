@@ -1,11 +1,17 @@
 .programms {
+  padding-top: 56px;
   padding-bottom: 62px;
-  padding-top: 105px;
   background-color: #ffffff;
   color: #000000;
+}
+
+.programms__bg-wrapper {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding-top: 49px;
   background-image: url("../img/programms-sketch-desktop@1x.png");
   background-repeat: no-repeat;
-  background-position: right 26%;
+  background-position: right top;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/programms-sketch-desktop@2x.png");
@@ -14,7 +20,7 @@
 }
 
 .programms__wrapper {
-  padding-left: 64px;
+  padding-left: 127px;
   display: flex;
 }
 
@@ -22,7 +28,6 @@
   margin: 0;
   margin-right: 42px;
   padding: 0;
-  padding-left: 63px;
   padding-top: 3px;
   min-width: 250px;
   list-style: none;
@@ -283,6 +288,9 @@
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 30px;
+  }
+
+  .programms__bg-wrapper {
     background-image: url("../img/programms-sketch-mobile@1x.png");
     background-repeat: no-repeat;
     background-position: 24px 33%;

@@ -2,3 +2,10 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+@media (max-width: $mob-width) {
+  .container {
+    max-width: 100%;
+    margin: 0;
+  }
+}

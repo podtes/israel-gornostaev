@@ -73,15 +73,15 @@
 @media (max-width: $mob-width) {
   .about {
     padding-top: 45px;
-    padding-bottom: 145px;
+    padding-bottom: 96px;
     text-align: center;
     background-image: url("../../img/photo-about-mobile@1x.png"),
       url("../../img/watercolor-Bg-mobile@1x.jpg");
     background-repeat: no-repeat,
       no-repeat;
-    background-position: 50% 81%,
-      50% 54%;
-    background-size: contain,
+    background-position: 50% 91%,
+      50% 60%;
+    background-size: 320px 224px,
       contain;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {

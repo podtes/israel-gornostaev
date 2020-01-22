@@ -1,21 +1,29 @@
 .details {
-  padding-top: 16px;
-  padding-bottom: 75px;
   background-color: #ffffff;
   color: #000000;
   text-align: center;
-  background-image: url("../../img/map-desktop@1x.png"),
-    url("../../img/details-bg-desktop@1x.jpg");
-  background-repeat: no-repeat,
-    no-repeat;
-  background-position: right 22px,
-    50% -74px;
+  background-image: url("../../img/details-bg-desktop@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% -74px;
+  background-size: cover;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/map-desktop@2x.png"),
-      url("../../img/details-bg-desktop@2x.jpg");
-    background-size: 705px,
-      1366px;
+    background-image: url("../../img/details-bg-desktop@2x.jpg");
+  }
+}
+
+.details__bg-wrapper {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding-top: 16px;
+  padding-bottom: 75px;
+  background-image: url("../../img/map-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-position: right 22px;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../../img/map-desktop@2x.png");
+    background-size: 705px;
   }
 }
 
@@ -309,9 +317,7 @@
 
 @media (max-width: $tab-width) {
   .details {
-    background-image: url("../../img/map-desktop@1x.png"),
-      none;
-    background-position: right 390px;
+    background-image: none;
   }
 
   .details__form-wrapper {
@@ -319,7 +325,7 @@
   }
 
   .details__about-kurator {
-    margin-bottom: 430px;
+    margin-bottom: 80px;
   }
 
   .details__name-label input,
@@ -342,23 +348,31 @@
     padding-left: 0;
     padding-top: 33px;
     padding-bottom: 63px;
-    background-image: url("../../img/map-desktop@1x.png"),
-      none;
-    background-position: 66% 665px;
-    background-size: 655px;
-    text-align: center;
+    background-image: none;
+
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/map-desktop@2x.png"),
-        none;
-      background-size: 655px;
+      background-image: none;
+    }
+  }
+
+  .details__bg-wrapper {
+    padding: 0;
+    background-image: url("../../img/map-desktop@1x.png");
+    background-position: 66% 632px;
+    background-size: 655px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../../img/map-desktop@2x.png");
     }
   }
 
   .details h2 {
+    padding-left: 0;
     margin-bottom: 24px;
     font-size: 32px;
     line-height: 39px;
+    text-align: center;
   }
 
   .details__choose-city {
@@ -395,7 +409,7 @@
   .details__kurator-info-wrapper {
     text-align: left;
     padding-left: 0;
-    margin-bottom: 15px;
+    margin-bottom: 17px;
     max-width: 100%;
   }
 
@@ -415,6 +429,7 @@
 
   .details__bottom-wrapper {
     flex-direction: column;
+    padding-left: 0;
   }
 
   .details__form-text-wrapper {
@@ -455,12 +470,12 @@
   .details__phone-label input,
   .details__name-label input {
     margin-right: 0;
-    margin-bottom: 10px;
+    margin-bottom: 9px;
     width: 100%;
   }
 
   .details__phone-label input {
-    margin-bottom: 24px;
+    margin-bottom: 23px;
   }
 
   .details__error-message {
