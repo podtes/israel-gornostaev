@@ -1,36 +1,36 @@
 .how-go {
-  padding-left: 700px;
   padding-top: 191px;
-  padding-bottom: 129px;
+  padding-bottom: 108px;
   background-color: #ffffff;
   color: #000000;
-  background-image: url("../../img/img-how-desktop@1x.png"),
-    url("../../img/bg-how-desktop@1x.png"),
-    url("../../img/stamp-desktop@1x.png");
+  background-image: url("../img/img-how-desktop@1x.png"),
+    url("../img/bg-how-desktop@1x.png"),
+    url("../img/stamp-desktop@1x.png");
   background-repeat: no-repeat,
     no-repeat,
     no-repeat;
   background-position: 12px 160px,
     0 -40px,
-    1150px 370px;
+    112% 370px;
   background-size: 581px,
-    1366px,
+    cover,
     337px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/img-how-desktop@2x.png"),
-      url("../../img/bg-how-desktop@2x.png"),
-      url("../../img/stamp-desktop@2x.png");
+    background-image: url("../img/img-how-desktop@2x.png"),
+      url("../img/bg-how-desktop@2x.png"),
+      url("../img/stamp-desktop@2x.png");
     background-position: 12px 160px,
       0 -40px,
-      1150px 370px;
+      112% 370px;
     background-size: 581px,
-      1366px,
+      cover,
       337px;
   }
 }
 
 .how-go__wrapper {
+  padding-left: 616px;
   max-width: 525px;
 }
 
@@ -50,7 +50,7 @@
 .how-go__about {
   margin: 0;
   padding: 0;
-  padding-right: 40px;
+  padding-right: 35px;
   margin-bottom: 32px;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-size: 15px;
@@ -65,7 +65,7 @@
   margin: 0;
   margin-bottom: 32px;
   padding: 0;
-  padding-right: 60px;
+  padding-right: 70px;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-weight: 500;
   font-size: 17px;
@@ -192,7 +192,7 @@
     padding-bottom: 0;
     background-image: none,
       none,
-      url("../../img/stamp-desktop@1x.png");
+      url("../img/stamp-desktop@1x.png");
     background-repeat: no-repeat,
       no-repeat,
       no-repeat;
@@ -213,7 +213,7 @@
     padding-bottom: 48px;
     background-image: none,
       none,
-      url("../../img/stamp-mobile@1x.png");
+      url("../img/stamp-mobile@1x.png");
     background-repeat: no-repeat,
       no-repeat,
       no-repeat;
@@ -227,7 +227,7 @@
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: none,
         none,
-        url("../../img/stamp-mobile@2x.png");
+        url("../img/stamp-mobile@2x.png");
     }
   }
 

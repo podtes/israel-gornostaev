@@ -1,19 +1,21 @@
 .masa-photo {
-  padding-bottom: 303px;
+  padding-bottom: 302px;
   padding-top: 224px;
   background-color: #ffffff;
   color: #000000;
-  background-image: url("../../img/cynthia-magana-138943-desktop@1x.png");
+  background-image: url("../img/cynthia-magana-138943-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: 3px 103px;
   background-size: contain;
-  display: flex;
-  justify-content: flex-end;
   // TODO: При ширине свыше 1600px фон не растягивается.
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/cynthia-magana-138943-desktop@2x.png");
+  }
 }
 
 .masa-photo__wrapper {
-  padding-right: 175px;
+  padding-left: 620px;
   max-width: 397px;
   text-align: left;
 }

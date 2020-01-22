@@ -1,28 +1,29 @@
 .faq {
-  padding-left: 110px;
   padding-top: 30px;
   padding-bottom: 118px;
+  padding-left: 54px;
+  text-align: center;
   background-color: #ffffff;
   color: #000000;
-  background-image: url("../../img/faq-img-desktop@1x.png"),
-    url("../../img/bag-desktop@1x.png"),
-    url("../../img/faq-bg-desktop@1x.jpg");
+  background-image: url("../img/faq-img-desktop@1x.png"),
+    url("../img/bag-desktop@1x.png"),
+    url("../img/faq-bg-desktop@1x.jpg");
   background-repeat: no-repeat,
     no-repeat,
     no-repeat;
-  background-position: 721px 29px,
-    -41px 756px,
+  background-position: right 29px,
+    left 756px,
     50% -50px;
   background-size: auto,
     auto,
     cover;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/faq-img-desktop@2x.png"),
-      url("../../img/bag-desktop@2x.png"),
-      url("../../img/faq-bg-desktop@2x.jpg");
+    background-image: url("../img/faq-img-desktop@2x.png"),
+      url("../img/bag-desktop@2x.png"),
+      url("../img/faq-bg-desktop@2x.jpg");
     background-size: 645px 803px,
-      194px 177px,
+      153px 177px,
       cover;
   }
 }
@@ -38,13 +39,15 @@
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #1fc0fc;
+  text-align: left;
 }
 
 .faq ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  max-width: 559px;
+  max-width: 46.6%;
+  text-align: left;
 }
 
 .faq li {
@@ -104,7 +107,7 @@
   &::after {
     position: absolute;
     content: "";
-    background: url("../../img/arrow-down.svg") no-repeat 0 0;
+    background: url("../img/arrow-down.svg") no-repeat 0 0;
     width: 20px;
     height: 13px;
     top: 45px;
@@ -116,7 +119,7 @@
   margin-bottom: 25px;
 
   &::after {
-    background: url("../../img/arrow-up.svg") no-repeat 0 0;
+    background: url("../img/arrow-up.svg") no-repeat 0 0;
   }
 }
 
@@ -172,12 +175,12 @@
     padding: 0 35px;
     padding-bottom: 200px;
     background-image: none,
-      url("../../img/bag-desktop@1x.png"),
+      url("../img/bag-desktop@1x.png"),
       none;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: none,
-        url("../../img/bag-desktop@2x.png"),
+        url("../img/bag-desktop@2x.png"),
         none;
     }
   }
@@ -197,12 +200,12 @@
   .faq {
     text-align: center;
     padding: 40px 16px;
-    background-image: url("../../img/bag-mobile@1x.png");
+    background-image: url("../img/bag-mobile@1x.png");
     background-repeat: no-repeat;
     background-position: -48px 700px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/bag-mobile@2x.png");
+      background-image: url("../img/bag-mobile@2x.png");
       background-size: 194px 177px;
     }
   }

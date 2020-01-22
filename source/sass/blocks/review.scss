@@ -1,7 +1,5 @@
 .reviews {
   position: relative;
-  padding-left: 97px;
-  padding-right: 141px;
   padding-bottom: 16px;
   padding-top: 39px;
   text-align: center;
@@ -11,7 +9,7 @@
     url("../../img/reviews-bg-watercolor@1x.png");
   background-repeat: no-repeat,
     no-repeat;
-  background-position: 843px 94px,
+  background-position: 101.5% 94px,
     109px 75px;
   background-size: auto,
     1259px;
@@ -27,7 +25,6 @@
 .reviews h2 {
   margin: 0;
   padding: 0;
-  padding-left: 42px;
   font-family: "Montserrat", "Arial", sans-serif;
   font-weight: bold;
   font-size: 40px;
@@ -52,6 +49,7 @@
 .reviews__list {
   margin: 0;
   padding: 0;
+  padding-left: 15px;
   list-style: none;
   display: flex;
   overflow: hidden;
@@ -73,9 +71,9 @@
 
 .reviews__footer-wrapper {
   position: relative;
-  width: 60.2%;
-  bottom: 64px;
-  left: 405px;
+  width: 56.5%;
+  bottom: 66px;
+  left: 419px;
   display: flex;
   justify-content: space-between;
 }
@@ -120,7 +118,7 @@
 .reviews__second-paragraph {
   margin: 0;
   padding: 0;
-  padding-right: 50px;
+  padding-right: 105px;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-size: 17px;
   line-height: 29px;

@@ -1,7 +1,6 @@
 .want-go {
   position: relative;
   padding-top: 160px;
-  padding-left: 210px;
   padding-bottom: 130px;
   background-color: #ffffff;
   color: #000000;
@@ -10,7 +9,7 @@
   background-repeat: no-repeat,
     no-repeat;
   background-position: -73px 30%,
-    548px -49px;
+    right -49px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../../img/backpack-desktop@2x.png"),
@@ -18,6 +17,10 @@
     background-size: 220px,
       818px;
   }
+}
+
+.want-go__wrapper {
+  padding-left: 127px;
 }
 
 .want-go h2 {

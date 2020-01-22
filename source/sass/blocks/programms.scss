@@ -1,22 +1,20 @@
 .programms {
   padding-bottom: 62px;
   padding-top: 105px;
-  padding-left: 50px;
-  padding-right: 50px;
   background-color: #ffffff;
   color: #000000;
-  background-image: url("../../img/programms-sketch-desktop@1x.png");
+  background-image: url("../img/programms-sketch-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: right 26%;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/programms-sketch-desktop@2x.png");
+    background-image: url("../img/programms-sketch-desktop@2x.png");
     background-size: 680px;
   }
 }
 
 .programms__wrapper {
-  padding-left: 160px;
+  padding-left: 64px;
   display: flex;
 }
 
@@ -24,6 +22,7 @@
   margin: 0;
   margin-right: 42px;
   padding: 0;
+  padding-left: 63px;
   padding-top: 3px;
   min-width: 250px;
   list-style: none;
@@ -41,7 +40,7 @@
 }
 
 .programms__item--active .programms__button {
-  background-image: url("../../img/programms-button-desktop.svg");
+  background-image: url("../img/programms-button-desktop.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -54,7 +53,7 @@
   opacity: 1;
 
   &:hover {
-    background-image: url("../../img/programms-button-desktop.svg");
+    background-image: url("../img/programms-button-desktop.svg");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
@@ -102,7 +101,7 @@
   &::before {
     position: absolute;
     content: "";
-    background: url("../../img/general.png") no-repeat 50% 50%;
+    background: url("../img/general.png") no-repeat 50% 50%;
     width: 28px;
     height: 33px;
     top: 52%;
@@ -111,13 +110,13 @@
   }
 
   &:hover::before {
-    background: url("../../img/general-hover.png") no-repeat 50% 50%;
+    background: url("../img/general-hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--general {
   &::before {
-    background: url("../../img/general-active.png") no-repeat 50% 50%;
+    background: url("../img/general-active.png") no-repeat 50% 50%;
   }
 }
 
@@ -125,7 +124,7 @@
   &::before {
     position: absolute;
     content: "";
-    background: url("../../img/study.png") no-repeat 50% 50%;
+    background: url("../img/study.png") no-repeat 50% 50%;
     width: 36px;
     height: 35px;
     top: 50%;
@@ -134,13 +133,13 @@
   }
 
   &:hover::before {
-    background: url("../../img/study-hover.png") no-repeat 50% 50%;
+    background: url("../img/study-hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--study {
   &::before {
-    background: url("../../img/study-active.png") no-repeat 50% 50%;
+    background: url("../img/study-active.png") no-repeat 50% 50%;
   }
 }
 
@@ -148,7 +147,7 @@
   &::before {
     position: absolute;
     content: "";
-    background: url("../../img/work.png") no-repeat 50% 50%;
+    background: url("../img/work.png") no-repeat 50% 50%;
     width: 32px;
     height: 25px;
     top: 49%;
@@ -157,13 +156,13 @@
   }
 
   &:hover::before {
-    background: url("../../img/work-hover.png") no-repeat 50% 50%;
+    background: url("../img/work-hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--work {
   &::before {
-    background: url("../../img/work-active.png") no-repeat 50% 50%;
+    background: url("../img/work-active.png") no-repeat 50% 50%;
   }
 }
 
@@ -171,7 +170,7 @@
   &::before {
     position: absolute;
     content: "";
-    background: url("../../img/volunteer.png") no-repeat 50% 50%;
+    background: url("../img/volunteer.png") no-repeat 50% 50%;
     width: 32px;
     height: 29px;
     top: 49%;
@@ -180,13 +179,13 @@
   }
 
   &:hover::before {
-    background: url("../../img/volunteer-hover.png") no-repeat 50% 50%;
+    background: url("../img/volunteer-hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--volunteer {
   &::before {
-    background: url("../../img/volunteer-active.png") no-repeat 50% 50%;
+    background: url("../img/volunteer-active.png") no-repeat 50% 50%;
   }
 }
 
@@ -194,7 +193,7 @@
   &::before {
     position: absolute;
     content: "";
-    background: url("../../img/religion.png") no-repeat 50% 50%;
+    background: url("../img/religion.png") no-repeat 50% 50%;
     width: 23px;
     height: 25px;
     top: 49%;
@@ -203,20 +202,20 @@
   }
 
   &:hover::before {
-    background: url("../../img/religion-hover.png") no-repeat 50% 50%;
+    background: url("../img/religion-hover.png") no-repeat 50% 50%;
   }
 }
 
 .programms__item--active .programms__button--religion {
   &::before {
-    background: url("../../img/religion-active.png") no-repeat 50% 50%;
+    background: url("../img/religion-active.png") no-repeat 50% 50%;
   }
 }
 
 .programms h2 {
   padding: 0;
   margin: 0;
-  padding-left: 160px;
+  padding-left: 127px;
   margin-bottom: 65px;
   font-family: "Montserrat", "Arial", sans-serif;
   font-size: 40px;
@@ -284,14 +283,14 @@
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 30px;
-    background-image: url("../../img/programms-sketch-mobile@1x.png");
+    background-image: url("../img/programms-sketch-mobile@1x.png");
     background-repeat: no-repeat;
     background-position: 24px 33%;
     background-size: contain;
     overflow: hidden;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/programms-sketch-mobile@2x.png");
+      background-image: url("../img/programms-sketch-mobile@2x.png");
     }
   }
 
@@ -383,13 +382,13 @@
     }
 
     &:hover::before {
-      background: url("../../img/general-hover.png") no-repeat 50% 50%;
+      background: url("../img/general-hover.png") no-repeat 50% 50%;
     }
   }
 
   .programms__item--active .programms__button--general {
     &::before {
-      background: url("../../img/general-active.png") no-repeat 50% 50%;
+      background: url("../img/general-active.png") no-repeat 50% 50%;
     }
   }
 
@@ -403,19 +402,19 @@
     }
 
     &:hover::before {
-      background: url("../../img/study-hover.png") no-repeat 50% 50%;
+      background: url("../img/study-hover.png") no-repeat 50% 50%;
     }
   }
 
   .programms__item--active .programms__button--study {
     &::before {
-      background: url("../../img/study-mobile.png") no-repeat 50% 50%;
+      background: url("../img/study-mobile.png") no-repeat 50% 50%;
     }
   }
 
   .programms__button--work {
     &::before {
-      background: url("../../img/work-mobile.png") no-repeat 50% 50%;
+      background: url("../img/work-mobile.png") no-repeat 50% 50%;
       width: 32px;
       height: 25px;
       top: 12px;
@@ -424,13 +423,13 @@
     }
 
     &:hover::before {
-      background: url("../../img/work-hover.png") no-repeat 50% 50%;
+      background: url("../img/work-hover.png") no-repeat 50% 50%;
     }
   }
 
   .programms__item--active .programms__button--work {
     &::before {
-      background: url("../../img/work-active.png") no-repeat 50% 50%;
+      background: url("../img/work-active.png") no-repeat 50% 50%;
     }
   }
   // TODO: дальше нет мобильных иконок, чтобы их выставить в соответствии с макетом.
@@ -444,13 +443,13 @@
     }
 
     &:hover::before {
-      background: url("../../img/volunteer-hover.png") no-repeat 50% 50%;
+      background: url("../img/volunteer-hover.png") no-repeat 50% 50%;
     }
   }
 
   .programms__item--active .programms__button--volunteer {
     &::before {
-      background: url("../../img/volunteer-active.png") no-repeat 50% 50%;
+      background: url("../img/volunteer-active.png") no-repeat 50% 50%;
     }
   }
 
@@ -464,13 +463,13 @@
     }
 
     &:hover::before {
-      background: url("../../img/religion-hover.png") no-repeat 50% 50%;
+      background: url("../img/religion-hover.png") no-repeat 50% 50%;
     }
   }
 
   .programms__item--active .programms__button--religion {
     &::before {
-      background: url("../../img/religion-active.png") no-repeat 50% 50%;
+      background: url("../img/religion-active.png") no-repeat 50% 50%;
     }
   }
 }
