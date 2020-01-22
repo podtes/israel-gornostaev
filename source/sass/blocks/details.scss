@@ -332,6 +332,11 @@
     margin-bottom: 80px;
   }
 
+  .details__bottom-wrapper {
+    padding: 0 27px;
+    justify-content: space-between;
+  }
+
   .details__name-label input,
   .details__phone-label input {
     margin-right: 0;
@@ -427,7 +432,8 @@
 
   .details__bottom-wrapper {
     flex-direction: column;
-    padding-left: 0;
+    padding: 0;
+    justify-content: flex-start;
   }
 
   .details__form-text-wrapper {

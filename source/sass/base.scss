@@ -35,12 +35,19 @@
   font-family: "Roleway";
   font-style: normal;
   font-display: swap;
-  src: url("../fonts/Roleway-Bold.woff2") format("woff2"), url("../fonts/Roleway-Bold.woff") format("woff");
+  src: url("../fonts/Raleway-Bold.woff2") format("woff2"), url("../fonts/Raleway-Bold.woff") format("woff");
+}
+
+html {
+  height: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background-color: #ffffff;
   color: #000000;
   font-family: "Fira Sans", "Arial", sans-serif;

@@ -91,9 +91,7 @@
   box-sizing: border-box;
 
   &:hover {
-    color: transparent;
-    background-clip: text;
-    background-image: linear-gradient(132.19deg, #ffc341 20.46%, #ffd701 65.31%);
+    color: #ffd701;
     opacity: 0.87;
   }
 
@@ -368,12 +366,6 @@
     padding-left: 50px;
     padding-right: 12px;
     word-break: normal;
-
-    &:hover {
-      color: transparent;
-      background-image: linear-gradient(132.19deg, #ffc341 20.46%, #ffd701 65.31%);
-      opacity: 0.87;
-    }
 
     &:active {
       opacity: 0.5;

@@ -101,15 +101,12 @@
 .faq__question h3 {
   &::before {
     position: absolute;
-    content: "1";
+    content: "";
+    width: 20px;
+    height: 25px;
     top: 34px;
-    left: 0;
-    font-family: "Fira Sans", "Arial", sans-serif;
-    font-weight: bold;
-    font-size: 28px;
-    color: transparent;
-    background-clip: text;
-    background-image: linear-gradient(95.15deg, #ffc341 20.46%, #ffd701 65.31%);
+    left: -4px;
+    background: url("../img/faq-number-1.svg") no-repeat 50% 50%;
   }
 
   &::after {
@@ -145,19 +142,21 @@
 
 .faq__question--second h3 {
   &::before {
-    content: "2";
+    background: url("../img/faq-number-2.svg") no-repeat 50% 50%;
   }
 }
 
 .faq__question--third h3 {
   &::before {
-    content: "3";
+    background: url("../img/faq-number-3.svg") no-repeat 50% 50%;
   }
 }
 
 .faq__question--fourth h3 {
   &::before {
-    content: "4";
+    top: 32px;
+    left: -3px;
+    background: url("../img/faq-number-4.svg") no-repeat 50% 50%;
   }
 }
 
@@ -167,13 +166,14 @@
 
 .faq__question--fifth h3 {
   &::before {
-    content: "5";
+    background: url("../img/faq-number-5.svg") no-repeat 50% 50%;
   }
 }
 
 .faq__question--sixth h3 {
   &::before {
-    content: "6";
+    left: -2px;
+    background: url("../img/faq-number-6.svg") no-repeat 50% 50%;
   }
 }
 
@@ -226,7 +226,7 @@
     background-size: 193px 177px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: ("../img/bag-desktop@2x.png");
+      background-image: url("../img/bag-desktop@2x.png");
     }
   }
 
