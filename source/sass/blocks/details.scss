@@ -15,7 +15,7 @@
 .details__bg-wrapper {
   max-width: 1366px;
   margin: 0 auto;
-  padding-top: 16px;
+  padding-top: 15px;
   padding-bottom: 75px;
   background-image: url("../img/map-desktop@1x.png");
   background-repeat: no-repeat;
@@ -222,6 +222,7 @@
 }
 
 .details__form-wrapper {
+  padding-right: 1px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -253,6 +254,7 @@
 .details__name-label input {
   margin-right: 23px;
   margin-bottom: 15px;
+  max-width: 250px;
 
   &:valid {
     border-color: #484848;
@@ -265,6 +267,7 @@
 
 .details__phone-label input {
   margin-right: 24px;
+  max-width: 250px;
 
   &:focus {
     border-color: #ffd701;
@@ -393,10 +396,6 @@
     &:first-of-type {
       margin-right: 15px;
     }
-
-    &:nth-of-type(2) {
-      padding-bottom: 0;
-    }
   }
 
   .details__kurator-info {
@@ -475,6 +474,7 @@
   .details__name-label input {
     margin-right: 0;
     margin-bottom: 9px;
+    max-width: none;
     width: 100%;
   }
 

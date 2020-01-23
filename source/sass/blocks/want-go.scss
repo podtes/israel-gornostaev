@@ -2,12 +2,12 @@
   position: relative;
   background-color: #ffffff;
   color: #000000;
-  background-image: url("../../img/backpack-desktop@1x.png");
+  background-image: url("../img/backpack-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: -73px 86px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/backpack-desktop@2x.png");
+    background-image: url("../img/backpack-desktop@2x.png");
     background-size: 220px;
   }
 }
@@ -17,12 +17,12 @@
   padding-top: 160px;
   padding-bottom: 130px;
   margin: 0 auto;
-  background-image: url("../../img/girl-flag-desktop@1x.jpg");
+  background-image: url("../img/girl-flag-desktop@1x.jpg");
   background-repeat: no-repeat;
   background-position: right -49px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/girl-flag-desktop@2x.jpg");
+    background-image: url("../img/girl-flag-desktop@2x.jpg");
     background-size: 818px;
   }
 }
@@ -80,7 +80,6 @@
 
   &:focus {
     border-color: #ffd701;
-    // TODO: тут нужно будет поставить градиент на бордер
   }
 
   &:valid {
@@ -107,7 +106,8 @@
 
 .want-go__callback-button {
   padding: 20px 38px;
-  transform: translateX(-216px);
+  width: 217px;
+  transform: translateX(-217px);
   font-variant: small-caps;
 }
 
@@ -137,18 +137,20 @@
     padding-top: 49px;
     padding-left: 0;
     padding-right: 0;
-    background-image: url("../../img/backpack-mobile@1x.png");
+    background-image: url("../img/backpack-mobile@1x.png");
     background-repeat: no-repeat;
     background-position: left 1px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/backpack-mobile@2x.png");
+      background-image: url("../img/backpack-mobile@2x.png");
       background-repeat: no-repeat;
       background-size: 103px;
     }
   }
 
   .want-go__wrapper {
+    max-width: 290px;
+    margin: 0 auto;
     padding-left: 17px;
     padding-right: 17px;
   }
@@ -156,12 +158,12 @@
   .want-go__bg-wrapper {
     padding-top: 0;
     padding-bottom: 308px;
-    background-image: url("../../img/girl-flag-bg-mobile@1x.jpg");
+    background-image: url("../img/girl-flag-bg-mobile@1x.jpg");
     background-repeat: no-repeat;
     background-position: 50% 291px;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/girl-flag-bg-mobile@2x.jpg");
+      background-image: url("../img/girl-flag-bg-mobile@2x.jpg");
       background-repeat: no-repeat;
       background-size: contain;
     }
@@ -200,6 +202,7 @@
   .want-go__callback-button {
     margin: 0 auto;
     padding: 20px 61px;
+    width: auto;
     transform: translateX(0);
   }
 }

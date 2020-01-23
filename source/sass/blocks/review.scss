@@ -3,16 +3,13 @@
   text-align: center;
   background-color: #ffffff;
   color: #000000;
-  background-image: url("../../img/reviews-bg-watercolor@1x.png");
+  background-image: url("../img/reviews-bg-watercolor@1x.png");
   background-repeat: no-repeat;
   background-position: 109px 75px;
   background-size: 1259px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/reviews-sketch-desktop@2x.png"),
-      url("../../img/reviews-bg-watercolor@2x.png");
-    background-size: 535px 318px,
-      1259px;
+    background-image: url("../img/reviews-bg-watercolor@2x.png");
   }
 }
 
@@ -22,13 +19,13 @@
   padding-bottom: 16px;
   padding-top: 39px;
 
-  background-image: url("../../img/reviews-sketch-desktop@1x.png");
+  background-image: url("../img/reviews-sketch-desktop@1x.png");
   background-repeat: no-repeat;
   background-position: 101.5% 94px;
   background-size: auto;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/reviews-sketch-desktop@2x.png");
+    background-image: url("../img/reviews-sketch-desktop@2x.png");
     background-size: 535px 318px;
   }
 }
@@ -62,8 +59,6 @@
   padding: 0;
   padding-left: 15px;
   list-style: none;
-  display: flex;
-  overflow: hidden;
 }
 
 .reviews__item {
@@ -103,6 +98,7 @@
   transform: translateY(-40px);
   width: 364px;
   height: 480px;
+  max-width: 364px;
 }
 
 .reviews__dates-and-city {
@@ -179,7 +175,7 @@
   font-size: 0;
   width: 15px;
   height: 30px;
-  background: url("../../img/arrow-left.svg") no-repeat 0 0;
+  background: url("../img/arrow-left.svg") no-repeat 0 0;
   border: none;
   cursor: pointer;
 
@@ -197,7 +193,7 @@
   font-size: 0;
   width: 15px;
   height: 30px;
-  background: url("../../img/arrow-right.svg") no-repeat 0 0;
+  background: url("../img/arrow-right.svg") no-repeat 0 0;
   border: none;
   cursor: pointer;
 

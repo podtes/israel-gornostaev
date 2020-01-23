@@ -53,8 +53,8 @@
 .masa-photo__watch-btn {
   position: relative;
   display: inline-block;
-  padding-top: 21px;
-  padding-bottom: 18px;
+  padding-top: 20px;
+  padding-bottom: 19px;
   padding-left: 71px;
   padding-right: 44px;
   font-family: "Fira Sans", "Arial", sans-serif;
@@ -70,8 +70,8 @@
 
 .masa-photo__icon-insta {
   position: absolute;
-  top: 18px;
-  left: 39px;
+  top: 17px;
+  left: 41px;
   fill: #ffffff;
 }
 
@@ -103,18 +103,18 @@
   .masa-photo__bg-wrapper {
     padding-top: 0;
     padding-bottom: 0;
-    background-image: url("../../img/cynthia-mobile@1x.png");
+    background-image: url("../img/cynthia-mobile@1x.png");
     background-repeat: no-repeat;
     background-position: 22% 44px;
     background-size: 632px 272px;
   }
 
   .masa-photo__wrapper {
-    margin: 0;
+    max-width: 290px;
+    margin: 0 auto;
     padding: 0;
     padding-left: 11px;
     padding-right: 13px;
-    max-width: 100%;
   }
 
   .masa-photo h2 {
@@ -138,7 +138,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 17px;
+    margin: 0 13px;
     padding-left: 77px;
   }
 

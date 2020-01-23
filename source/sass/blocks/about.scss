@@ -4,8 +4,8 @@
   text-align: center;
   background-color: #ffffff;
   color: #000000;
-  background-image: url("../../img/photo-about-desktop@1x.png"),
-    url("../../img/watercolor-Bg-desktop@1x.jpg");
+  background-image: url("../img/photo-about-desktop@1x.png"),
+    url("../img/watercolor-Bg-desktop@1x.jpg");
   background-repeat: no-repeat,
     no-repeat;
   background-position: 50% 70%,
@@ -14,8 +14,8 @@
     contain;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background-image: url("../../img/photo-about-desktop@2x.png"),
-      url("../../img/watercolor-Bg-desktop@2x.jpg");
+    background-image: url("../img/photo-about-desktop@2x.png"),
+      url("../img/watercolor-Bg-desktop@2x.jpg");
   }
 }
 
@@ -53,7 +53,7 @@
   border: none;
   border-radius: 50%;
   background-color: transparent;
-  background-image: url("../../img/play-button.svg");
+  background-image: url("../img/play-button.svg");
   background-repeat: no-repeat;
   background-position: center center;
   width: 96px;
@@ -61,12 +61,12 @@
 
   &:hover {
     cursor: pointer;
-    background-image: url("../../img/play-button-hover.svg");
+    background-image: url("../img/play-button-hover.svg");
   }
 
   &:active {
     cursor: pointer;
-    background-image: url("../../img/play-button-active.svg");
+    background-image: url("../img/play-button-active.svg");
   }
 }
 
@@ -75,8 +75,8 @@
     padding-top: 45px;
     padding-bottom: 96px;
     text-align: center;
-    background-image: url("../../img/photo-about-mobile@1x.png"),
-      url("../../img/watercolor-Bg-mobile@1x.jpg");
+    background-image: url("../img/photo-about-mobile@1x.png"),
+      url("../img/watercolor-Bg-mobile@1x.jpg");
     background-repeat: no-repeat,
       no-repeat;
     background-position: 50% 91%,
@@ -85,8 +85,8 @@
       contain;
 
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../../img/photo-about-mobile@2x.png"),
-        url("../../img/watercolor-Bg-mobile@2x.jpg");
+      background-image: url("../img/photo-about-mobile@2x.png"),
+        url("../img/watercolor-Bg-mobile@2x.jpg");
     }
   }
 
