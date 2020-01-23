@@ -2,6 +2,8 @@
 var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
 
+var body = document.querySelector('body');
+
 var pageHeader = document.querySelector('.page-header');
 var callbackOpenButton = pageHeader.querySelector('.page-header__callback');
 var callbackCloseButton = document.querySelector('.modal-order-callback__close-button');
@@ -53,6 +55,7 @@ var closeCallbackModal = function () {
     document.removeEventListener('keydown', openCallbackModalPressEscHandler);
     overlay.removeEventListener('click', overlayClickHandler);
     resetForm(callbackModalForm, errorMessageModal);
+    body.classList.remove('fix-body');
   }
 };
 var openCallbackModal = function () {
@@ -62,6 +65,7 @@ var openCallbackModal = function () {
     nameInput.focus();
     document.addEventListener('keydown', openCallbackModalPressEscHandler);
     overlay.addEventListener('click', overlayClickHandler);
+    body.classList.add('fix-body');
   }
 };
 var openCallbackModalPressEscHandler = function (evt) {
@@ -101,6 +105,7 @@ var openSuccessModal = function () {
     successModal.classList.add('modal-open');
     document.addEventListener('keydown', openSuccessModalPressEscHandler);
     overlay.addEventListener('click', overlayClickHandler);
+    body.classList.add('fix-body');
   }
 };
 var closeSuccessModal = function () {
@@ -109,6 +114,7 @@ var closeSuccessModal = function () {
     successModal.classList.remove('modal-open');
     document.removeEventListener('keydown', openSuccessModalPressEscHandler);
     overlay.removeEventListener('click', overlayClickHandler);
+    body.classList.remove('fix-body');
   }
 };
 var openSuccessModalPressEscHandler = function (evt) {

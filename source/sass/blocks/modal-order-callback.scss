@@ -58,8 +58,9 @@
   font-size: 17px;
   line-height: 20px;
   color: #484848;
-  opacity: 0.87;
+  opacity: 0.5;
   letter-spacing: -0.04em;
+  -webkit-tap-highlight-color: transparent;
 
   &:valid {
     border-color: #484848;
@@ -67,6 +68,7 @@
 
   &:focus {
     border-color: #ffd701;
+    opacity: 0.87;
   }
 }
 
@@ -95,14 +97,11 @@
   display: none;
 }
 
-.modal-order-callback__form input::placeholder {
-  opacity: 0.5;
-}
-
 .modal-order-callback__form input[type="submit"] {
   margin-left: 59px;
   margin-bottom: 17px;
   padding: 19px 63px;
+  appearance: none;
 }
 
 .modal-order-callback__checkbox-label {
@@ -239,6 +238,10 @@ input[type="checkbox"]:not(:checked) {
     margin: 0 auto;
     padding-left: 26px;
     text-align: center;
+  }
+
+  .modal-order-callback__form label::after {
+    left: 7px;
   }
 
   .modal-order-callback__checkbox-label::before {

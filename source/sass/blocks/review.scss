@@ -68,11 +68,14 @@
 
 .reviews__item--active {
   display: flex;
+  justify-content: flex-start;
 }
 
 .reviews__wrapper {
   display: flex;
   flex-direction: column;
+  //max-width: 675px;
+  max-width: 57%;
 }
 
 .reviews__footer-wrapper {
@@ -94,11 +97,12 @@
 }
 
 .reviews img {
-  margin-right: 40px;
+  display: block;
   transform: translateY(-40px);
   width: 364px;
   height: 480px;
   max-width: 364px;
+  margin-right: 40px;
 }
 
 .reviews__dates-and-city {
@@ -125,7 +129,6 @@
 .reviews__second-paragraph {
   margin: 0;
   padding: 0;
-  padding-right: 105px;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-size: 17px;
   line-height: 29px;
@@ -284,6 +287,10 @@
     @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: none;
     }
+  }
+
+  .reviews__wrapper {
+    max-width: none;
   }
 
   .reviews__list {

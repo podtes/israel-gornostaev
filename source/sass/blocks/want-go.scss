@@ -76,20 +76,17 @@
   font-size: 17px;
   line-height: 20px;
   color: #484848;
-  opacity: 0.87;
+  opacity: 0.5;
+  -webkit-tap-highlight-color: transparent;
 
   &:focus {
     border-color: #ffd701;
+    opacity: 0.87;
   }
 
   &:valid {
     border-color: #484848;
   }
-}
-
-.want-go input::placeholder {
-  color: #484848;
-  opacity: 0.5;
 }
 
 .want-go__error-message {
