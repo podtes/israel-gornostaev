@@ -8,7 +8,7 @@
   background-repeat: no-repeat,
     no-repeat;
   background-position: 103% 714px,
-    50% 113%;
+    50% 50%;
   background-size: 124px 148px,
     contain;
 
@@ -44,7 +44,7 @@
   padding: 0;
   padding-right: 19px;
   margin: 0 auto;
-  margin-bottom: 31px;
+  margin-bottom: 44px;
   font-family: "Fira Sans", "Arial", sans-serif;
   font-size: 17px;
   line-height: 29px;
@@ -55,38 +55,28 @@
   letter-spacing: -0.005em;
 }
 
-.live-israel__photos {
-  padding: 0;
-  margin: 0 auto;
-  list-style: none;
-  display: flex;
-  max-width: 1158px;
-  justify-content: flex-start;
+.live-israel .swiper-container {
+  overflow: visible;
 }
 
-.live-israel__photo-wrapper {
-  padding-top: 13px;
-  display: flex;
-  flex-direction: column;
+.live-israel .swiper-wrapper {
   flex-wrap: wrap;
 }
 
-.live-israel__first-couple-photos-wrapper {
-  margin-bottom: 30px;
-  display: flex;
-  max-width: 652px;
-  justify-content: space-between;
+.live-israel .swiper-slide {
+  width: auto;
+  height: auto;
 }
 
-.live-israel__second-couple-photos-wrapper {
-  display: flex;
-  max-width: 655px;
-  justify-content: space-between;
+.live-israel__photos {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1158px;
 }
 
 .live-israel__photo--first {
   position: relative;
-  margin-top: -54px;
+  top: -67px;
   margin-right: 15px;
   width: 482px;
   height: 733px;
@@ -135,7 +125,9 @@
 }
 
 .live-israel__photo--fourth {
-  margin-right: 30px;
+  position: absolute;
+  top: 348px;
+  left: -653px;
   width: 411px;
   height: 319px;
   background-image: url("../img/live-israel4-desktop@1x.png");
@@ -149,6 +141,9 @@
 }
 
 .live-israel__photo--fifth {
+  position: absolute;
+  top: 348px;
+  left: -210px;
   width: 211px;
   height: 319px;
   background-image: url("../img/live-israel5-desktop@1x.png");
@@ -204,8 +199,39 @@
   left: 24px;
 }
 
-.live-israel__indicators {
-  display: none;
+@media (max-width: 1180px) {
+  .live-israel__about {
+    margin-bottom: 70px;
+  }
+
+  .live-israel .swiper-wrapper {
+    justify-content: center;
+    width: auto;
+  }
+
+  .live-israel .swiper-slide:first-child {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }
+
+  .live-israel__photo--second {
+    margin-right: 90px;
+    margin-bottom: 30px;
+  }
+
+  .live-israel__photo--fourth {
+    position: relative;
+    margin-right: 80px;
+    top: 0;
+    left: 0;
+  }
+
+  .live-israel__photo--fifth {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
 }
 
 @media (max-width: $tab-width) {
@@ -217,10 +243,6 @@
     background: none;
   }
 
-  .live-israel__photos {
-    display: block;
-  }
-
   .live-israel h2 {
     margin: 0 auto;
     margin-bottom: 25px;
@@ -229,9 +251,10 @@
 
   .live-israel__about {
     padding: 0;
-    margin: 0 30px;
+    margin: 0 auto;
+    margin-bottom: 70px;
     width: auto;
-    text-align: left;
+    text-align: center;
   }
 
   .live-israel__photo--first {
@@ -282,20 +305,31 @@
     max-width: 100%;
   }
 
-  .swiper-container {
+  .live-israel .swiper-container {
     padding-bottom: 5px;
     width: 100%;
     height: 447px;
+    overflow: hidden;
   }
 
-  .swiper-slide {
+  .live-israel .swiper-wrapper {
+    padding: 0;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: normal;
+  }
+
+  .live-israel .swiper-slide {
     position: relative;
     text-align: center;
     font-size: 18px;
     background: #ffffff;
     display: flex;
+    //flex-shrink: 1;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
   }
 
   .swiper-container-horizontal > .swiper-pagination-bullets,
@@ -334,6 +368,7 @@
   }
 
   .live-israel__photo--first {
+    top: 0;
     width: 288px;
     height: 400px;
     background-image: url("../img/live-israel1-mobile@1x.png");
@@ -392,6 +427,8 @@
   }
 
   .live-israel__photo--fourth {
+    top: 0;
+    left: 0;
     width: 288px;
     height: 400px;
     background-image: url("../img/live-israel4-mobile@1x.png");
@@ -411,6 +448,8 @@
   }
 
   .live-israel__photo--fifth {
+    top: 0;
+    left: 0;
     width: 288px;
     height: 400px;
     background-image: url("../img/live-israel5-mobile@1x.png");
