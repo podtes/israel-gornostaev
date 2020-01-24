@@ -96,7 +96,7 @@
 @media (max-width: $mob-width) {
   .masa-photo {
     text-align: center;
-    padding-top: 0;
+    padding-top: 47px;
     padding-bottom: 40px;
   }
 
@@ -110,11 +110,9 @@
   }
 
   .masa-photo__wrapper {
-    max-width: 290px;
+    text-align: center;
     margin: 0 auto;
-    padding: 0;
-    padding-left: 11px;
-    padding-right: 13px;
+    padding: 0 12px;
   }
 
   .masa-photo h2 {
@@ -135,15 +133,17 @@
   }
 
   .masa-photo__watch-btn {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 13px;
+    margin: 0 16px;
     padding-left: 77px;
   }
 
   .masa-photo__icon-insta {
+    position: absolute;
     top: 18px;
-    left: 22%;
+    left: 57px;
   }
 }

@@ -38,15 +38,17 @@
   src: url("../fonts/Raleway-Bold.woff2") format("woff2"), url("../fonts/Raleway-Bold.woff") format("woff");
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
+//* {
+//  margin: 0;
+//  padding: 0;
+//}
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
   background-color: #ffffff;
   color: #000000;
   font-family: "Fira Sans", "Arial", sans-serif;

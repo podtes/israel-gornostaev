@@ -291,7 +291,7 @@
   .programms__bg-wrapper {
     background-image: url("../img/programms-sketch-mobile@1x.png");
     background-repeat: no-repeat;
-    background-position: 24px 33%;
+    background-position: 24px 44%;
     background-size: contain;
     overflow: hidden;
 
@@ -330,6 +330,7 @@
   .programms p {
     font-size: 14px;
     line-height: 22px;
+    letter-spacing: -0.002em;
 
     &:first-of-type {
       margin-bottom: 15px;
@@ -344,6 +345,11 @@
   .programms__item {
     margin-bottom: 0;
     margin-right: 0;
+  }
+
+  .programms__about--active {
+    max-width: 290px;
+    margin: 0 auto;
   }
 
   .programms__item--active .programms__button {

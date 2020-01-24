@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Программы обучения в Израиле</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="./css/style.min.css">
     <link rel="preload" href="./fonts/FiraSans.woff2" as="font">
     <link rel="preload" href="./fonts/FiraSans-Bold.woff2" as="font">
     <link rel="preload" href="./fonts/Montserrat-Bold.woff2" as="font">
     <link rel="preload" href="./fonts/Montserrat-Regular.woff2" as="font">
     <link rel="preload" href="./fonts/Raleway-Bold.woff2" as="font">
-    <script src="js/svguse.js" defer></script>
   </head>
   <body>
     <div class="intro-header-wrapper">
@@ -172,47 +172,39 @@
       </section>
       <section class="live-israel">
         <h2>Жизнь в израиле</h2>
-        <p class="live-israel__about">Помимо учёбы, в рамках программы у вас будет возможность путешествовать по стране и познакомиться с богатой культурно-исторической жизнью Израиля и его жителей.</p>
+        <p class="live-israel__about">Помимо учёбы, в рамках программе у вас будет возможность путешествовать по стране и познакомиться с богатой культурно-исторической жизнью Израиля и его жителей.</p>
         <div class="live-israel__photos">
-          <div class="live-israel__photo live-israel__photo--first">
-            <p>Экскурсии по Израилю и знакомство с его историей</p>
-          </div>
-          <div class="live-israel__photo-wrapper">
-            <div class="live-israel__first-couple-photos-wrapper">
-              <div class="live-israel__photo live-israel__photo--second">
-                <p>Изучение иврита</p>
+          <div id="live-israel-swiper" class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="live-israel__photo live-israel__photo--first">
+                  <p>Экскурсии по Израилю и знакомство с его историей</p>
+                </div>
               </div>
-              <div class="live-israel__photo live-israel__photo--third">
-                <p>Обучение современным навыкам и профессиям</p>
+              <div class="swiper-slide">
+                <div class="live-israel__photo live-israel__photo--second">
+                  <p>Изучение иврита</p>
+                </div>
               </div>
-            </div>
-            <div class="live-israel__second-couple-photos-wrapper">
-              <div class="live-israel__photo live-israel__photo--fourth">
-                <p>Совместные творческие проекты с израильской молодёжью</p>
+              <div class="swiper-slide">
+                <div class="live-israel__photo live-israel__photo--third">
+                  <p>Обучение современным навыкам и профессиям</p>
+                </div>
               </div>
-              <div class="live-israel__photo live-israel__photo--fifth">
+              <div class="swiper-slide">
+                <div class="live-israel__photo live-israel__photo--fourth">
+                  <p>Совместные творческие проекты с израильской молодёжью</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="live-israel__photo live-israel__photo--fifth swiper-slide">
                 <p>Развитие лидерства</p>
               </div>
+              </div>
             </div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
-        <ul class="live-israel__indicators">
-          <li class="live-israel__indicator live-israel__indicator--active live-israel__indicator--first">
-            <span>Первое фото</span>
-          </li>
-          <li class="live-israel__indicator live-israel__indicator--second">
-            <span>Второе фото</span>
-          </li>
-          <li class="live-israel__indicator live-israel__indicator--third">
-            <span>Третье фото</span>
-          </li>
-          <li class="live-israel__indicator live-israel__indicator--fourth">
-            <span>Четвертое фото</span>
-          </li>
-          <li class="live-israel__indicator live-israel__indicator--fifth">
-            <span>Пятое фото</span>
-          </li>
-        </ul>
       </section>
       <section class="masa-photo">
         <div class="masa-photo__bg-wrapper">
@@ -552,6 +544,8 @@
       </section>
     </div>
     <script src="./js/vendor.js"></script>
+    <script src="./js/svgxuse.js"></script>
+    <script src="./js/swiper.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

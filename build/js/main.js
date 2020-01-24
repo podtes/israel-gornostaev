@@ -35,9 +35,6 @@ var programmButtonItems = document.querySelectorAll('.programms__item');
 var programmsButtons = document.querySelectorAll('.programms__button');
 var programmsTexts = document.querySelectorAll('.programms__about');
 
-var photosLiveIsrael = document.querySelectorAll('.live-israel__photo');
-var indicatorsLiveIsrael = document.querySelectorAll('.live-israel__indicator');
-
 
 // логика открытия и закрытия модальных окон
 var resetForm = function (form, errorMessage) {
@@ -244,33 +241,22 @@ var switchFaqQuestions = function () {
   }
 };
 
-// логика переключения слайдера секции live-israel
-var hideActivePhotoAndIndicator = function () {
-  if (photosLiveIsrael) {
-    for (var i = 0; i < photosLiveIsrael.length; i++) {
-      photosLiveIsrael[i].style.display = 'none';
-    }
-    for (var j = 0; j < indicatorsLiveIsrael.length; j++) {
-      if (indicatorsLiveIsrael[j].classList.contains('live-israel__indicator--active')) {
-        indicatorsLiveIsrael[j].classList.remove('live-israel__indicator--active');
-      }
-    }
-  }
+// подключение слайдера секции live-israel
+var getWindowWidth = function () {
+  return window.innerWidth || document.body.clientWidth;
 };
-var showActiveSlide = function (indicator, photo) {
-  indicator.addEventListener('click', function () {
-    hideActivePhotoAndIndicator();
-    indicator.classList.add('live-israel__indicator--active');
-    photo.style.display = 'block';
+
+if (getWindowWidth() < 768) {
+  var swiper = new Swiper('#live-israel-swiper.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    pagination: {
+      el: '#live-israel-swiper .swiper-pagination',
+      clickable: true
+    },
   });
-};
-var addListerersOnLiveIsraelIndicators = function () {
-  if (indicatorsLiveIsrael) {
-    for (var i = 0; i < indicatorsLiveIsrael.length; i++) {
-      showActiveSlide(indicatorsLiveIsrael[i], photosLiveIsrael[i]);
-    }
-  }
-};
+}
 
 // открытие модального окна c сообщением успеха из секции want-go и details
 wantGoForm.addEventListener('submit', function (evt) {
@@ -376,4 +362,3 @@ previousReviewButton.addEventListener('click', function () {
 
 addListerersOnProgrammsButtons();
 switchFaqQuestions();
-addListerersOnLiveIsraelIndicators();
