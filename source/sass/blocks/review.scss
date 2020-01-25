@@ -290,7 +290,8 @@
   }
 
   .reviews__wrapper {
-    max-width: none;
+    max-width: 290px;
+    margin: 0 auto;
   }
 
   .reviews__list {
@@ -361,7 +362,7 @@
 
   .reviews__footer-wrapper {
     position: static;
-    width: auto;
+    text-align: left;
     top: 0;
     left: -3px;
   }
@@ -375,6 +376,7 @@
 
   .reviews__social-list {
     position: relative;
+    max-width: 290px;
     left: -3px;
   }
 }

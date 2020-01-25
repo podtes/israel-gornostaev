@@ -376,6 +376,8 @@
 
   .details h2 {
     padding-left: 0;
+    max-width: 290px;
+    margin: 0 auto;
     margin-bottom: 24px;
     font-size: 32px;
     line-height: 39px;
@@ -385,6 +387,8 @@
   .details__choose-city {
     text-align: left;
     padding-left: 38px;
+    max-width: 290px;
+    margin: 0 auto;
     margin-bottom: 39px;
 
     &::before {
@@ -400,8 +404,9 @@
   }
 
   .details__kurator-info {
-    padding-left: 16px;
-    margin-bottom: 0;
+    padding-left: 3px;
+    max-width: 290px;
+    margin: 0 auto;
     flex-direction: column;
   }
 
@@ -423,6 +428,8 @@
   .details__about-kurator {
     padding-left: 15px;
     padding-right: 20px;
+    max-width: 290px;
+    margin: 0 auto;
     margin-bottom: 485px;
     text-align: left;
     font-size: 16px;
@@ -438,8 +445,9 @@
 
   .details__form-text-wrapper {
     text-align: left;
-    padding-left: 15px;
-    margin-right: 0;
+    padding-left: 2px;
+    max-width: 290px;
+    margin: 0 auto;
     margin-bottom: 34px;
   }
 
@@ -469,6 +477,8 @@
   .details__form-wrapper {
     padding-left: 15px;
     padding-right: 15px;
+    max-width: 290px;
+    margin: 0 auto;
   }
 
   .details__phone-label input,

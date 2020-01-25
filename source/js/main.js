@@ -245,7 +245,6 @@ var switchFaqQuestions = function () {
 var getWindowWidth = function () {
   return window.innerWidth || document.body.clientWidth;
 };
-
 if (getWindowWidth() < 768) {
   var swiper = new Swiper('#live-israel-swiper.swiper-container', {
     slidesPerView: 1,
