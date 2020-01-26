@@ -4,7 +4,7 @@
   text-align: center;
   background-image: url("../img/details-bg-desktop@1x.jpg");
   background-repeat: no-repeat;
-  background-position: 50% -74px;
+  background-position: 50% 78px;
   background-size: cover;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
@@ -15,11 +15,11 @@
 .details__bg-wrapper {
   max-width: 1366px;
   margin: 0 auto;
-  padding-top: 15px;
+  padding-top: 12px;
   padding-bottom: 75px;
   background-image: url("../img/map-desktop@1x.png");
   background-repeat: no-repeat;
-  background-position: right 22px;
+  background-position: right 17px;
 
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     background-image: url("../img/map-desktop@2x.png");

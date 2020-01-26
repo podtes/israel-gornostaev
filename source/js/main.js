@@ -246,7 +246,7 @@ var getWindowWidth = function () {
   return window.innerWidth || document.body.clientWidth;
 };
 if (getWindowWidth() < 768) {
-  var swiper = new Swiper('#live-israel-swiper.swiper-container', {
+  var swiperLiveIsrael = new Swiper('#live-israel-swiper.swiper-container', {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
@@ -256,6 +256,16 @@ if (getWindowWidth() < 768) {
     },
   });
 }
+
+
+var swiperReviews = new Swiper('#reviews-swiper.swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 100,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
 
 // открытие модального окна c сообщением успеха из секции want-go и details
 wantGoForm.addEventListener('submit', function (evt) {
@@ -321,42 +331,6 @@ callbackModalForm.addEventListener('submit', function (evt) {
   evt.preventDefault();
   callbackModalForm.reset();
   openSuccessModal();
-});
-
-// логика переключения слайдера отзывов
-nextReviewButton.addEventListener('click', function () {
-  for (var j = 0; j < reviewSlides.length; j++) {
-    if (reviewSlides[j].classList.contains('reviews__item--active')) {
-      if (j !== reviewSlides.length - 1) {
-        reviewSlides[j].classList.remove('reviews__item--active');
-        reviewSlides[j + 1].classList.add('reviews__item--active');
-        currentReviewCount.innerHTML = j + 2 + ' ';
-        break;
-      } else {
-        reviewSlides[j].classList.remove('reviews__item--active');
-        reviewSlides[0].classList.add('reviews__item--active');
-        currentReviewCount.innerHTML = 1 + ' ';
-        break;
-      }
-    }
-  }
-});
-previousReviewButton.addEventListener('click', function () {
-  for (var j = 0; j < reviewSlides.length; j++) {
-    if (reviewSlides[j].classList.contains('reviews__item--active')) {
-      if (j !== 0) {
-        reviewSlides[j].classList.remove('reviews__item--active');
-        reviewSlides[j - 1].classList.add('reviews__item--active');
-        currentReviewCount.innerHTML = j + ' ';
-        break;
-      } else {
-        reviewSlides[0].classList.remove('reviews__item--active');
-        reviewSlides[reviewSlides.length - 1].classList.add('reviews__item--active');
-        currentReviewCount.innerHTML = reviewSlides.length + ' ';
-        break;
-      }
-    }
-  }
 });
 
 addListerersOnProgrammsButtons();
