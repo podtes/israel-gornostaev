@@ -26,11 +26,6 @@ var errorMessageModal = document.querySelector('.modal-order-callback__error-mes
 
 var faqQuestionButtons = document.querySelectorAll('.faq__question');
 
-var reviewSlides = document.querySelectorAll('.reviews__item');
-var nextReviewButton = document.querySelector('.reviews__next-review');
-var currentReviewCount = document.querySelector('.reviews__start-review');
-var previousReviewButton = document.querySelector('.reviews__previous-review');
-
 var programmButtonItems = document.querySelectorAll('.programms__item');
 var programmsButtons = document.querySelectorAll('.programms__button');
 var programmsTexts = document.querySelectorAll('.programms__about');
@@ -241,31 +236,9 @@ var switchFaqQuestions = function () {
   }
 };
 
-// подключение слайдера секции live-israel
 var getWindowWidth = function () {
   return window.innerWidth || document.body.clientWidth;
 };
-if (getWindowWidth() < 768) {
-  var swiperLiveIsrael = new Swiper('#live-israel-swiper.swiper-container', {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    pagination: {
-      el: '#live-israel-swiper .swiper-pagination',
-      clickable: true
-    },
-  });
-}
-
-
-var swiperReviews = new Swiper('#reviews-swiper.swiper-container', {
-  slidesPerView: 1,
-  spaceBetween: 100,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-});
 
 // открытие модального окна c сообщением успеха из секции want-go и details
 wantGoForm.addEventListener('submit', function (evt) {
@@ -335,3 +308,7 @@ callbackModalForm.addEventListener('submit', function (evt) {
 
 addListerersOnProgrammsButtons();
 switchFaqQuestions();
+
+window.main = {
+  getWindowWidth: getWindowWidth
+};
