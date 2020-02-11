@@ -8912,7 +8912,7 @@
       if (!reg.test(input.value) || input.value.length < 3 || keyCode > 47 && keyCode < 58) {
         input.value = newValue;
       }
-      if (event.type === 'blur' && input.value.length < 3) {
+      if (event.type === 'blur' && input.value.length < 2) {
         input.value = '';
         input.style.border = '2px solid #e3e3e3';
       }
@@ -8945,6 +8945,10 @@ if (window.main.getWindowWidth() < 768) {
   return new window.Swiper('#reviews-swiper.swiper-container', {
     slidesPerView: 1,
     spaceBetween: 100,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',

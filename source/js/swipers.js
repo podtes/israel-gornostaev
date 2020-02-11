@@ -18,6 +18,10 @@ if (window.main.getWindowWidth() < 768) {
   return new window.Swiper('#reviews-swiper.swiper-container', {
     slidesPerView: 1,
     spaceBetween: 100,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'fraction',
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',

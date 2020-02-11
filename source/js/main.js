@@ -266,7 +266,7 @@ successModalOKButton.addEventListener('keydown', successModalOKButtonPressEnterH
 successModalCloseButton.addEventListener('keydown', successModalCloseButtonPressEnterHandler);
 
 // валидация инпута в модальном окне
-phoneInputModal.addEventListener('input', function () {
+phoneInputModal.addEventListener('change', function () {
   validatePhoneInputHandler(phoneInputModal, errorMessageModal);
 });
 phoneInputModal.addEventListener('focus', function () {
@@ -277,7 +277,7 @@ phoneInputModal.addEventListener('blur', function () {
 });
 
 // валидация инпута в секции подробностей
-phoneInputDetails.addEventListener('input', function () {
+phoneInputDetails.addEventListener('change', function () {
   validatePhoneInputHandler(phoneInputDetails, errorMessageDetails);
 });
 phoneInputDetails.addEventListener('focus', function () {
@@ -288,7 +288,7 @@ phoneInputDetails.addEventListener('blur', function () {
 });
 
 // валидация инпута в секции хочу поехать
-phoneInputWantGo.addEventListener('input', function () {
+phoneInputWantGo.addEventListener('change', function () {
   validatePhoneInputHandler(phoneInputWantGo, errorMessageWantGo);
 });
 phoneInputWantGo.addEventListener('focus', function () {
